@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
@@ -9,6 +10,8 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contactform.component.scss'
 })
 export class ContactformComponent {
+
+  http = inject(HttpClient);
 
   contactData = {
     name: "",
