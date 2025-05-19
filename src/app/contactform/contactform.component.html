@@ -1,13 +1,13 @@
 <div class="container">
-    <form action="">
+    <form (ngSubmit)="onSubmit()">
         <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Your name...">
+        <input [(ngModel)]="contactData.name" id="name" name="name" type="text" placeholder="Your name...">
 
         <label for="email">Email</label>
-        <input id="email" name="email" type="text" placeholder="Your mail...">
+        <input [(ngModel)]="contactData.email" id="email" name="email" type="text" placeholder="Your mail...">
 
         <label for="message">Subject</label>
-        <textarea name="message" id="message" placeholder="Write something..."></textarea>
-        <input type="submit" value="submit">
+        <textarea [(ngModel)]="contactData.message" name="message" id="message" placeholder="Write something..."></textarea>
+        <input type="submit" value="Submit">
     </form>
 </div>
