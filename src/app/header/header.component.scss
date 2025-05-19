@@ -1,0 +1,117 @@
+.header-container { 
+    width: 100vw;
+    height: 900px;
+    background-image: linear-gradient(to left bottom, #08463B, #1C1C1C);
+    
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0px;
+    right: 0;
+}
+
+.inner-header-container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-left: 96px;
+    padding-right: 96px;
+
+    // font-family: 'Karla';
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    // font-family: 'Fira Code';
+    color: #D9D9D9;
+}
+
+h1 {
+    font-size: 128px;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    color: #D9D9D9;
+    
+}
+
+.btn-container {
+    // width: 363px;
+    display: flex;
+    justify-content: center;
+    gap: 48px
+}
+
+.btn {
+    height: 48px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    padding-left: 24px;
+    padding-right: 24px;
+    line-height: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-left {
+    position: absolute;
+    left: 96px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.line-left {
+    width: 0px;
+    height: 240px;
+    border: 1px solid #3DCFB6;
+    border-collapse: collapse;
+}
+
+.header-right {
+    position: absolute;
+    right: 96px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.mail {
+    writing-mode: vertical-rl;
+    transform:rotate(180deg);
+}
+
+.line-right {
+    width: 0px;
+    height: 186px;
+    border: 1px solid #FFFFFF;
+    border-collapse: collapse;
+}
+
+.banner {
+    position: absolute;
+    bottom: 0;
+}
