@@ -25,7 +25,9 @@
     padding-left: 96px;
     padding-right: 96px;
 
-    // font-family: 'Karla';
+    font-family: 'Karla', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .header {
@@ -40,8 +42,14 @@ h3 {
     font-weight: 400;
     margin: 0;
     text-align: center;
-    // font-family: 'Fira Code';
+    font-family: 'Fira Code', Arial, sans-serif;
     color: #D9D9D9;
+}
+
+.inner-header {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 h1 {
