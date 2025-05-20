@@ -98,18 +98,13 @@ export class SlideBtnComponent {
       transform: 'translateX(-100%)',
       opacity: '1',
       transition: 'none'
-    };
-    // this.animatedStyle = {
-    //   transform: 'translateX(100%)',
-    //   opacity: '1',
-    //   transition: 'none'
-    // };
-    // Kurzes Timeout, damit Browser den Style registriert
+    }; 
+    
     setTimeout(() => {
       this.staticStyle = {
         transform: 'translateX(0%)',
         opacity: '1',
-        transition: `transform 500ms linear, opacity 500ms linear`
+        transition: `transform 200ms linear, opacity 500ms linear`
       };
     }, 20);
   }

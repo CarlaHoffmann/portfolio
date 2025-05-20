@@ -1,0 +1,28 @@
+.logo {
+    font-size: 52px;
+    font-weight: bold;
+    color: #3BCFB6;
+    font-family: 'Fira Code', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        color: transparent; // Text selbst wird durchsichtig
+        -webkit-text-stroke: 1px #3BCFB6; // Bunte Kontur
+        text-stroke: 1px #3BCFB6; // Für andere Browser (experimentell)
+        background: none; // kein Hintergrund
+    }
+    &:hover .name {
+        color: transparent; // Text selbst wird durchsichtig
+        -webkit-text-stroke: 1px #FFFFFF; // Bunte Kontur
+        text-stroke: 1px #FFFFFF; // Für andere Browser (experimentell)
+        background: none; // kein Hintergrund
+    }
+}
+
+.name {
+    color: #FFFFFF;
+    font-size: 23px;
+    margin: 0;
+    line-height: 0.8;
+}

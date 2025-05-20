@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [],
+  imports: [LogoComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
