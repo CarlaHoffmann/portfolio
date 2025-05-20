@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { PageComponentComponent } from '../page-component/page-component.component';
+import { SkillsComponent } from '../skills/skills.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [HeaderComponent, PageComponentComponent, FooterComponent],
+  imports: [HeaderComponent, PageComponentComponent, SkillsComponent, FooterComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })

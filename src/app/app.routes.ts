@@ -5,9 +5,9 @@ import { HeaderComponent } from './header/header.component';
 import { MainPageComponent } from './main-page/main-page.component';
 
 export const routes: Routes = [
-    { path: '', component: MainPageComponent},
+    { path: '/', component: MainPageComponent},
     // { path: '', component: MenuComponent},
     // { path: '', component: HeaderComponent},
     // { path: '', component: ContactformComponent},
-    // { path:'game/:id', component: GameComponent}
+    { path:'/contact', component: ContactformComponent}
 ];

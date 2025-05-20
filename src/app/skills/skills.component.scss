@@ -1,18 +1,22 @@
-.component-container {
+.tech-container {
     width: 100%;
-    padding: 96px;
     display: flex;
     justify-content: center;
+    padding-left: 96px;
+    padding-right: 96px;
+    padding-bottom: 96px;
     box-sizing: border-box;
-    font-family: 'Karla', Arial, sans-serif;
 }
 
-.inner-component-container {
+.inner-tech-container {
     width: 100%;
     max-width: 1440px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+}
+
+.tech-container {
+    width: 100%;
 }
 
 .text-container {
@@ -56,15 +60,14 @@ h1 {
     text-align: justify;
 }
 
-.text-components {
+.text-component {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.text-component {
-    display: flex;
-    gap: 24px;
-    position: relative;
-    left: -15px;
+h3 {
+    margin: 0;
+    font-family: 'Fira Code', Arial, sans-serif;
+    font-size: 24px;
 }
