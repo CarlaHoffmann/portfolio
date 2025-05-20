@@ -3,8 +3,8 @@
         <div class="menu">
         
             <div class="language-switch">
-                <div (click)="selectLanguage()" class="language en active">EN</div>
-                <div (click)="selectLanguage()" class="language de">DE</div>
+                <div (click)="selectLanguage('en')" class="language en" [class.active]="selectedLanguage === 'en'">EN</div>
+                <div (click)="selectLanguage('de')" class="language de" [class.active]="selectedLanguage === 'de'">DE</div>
             </div>
             <a href="">About me</a>
             <a href="">Skills</a>

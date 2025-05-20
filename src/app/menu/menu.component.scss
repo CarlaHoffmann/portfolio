@@ -29,6 +29,7 @@
 }
 
 .language-switch {
+    height: 24px;
     display: flex;
     align-items: center;
     border-radius: 100px;
@@ -54,21 +55,20 @@
     padding-right: 12px;  
     border-radius: 100px;
     font-size: 16px;
-    &:hover {
-        padding-right: 12px;  
-    } 
 }
 
-.language .en {
-    padding-right: 8px;   
-    
+.en {
+    padding-right: 8px;
 }
 
-.language .de {
+.de {
     padding-left: 8px; 
 }
 
 .active {
+    height: 26px;
+    padding-left: 12px !important;
+    padding-right: 12px !important; 
     background-color: #3bcfb6;
     color: #FFFFFF;
 }

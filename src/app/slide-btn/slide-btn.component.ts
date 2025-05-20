@@ -11,10 +11,13 @@ import { Component, Input } from '@angular/core';
 export class SlideBtnComponent {
   @Input() text = '';
 
+  borderColor = '#FFFFFF';
+  textColor = '#FFFFFF'; 
+
   showStatic = true;
   showAnimated = false;
 
-staticStyle = {
+  staticStyle = {
     transform: 'translateX(0%)',
     opacity: '1',
     transition: 'none'
@@ -36,11 +39,14 @@ staticStyle = {
     if (this.running) return;
     this.running = true;
 
+    this.borderColor = '#3DCFB6';
+    this.textColor = '#3DCFB6';
+
     // 1. Statisches Element nach links raus
     this.staticStyle = {
       transform: 'translateX(-100%)',
       opacity: '0',
-      transition: `transform 500ms linear, opacity 500ms linear`
+      transition: `transform 500ms linear, opacity 500ms linear, color 500ms linear`
     };
 
     this.timeout1 = setTimeout(() => {
@@ -84,6 +90,10 @@ staticStyle = {
     clearTimeout(this.timeout3);
     this.showStatic = true;
     this.showAnimated = false;
+
+    this.borderColor = '#FFFFFF';
+    this.textColor = '#FFFFFF';
+
     this.staticStyle = {
       transform: 'translateX(-100%)',
       opacity: '1',

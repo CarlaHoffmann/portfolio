@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
+  selectedLanguage: 'en' | 'de' = 'en';
 
-
-  selectLanguage() {}
+  selectLanguage(lang: 'en' | 'de') {
+    this.selectedLanguage = lang;
+  }
 }
