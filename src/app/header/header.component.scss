@@ -80,8 +80,6 @@ h1 {
     gap: 48px
 }
 
-
-
 .header-left {
     position: absolute;
     left: 96px;
@@ -90,6 +88,23 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 24px;
+}
+
+.icon-box {
+    border: 1px solid #3DCFB6;
+    border-radius: 32px;
+    padding: 10px
+}
+
+.icon-box img {
+    // animation: bounceY 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    animation: updown 1.2s linear infinite;
+}
+
+@keyframes updown {
+    0%   { transform: translateY(8px); }
+    50%  { transform: translateY(-2px); } // Höhe nach oben, anpassen nach Geschmack
+    100% { transform: translateY(8px); }
 }
 
 .line-left {
@@ -112,7 +127,57 @@ h1 {
 .mail {
     writing-mode: vertical-rl;
     transform:rotate(180deg);
+    &:hover {
+        color: #3DCFB6;
+    }
 }
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links a {
+    cursor: pointer;
+    position: relative; // wichtig für das Pseudo-Element
+    display: inline-block; // falls nicht schon gesetzt
+  
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -16px; // Abstand nach rechts, ggf. anpassen
+      top: 50%;
+      transform: translateY(-50%) scale(0.5);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #3DCFB6;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+  
+    &:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+}
+
+.links a img {
+    transition: filter 0.2s;
+}
+.links a:hover img {
+    filter: brightness(0) invert(1);
+}
+// .links a .icon {
+//     fill: #3DCFB6;
+//     transition: fill 0.3s;
+// }
+// .links a:hover .icon {
+//     fill: #ffffff;
+// }
 
 .line-right {
     width: 0px;
@@ -129,11 +194,11 @@ h1 {
     padding: 12px 32px;
 
     transform: skewY(-3deg);
-    overflow: hidden; /* Verhindert, dass Inhalte überlaufen */
-    background: rgba(255, 255, 255, 0.1); /* Beispielhintergrund */
-    backdrop-filter: blur(5.3px);           /* eigentlicher Blur-Effekt */
+    overflow: hidden; 
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5.3px); 
     -webkit-backdrop-filter: blur(5.3px); 
-    white-space: nowrap; /* Damit der Text in einer Zeile bleibt */
+    white-space: nowrap;
     color: #3DCFB6;
     font-size: 32px;
 }
