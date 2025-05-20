@@ -9,13 +9,13 @@
     &:hover {
         color: transparent; // Text selbst wird durchsichtig
         -webkit-text-stroke: 1px #3BCFB6; // Bunte Kontur
-        text-stroke: 1px #3BCFB6; // Für andere Browser (experimentell)
+        // text-stroke: 1px #3BCFB6; // Für andere Browser (experimentell)
         background: none; // kein Hintergrund
     }
     &:hover .name {
         color: transparent; // Text selbst wird durchsichtig
         -webkit-text-stroke: 1px #FFFFFF; // Bunte Kontur
-        text-stroke: 1px #FFFFFF; // Für andere Browser (experimentell)
+        // text-stroke: 1px #FFFFFF; // Für andere Browser (experimentell)
         background: none; // kein Hintergrund
     }
 }
