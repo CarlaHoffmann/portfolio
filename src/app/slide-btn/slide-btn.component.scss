@@ -1,0 +1,25 @@
+.btn {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 48px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #222;
+  }
+  
+  .btn-text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 48px;
+    color: #fff;
+    pointer-events: none;
+    font-size: 20px;
+    user-select: none;
+  }

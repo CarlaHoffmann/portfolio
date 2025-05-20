@@ -1,18 +1,30 @@
 .header-container { 
     width: 100vw;
     height: 900px;
-    background-image: linear-gradient(to left bottom, #08463B, #1C1C1C);
+    background-image: linear-gradient(
+        to left bottom,
+        #08463B 10%,
+        #1C1C1C 60%
+    );
     
     display: flex;
     justify-content: center;
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }
 
 .menu {
     position: absolute;
     width: 100%;
     top: 0;
-    left: 0px;
+    left: 0;
     right: 0;
+    z-index: 1;
 }
 
 .inner-header-container {
@@ -68,8 +80,27 @@ h1 {
     gap: 48px
 }
 
+// .btn {
+//     height: 48px;
+//     border: 1px solid #FFFFFF;
+//     border-radius: 100px;
+//     padding-left: 24px;
+//     padding-right: 24px;
+//     line-height: 120%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     cursor: pointer;
+//     &:hover {
+//         border: 1px solid #3DCFB6;
+//     }
+// }
 .btn {
+    position: relative;
+    overflow: hidden;
     height: 48px;
+    // width: 120px;
+    width: fit-content;
     border: 1px solid #FFFFFF;
     border-radius: 100px;
     padding-left: 24px;
@@ -78,7 +109,87 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+  
+    &:hover {
+        border: 1px solid #3DCFB6;
+  
+        .btn-text-out {
+            animation: slide-out 0.7s linear forwards;
+        }
+        .btn-text-in {
+            animation: slide-in 0.7s linear forwards;
+            animation-delay: 0.7s;
+        }
+    }
 }
+
+.btn-text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: none;
+    // will-change: transform;
+    display: block;
+    line-height: 48px;
+    color: #fff;
+}
+.btn-text-in {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.btn-text-out {
+    transform: translateX(0);
+    opacity: 1;
+}
+/* Keyframes für beide Animationen */
+@keyframes slide-out {
+    0%   { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slide-in {
+    0%   { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.animated-btn {
+    &:hover {
+        display: none;
+    }
+    &:hover .animated-btn-hover {
+        // display: flex;
+        display: inline-block;
+        white-space: nowrap;
+        transition: none;
+        will-change: transform;
+    }
+}
+
+.animated-btn-hover {
+    display: none;
+    
+}
+  
+@keyframes slide-out {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-1000px);
+    }
+}
+@keyframes slide-in {
+    0% {
+      transform: translateX(1000px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+}
+
+
 
 .header-left {
     position: absolute;
@@ -121,5 +232,33 @@ h1 {
 
 .banner {
     position: absolute;
-    bottom: 0;
+    bottom: 36px;
+    width: 100vw;
+    overflow: hidden;
+    padding: 12px 32px;
+
+    transform: skewY(-3deg);
+    overflow: hidden; /* Verhindert, dass Inhalte überlaufen */
+    background: rgba(255, 255, 255, 0.1); /* Beispielhintergrund */
+    backdrop-filter: blur(5.3px);           /* eigentlicher Blur-Effekt */
+    -webkit-backdrop-filter: blur(5.3px); 
+    white-space: nowrap; /* Damit der Text in einer Zeile bleibt */
+    color: #3DCFB6;
+    font-size: 32px;
 }
+
+.banner-content {
+    display: flex;
+    gap: 56px;
+    width: max-content;
+    animation: scroll-left 10s linear infinite;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }

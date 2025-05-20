@@ -1,0 +1,8 @@
+<div class="btn" (mouseenter)="startAnimation()" (mouseleave)="stopAnimation()">
+  <span class="btn-text btn-static" *ngIf="showStatic" [ngStyle]="staticStyle">
+    {{ text }} 
+  </span>
+  <span class="btn-text btn-animated" *ngIf="showAnimated" [ngStyle]="animatedStyle">
+    {{ text }}
+  </span>
+</div>
