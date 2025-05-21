@@ -33,18 +33,18 @@
     display: flex;
     align-items: center;
     border-radius: 100px;
-    border: 1px solid #3BCFB6;
+    border: 1px solid $green;
     color: rgba(59, 207, 182, 0.5);
     cursor: pointer;
     transition: color 0.5s ease, border-color 0.5s ease; 
     
     &:hover {
         border: 1px solid #FFFFFF;
-        color: #3bcfb6;
+        color: $green;
     }
     &:hover .active {
-        background-color: #3bcfb6;
-        color: #FFFFFF;
+        background-color: $green;
+        color: $white;
     }
 }
 
@@ -70,13 +70,13 @@
     height: 26px;
     padding-left: 12px !important;
     padding-right: 12px !important; 
-    background-color: #3bcfb6;
-    color: #FFFFFF;
+    background-color: $green;
+    color: $white;
 }
 
 a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: $white;
     cursor: pointer;
     position: relative; // wichtig für das Pseudo-Element
 
@@ -89,7 +89,7 @@ a {
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: #3DCFB6;
+        background: $green;
         opacity: 0;
         transform: translateX(-50%) scale(0.5);
         transition: opacity 0.3s, transform 0.3s;

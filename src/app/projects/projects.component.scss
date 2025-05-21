@@ -1,0 +1,30 @@
+.projects-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 96px;
+    padding-right: 96px;
+    padding-bottom: 96px;
+}
+
+.inner-projects-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header span {
+    font-size: 24px;
+}
+
+h1 {
+    font-family: 'Fira Code', Arial, sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+}
