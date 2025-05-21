@@ -1,4 +1,4 @@
-.tech-container {
+.skill-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-.inner-tech-container {
+.inner-skill-container {
     width: 100%;
     max-width: 1440px;
     display: flex;
@@ -70,4 +70,30 @@ h3 {
     margin: 0;
     font-family: 'Fira Code', Arial, sans-serif;
     font-size: 24px;
+}
+
+.tech-icon-container {
+    width: 632px;
+    
+}
+
+.inner-tech-icon-container {
+    width: 100%;
+    position: relative;
+    top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px;
+}
+
+.tech {
+    width: 104px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.tech span {
+    text-align: center;
 }

@@ -12,11 +12,14 @@ $white: #FFFFFF;
     box-sizing: border-box;
     padding-left: 96px;
     padding-right: 96px;
-    padding-bottom: 96px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
 }
 
 .inner-projects-container {
     width: 100%;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
     gap: 41px;
@@ -42,8 +45,10 @@ h1 {
 }
 
 .project-list {
-    width: 880px;
+    width: 70%;
+    max-width: 880px;
     border-top: 1px solid $green;
+    position: relative;
 }
 
 .project {
@@ -52,9 +57,16 @@ h1 {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+    position: relative;
+    cursor: pointer;
+    // transition: background-color 1s cubic-bezier(0.6, 0, 0.4, 1);
+    transition: background-color 0.6s;
 
     &:hover {
         background-color: rgba(61, 207, 182, 0.3);
+    }
+    &:hover .project-image-wrapper {
+        opacity: 1;
     }
 }
 
@@ -62,4 +74,49 @@ h1 {
     font-family: 'Fira Code', Arial, sans-serif;
     font-size: 24px;
     font-weight: 700;
+}
+
+.project-image-wrapper {
+    position: absolute;
+    top: 50%;
+    right: -45%;
+    width: 280px;
+    height: 180px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1; // über dem normalen Inhalt, aber unter eventuellem Overlay
+}
+
+.project-shadow {
+    position: absolute;
+    left: 20px; // Versatz nach rechts
+    top: 20px;  // Versatz nach unten
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    z-index: 1;
+    background: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 8px,
+      rgba($green, 1) 8px,
+      rgba($green, 1) 9px
+    );
+    pointer-events: none;
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    // box-shadow: 0 0 16px 0 rgba($green, 0.2); // Optional: leichter Glow
+    z-index: 2;
+    pointer-events: none;
 }

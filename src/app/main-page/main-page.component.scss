@@ -2,4 +2,9 @@
     width: 100%;
     background-color: #1C1C1C;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
