@@ -1,3 +1,12 @@
+$green: #3DCFB6;
+$dark-green: #08463B;
+$dark-grey: #1C1C1C;
+$white: #FFFFFF;
+
+.green {
+    color: $green;
+} 
+
 .projects-container {
     width: 100%;
     box-sizing: border-box;
@@ -21,10 +30,36 @@
 
 .header span {
     font-size: 24px;
+    color: $green;
 }
 
 h1 {
+    margin: 0;
     font-family: 'Fira Code', Arial, sans-serif;
     font-size: 64px;
+    font-weight: 700;
+    color: $green;
+}
+
+.project-list {
+    width: 880px;
+    border-top: 1px solid $green;
+}
+
+.project {
+    padding: 40px 32px;
+    border-bottom: 1px solid $green;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+
+    &:hover {
+        background-color: rgba(61, 207, 182, 0.3);
+    }
+}
+
+.project-title {
+    font-family: 'Fira Code', Arial, sans-serif;
+    font-size: 24px;
     font-weight: 700;
 }
