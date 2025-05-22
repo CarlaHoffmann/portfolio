@@ -1,9 +1,25 @@
 .main-page {
     width: 100%;
-    background-color: #1C1C1C;
-    box-sizing: border-box;
+    background-color: black;
+    // box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    // position: relative;
+}
+
+.header {
+    width: 100%;
+    max-width: 1440px;
+}
+
+.content {
+    width: 100%;
+    max-width: 1440px;
+    background-color: #1C1C1C;
+    // display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 120px;
     padding-top: 120px;
     padding-bottom: 120px;

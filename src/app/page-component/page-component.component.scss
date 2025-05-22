@@ -1,5 +1,6 @@
 .component-container {
     width: 100%;
+    max-width: 1440px;
     padding-left: 96px;
     padding-right: 96px;
     padding-bottom: 96px;
@@ -14,7 +15,7 @@
     max-width: 1440px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
 }
 
 .text-container {

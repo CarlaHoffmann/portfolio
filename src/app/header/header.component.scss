@@ -5,17 +5,20 @@ $white: #FFFFFF;
 
 .header-container { 
     width: 100%;
+    max-width: 1440px;
     height: 900px;
+    padding-left: 96px;
+    padding-right: 96px;
+    box-sizing: border-box;
+    position: relative;
     background-image: linear-gradient(
         to left bottom,
         #08463B 10%,
         #1C1C1C 60%
     );
-    
     display: flex;
     justify-content: center;
     overflow: hidden;
-    z-index: -1;
 }
 
 .menu {
@@ -27,26 +30,14 @@ $white: #FFFFFF;
     z-index: 1;
 }
 
-.inner-header-container {
-    width: 100%;
-    max-width: 1440px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-left: 96px;
-    padding-right: 96px;
-
-    font-family: 'Karla', Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-}
-
 .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Karla', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 h3 {
@@ -82,6 +73,7 @@ h1 {
 
 .header-left {
     position: absolute;
+    // position: relative;
     left: 96px;
     bottom: 0;
     display: flex;
@@ -181,7 +173,8 @@ h1 {
 .banner {
     position: absolute;
     bottom: 48px;
-    width: 100vw;
+    width: 100%;
+    max-width: 1440px;
     overflow: hidden;
     padding: 12px 32px;
 
