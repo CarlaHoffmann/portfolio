@@ -19,46 +19,82 @@
     <div class="contactform">
         <form (ngSubmit)="onSubmit(contactform)" #contactform="ngForm">
             <div>
-                <div class="contactform-section">
-                    <label class="green" for="name">What's your name?</label>
-                    <input #name="ngModel" minlength="3" [(ngModel)]="contactData.name" id="name" name="name" type="text" placeholder="Your name goes here" required>
-            
-                    @if (!name.valid && name.touched && !name.disabled) {
-                        <span class="red">Oops! it seems your name is missing</span>
-                    }
-                </div>
-                
-                <div class="contactform-section">
-                    <label class="green" for="email">What's your email?</label>
-                    <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" type="text" placeholder="youremail@email.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-            
-                    @if (!email.valid && email.touched && !email.disabled) {
-                        <span class="red">Hoppla! your email is required</span>
-                    }
-                </div>
-                
-                <div class="contactform-section">
-                    <label class="green" for="message">How can I help you?</label>
-                    <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" name="message" id="message" placeholder="Hello Carla, I am interested in..." required></textarea>
+                <label class="contactform-section" for="name">
+                    <span class="green">What's your name?</span>
+                    <input
+                      #name="ngModel" 
+                      minlength="3"
+                      [(ngModel)]="contactData.name"
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="Your name goes here"
+                      required
+                      [style.display]="showNameInput ? 'block' : 'none'"
+                    >
                     
-                    @if (!message.valid && message.touched && !message.disabled) {
-                        <span class="red">What do you need to develop?</span>
+                    @if (!name.valid && !name.disabled && formSubmitted && !showNameInput) {
+                      <span class="red" style="cursor:pointer" (click)="showNameInput = true">
+                        Oops! it seems your name is missing
+                      </span>
                     }
-                </div>
+                </label>
+                
+                <label class="contactform-section" for="email">
+                    <div class="green">What's your email?</div>
+                    <input 
+                      #email="ngModel" 
+                      [(ngModel)]="contactData.email" 
+                      id="email" 
+                      name="email" 
+                      type="text" 
+                      placeholder="youremail@email.com" 
+                      required 
+                      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                      [style.display]="showEmailInput ? 'block' : 'none'"
+                    >
+            
+                    @if (!email.valid && !email.disabled && formSubmitted && !showEmailInput) {
+                        <span class="red" (click)="showEmailInput = true">Hoppla! your email is required</span>
+                    }
+                </label>
+                
+                <label class="contactform-section" for="message">
+                    <div class="green">How can I help you?</div>
+                    <textarea 
+                      #message="ngModel" 
+                      minlength="4" 
+                      [(ngModel)]="contactData.message" 
+                      name="message" 
+                      id="message" 
+                      placeholder="Hello Carla, I am interested in..." 
+                      required
+                      [style.display]="showMessageInput ? 'block' : 'none'"
+                    >
+                    </textarea>
+                    
+                    @if (!message.valid && !message.disabled && formSubmitted && !showMessageInput) {
+                        <span class="red" (click)="showMessageInput = true">What do you need to develop?</span>
+                    }
+                </label>
             </div>
             
             <div class="contact-submit">
                 <div class="checkbox-container">
                     <label class="checkbox-label">
-                        <input id="checkbox" type="checkbox" #policyAccepted="ngModel" [(ngModel)]="policyAccepted" name="policyAccepted" required>
+                        <input id="checkbox" type="checkbox" #policyNgModel="ngModel" [(ngModel)]="policyAccepted" name="policyAccepted" required autocomplete="off">
+                        <!-- <p>policyAccepted: {{ policyAccepted }}</p> -->
                         <span class="custom-checkbox"></span>
                         <span class="policy">
                           I've read the <span class="green">privacy policy</span> and agree to the processing of my data as outlined.
                         </span>
                     </label>
-                    @if (policyAccepted.touched && !policyAccepted.valid) {
-                        <span class="policy-warning red">Please accept the privacy policy.</span>
-                    }
+                    <div class="policy-warning-box">
+                        @if (policyNgModel.touched && !policyNgModel.valid) {
+                            <span class="policy-warning red">Please accept the privacy policy.</span>
+                        }
+                    </div>
+                    
                 </div>
                 
                 <div class="btn-box">

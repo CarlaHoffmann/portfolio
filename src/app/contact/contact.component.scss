@@ -5,6 +5,7 @@ $white: #FFFFFF;
 
 .red {
     color: #d47676;
+    font-size: 18px;
 }
 
 .contact-container {
@@ -73,6 +74,11 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    cursor: pointer;
+    &:hover {
+        border-top: 1px solid rgba(61, 207, 182, 1);
+        border-bottom: 1px solid rgba(61, 207, 182, 1);
+    }
 }
 
 input, textarea {
@@ -81,6 +87,25 @@ input, textarea {
     font-family: 'Karla', Arial, sans-serif;
     font-size: 18px;
     color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 1) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+input:-moz-autofill,
+textarea:-moz-autofill {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+textarea {
+    height: 22px;
 }
 
 .contact-submit {
@@ -108,8 +133,8 @@ input, textarea {
 
 .checkbox-label input[type="checkbox"] {
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 0px;
+    height: 0px;
     position: absolute;
     left: 0;
     top: 0;
@@ -128,7 +153,7 @@ input, textarea {
     transition: border-color 0.2s;
 }
 
-.checkbox-label input[type="checkbox"]:checked + .custom-checkbox::after {
+.checkbox-label input[type="checkbox"]:valid + .custom-checkbox::after {
     content: '';
     position: absolute;
     left: 5px;
@@ -142,13 +167,19 @@ input, textarea {
 }
 
 .policy {
+    position: relative;
     font-size: 15px;
     font-family: 'Karla', Arial, sans-serif;
 }
 
 .checkbox-label .green {
     font-family: 'Fira Code', Arial, sans-serif;
+    font-weight: 400;
     letter-spacing: -3%;
+}
+
+.policy-warning-box {
+    height: 17px;
 }
 
 .policy-warning {

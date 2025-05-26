@@ -18,8 +18,12 @@ export class ContactComponent {
     email: "",
     message: "",
   }
-
   policyAccepted = false;
+  formSubmitted = false;
+  
+  showNameInput = true;
+  showEmailInput = true;
+  showMessageInput = true;
 
 
   // onSubmit(ngForm: NgForm) {
@@ -27,7 +31,7 @@ export class ContactComponent {
   //     console.log(this.contactData);
   //   }
   // }
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://carla-hoffmann.net/sendMail.php', // 'https://deineDomain.de/sendMail.php'
@@ -40,18 +44,50 @@ export class ContactComponent {
     },
   };
 
+  // checkNameValidity(name: any) {
+  //   if (!name.valid && name.touched && !name.disabled) {
+  //     this.showNameInput = false;
+  //   }
+  // }
+
   onSubmit(ngForm: NgForm) {
+    this.formSubmitted = true;
+
+    // Nur das jeweilige Feld ausblenden, wenn es ungültig ist
+    if (ngForm.controls['name'] && !ngForm.controls['name'].valid) {
+      this.showNameInput = false;
+    }
+    if (ngForm.controls['email'] && !ngForm.controls['email'].valid) {
+      this.showEmailInput = false;
+    }
+    if (ngForm.controls['message'] && !ngForm.controls['message'].valid) {
+      this.showMessageInput = false;
+    }
+
     if (!this.policyAccepted) {
-      console.log('policy not accepted');
+      console.log('policy not accepted:', this.policyAccepted);
       return;
     }
+    // Wenn irgendwas ungültig ist, abbrechen
+    if (!ngForm.valid) {
+      return;
+    }
+
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => { 
             
-            ngForm.resetForm();
-            this.policyAccepted = false;
+            ngForm.resetForm({
+              // name: '',
+              // email: '',
+              // message: '',
+              policyAccepted: false
+            });
+            this.formSubmitted = false;
+            this.showNameInput = true;
+            this.showEmailInput = true;
+            this.showMessageInput = true;
           },
           error: (error) => {
             console.error(error);
@@ -60,8 +96,16 @@ export class ContactComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       console.log('Test mail');
-      ngForm.resetForm();
-      this.policyAccepted = false;
+      ngForm.resetForm({
+        // name: '',
+        // email: '',
+        // message: '',
+        policyAccepted: false
+      });
+      this.formSubmitted = false;
+      this.showNameInput = true;
+      this.showEmailInput = true;
+      this.showMessageInput = true;
     }
   }
 }
