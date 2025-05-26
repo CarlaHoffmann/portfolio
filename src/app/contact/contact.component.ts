@@ -27,7 +27,7 @@ export class ContactComponent {
   //     console.log(this.contactData);
   //   }
   // }
-  mailTest = false;
+  mailTest = true;
 
   post = {
     endPoint: 'https://carla-hoffmann.net/sendMail.php', // 'https://deineDomain.de/sendMail.php'
@@ -42,6 +42,7 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (!this.policyAccepted) {
+      console.log('policy not accepted');
       return;
     }
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
