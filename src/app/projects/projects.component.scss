@@ -22,17 +22,16 @@ $white: #FFFFFF;
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    gap: 41px;
+    gap: 40px;
 }
 
-.header {
+.component-header {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.header span {
-    font-size: 24px;
+h1, h2 {
     color: $green;
 }
 
@@ -41,7 +40,14 @@ h1 {
     font-family: 'Fira Code', Arial, sans-serif;
     font-size: 64px;
     font-weight: 700;
-    color: $green;
+    letter-spacing: -3%;
+    line-height: 1;
+}
+
+.info {
+    width: fit-content;
+    font-size: 18px;
+    text-align: justify;
 }
 
 .project-list {
