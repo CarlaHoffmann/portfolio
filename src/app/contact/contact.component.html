@@ -49,16 +49,23 @@
             
             <div class="contact-submit">
                 <div class="checkbox-container">
-                    <div class="checkbox-text">
-                        <input id="checkbox" type="checkbox">
-                        <span class="policy">I've read the <span class="green">privacy policy</span> and agree to the processing of my data as outlined.</span> 
-                    </div>
-                    <div class="policy-warning red">Please accept the privacy policy.</div>
+                    <label class="checkbox-label">
+                        <input id="checkbox" type="checkbox" #policyAccepted="ngModel" [(ngModel)]="policyAccepted" name="policyAccepted">
+                        <span class="custom-checkbox"></span>
+                        <span class="policy">
+                          I've read the <span class="green">privacy policy</span> and agree to the processing of my data as outlined.
+                        </span>
+                    </label>
+                    @if (policyAccepted.touched && !policyAccepted.disabled) {
+                        <span class="policy-warning red">Please accept the privacy policy.</span>
+                    }
                 </div>
                 
                 
+                
                 <div class="btn-box">
-                    <input id="submit-btn" type="submit" value="Submit">
+                    <!-- <input id="submit-btn" type="submit" value="Submit"> -->
+                    <app-slide-btn input id="submit-btn" type="submit" value="Submit" text="Say Hello ;)"></app-slide-btn> 
                 </div>
             </div>
             

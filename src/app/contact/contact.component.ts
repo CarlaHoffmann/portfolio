@@ -19,6 +19,9 @@ export class ContactComponent {
     message: "",
   }
 
+  policyAccepted = false;
+
+
   // onSubmit(ngForm: NgForm) {
   //   if(ngForm.valid && ngForm.submitted) {
   //     console.log(this.contactData);
@@ -38,12 +41,16 @@ export class ContactComponent {
   };
 
   onSubmit(ngForm: NgForm) {
+    if (!this.policyAccepted) {
+      return;
+    }
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => { 
             
             ngForm.resetForm();
+            this.policyAccepted = false;
           },
           error: (error) => {
             console.error(error);
@@ -53,6 +60,7 @@ export class ContactComponent {
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       console.log('Test mail');
       ngForm.resetForm();
+      this.policyAccepted = false;
     }
   }
 }
