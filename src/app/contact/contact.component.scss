@@ -5,6 +5,9 @@ $white: #FFFFFF;
 
 .red {
     color: #d47676;
+}
+
+.warning {
     font-size: 18px;
 }
 
@@ -20,8 +23,13 @@ h1, h2, h3, label, .green {
     color: $green;
 }
 
-h1, h3, label {
+h1, h3, form h2 {
     font-family: 'Fira Code', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
 }
 
 label {
@@ -67,6 +75,12 @@ form {
     gap: 40px;
 }
 
+@keyframes shake {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1px); }
+    100% { transform: translateY(0px); }
+}
+
 .contactform-section {
     padding: 32px;
     border-top: 1px solid rgba(61, 207, 182, 0.5);
@@ -75,10 +89,28 @@ form {
     flex-direction: column;
     gap: 10px;
     cursor: pointer;
+
     &:hover {
         border-top: 1px solid rgba(61, 207, 182, 1);
         border-bottom: 1px solid rgba(61, 207, 182, 1);
     }
+    &:hover input::placeholder, &:hover textarea::placeholder{
+        color: #FFFFFF;
+        opacity: 1; // für Firefox
+    }
+    // &:hover input.shake, &:hover textarea.shake {
+    //     animation: shake 0.2s;
+    // }
+}
+
+#name.shake {
+    animation: shake 0.2s;
+}
+#email.shake{
+    animation: shake 0.2s;
+}
+#message.shake {
+    animation: shake 0.2s;
 }
 
 input, textarea {
@@ -88,6 +120,12 @@ input, textarea {
     font-size: 18px;
     color: rgba(255, 255, 255, 1);
     cursor: pointer;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
 }
 
 input:-webkit-autofill,
@@ -172,14 +210,23 @@ textarea {
     font-family: 'Karla', Arial, sans-serif;
 }
 
-.checkbox-label .green {
+.policy-link {
+    display: inline-block;
     font-family: 'Fira Code', Arial, sans-serif;
     font-weight: 400;
     letter-spacing: -3%;
+    padding: 5px 4px;
+    text-underline-offset: 6px; // Abstand zwischen Text und Unterstrich
+
+    &:hover {
+        text-decoration: underline $green;
+        color: #FFFFFF;
+    }
 }
 
 .policy-warning-box {
     height: 17px;
+    font-size: 14px;
 }
 
 .policy-warning {

@@ -25,6 +25,10 @@ export class ContactComponent {
   showEmailInput = true;
   showMessageInput = true;
 
+  shakeName = false;
+  shakeEmail = false;
+  shakeMessage = false;
+
 
   // onSubmit(ngForm: NgForm) {
   //   if(ngForm.valid && ngForm.submitted) {
@@ -106,6 +110,44 @@ export class ContactComponent {
       this.showNameInput = true;
       this.showEmailInput = true;
       this.showMessageInput = true;
+    }
+  }
+
+  triggerShake(field: 'name' | 'email' | 'message') {
+    // Setze die Variable auf true, damit die Klasse gesetzt wird
+    if (field === 'name') {
+      this.shakeName = false;
+      setTimeout(() => this.shakeName = true, 0);
+      setTimeout(() => this.shakeName = false, 200); // Dauer der Animation
+    }
+    if (field === 'email') {
+      this.shakeEmail = false;
+      setTimeout(() => this.shakeEmail = true, 0);
+      setTimeout(() => this.shakeEmail = false, 200);
+    }
+    if (field === 'message') {
+      this.shakeMessage = false;
+      setTimeout(() => this.shakeMessage = true, 0);
+      setTimeout(() => this.shakeMessage = false, 200);
+    }
+  }
+
+  triggerOffShake(field: 'name' | 'email' | 'message') {
+    // Setze die Variable auf true, damit die Klasse gesetzt wird
+    if (field === 'name') {
+      this.shakeName = false;
+      setTimeout(() => this.shakeName = true, 0);
+      setTimeout(() => this.shakeName = false, 50); // Dauer der Animation
+    }
+    if (field === 'email') {
+      this.shakeEmail = false;
+      setTimeout(() => this.shakeEmail = true, 0);
+      setTimeout(() => this.shakeEmail = false, 50);
+    }
+    if (field === 'message') {
+      this.shakeMessage = false;
+      setTimeout(() => this.shakeMessage = true, 0);
+      setTimeout(() => this.shakeMessage = false, 50);
     }
   }
 }

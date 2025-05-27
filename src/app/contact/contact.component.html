@@ -19,8 +19,10 @@
     <div class="contactform">
         <form (ngSubmit)="onSubmit(contactform)" #contactform="ngForm">
             <div>
-                <label class="contactform-section" for="name">
-                    <span class="green">What's your name?</span>
+                <label class="contactform-section" for="name"
+                  (mouseenter)="triggerShake('name')"
+                  (mouseleave)="triggerOffShake('name')">
+                    <h2 class="green">What's your name?</h2>
                     <input
                       #name="ngModel" 
                       minlength="3"
@@ -31,17 +33,20 @@
                       placeholder="Your name goes here"
                       required
                       [style.display]="showNameInput ? 'block' : 'none'"
+                      [class.shake]="shakeName"
                     >
                     
                     @if (!name.valid && !name.disabled && formSubmitted && !showNameInput) {
-                      <span class="red" style="cursor:pointer" (click)="showNameInput = true">
+                      <span class="warning red" style="cursor:pointer" (click)="showNameInput = true">
                         Oops! it seems your name is missing
                       </span>
                     }
                 </label>
                 
-                <label class="contactform-section" for="email">
-                    <div class="green">What's your email?</div>
+                <label class="contactform-section" for="email"
+                  (mouseenter)="triggerShake('email')"
+                  (mouseleave)="triggerOffShake('email')">
+                    <h2 class="green">What's your email?</h2>
                     <input 
                       #email="ngModel" 
                       [(ngModel)]="contactData.email" 
@@ -52,15 +57,18 @@
                       required 
                       pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                       [style.display]="showEmailInput ? 'block' : 'none'"
+                      [class.shake]="shakeEmail"
                     >
             
                     @if (!email.valid && !email.disabled && formSubmitted && !showEmailInput) {
-                        <span class="red" (click)="showEmailInput = true">Hoppla! your email is required</span>
+                        <span class="warning red" (click)="showEmailInput = true">Hoppla! your email is required</span>
                     }
                 </label>
                 
-                <label class="contactform-section" for="message">
-                    <div class="green">How can I help you?</div>
+                <label class="contactform-section" for="message" 
+                  (mouseenter)="triggerShake('message')"
+                  (mouseleave)="triggerOffShake('message')">
+                    <h2 class="green">How can I help you?</h2>
                     <textarea 
                       #message="ngModel" 
                       minlength="4" 
@@ -70,11 +78,12 @@
                       placeholder="Hello Carla, I am interested in..." 
                       required
                       [style.display]="showMessageInput ? 'block' : 'none'"
+                      [class.shake]="shakeMessage"
                     >
                     </textarea>
                     
                     @if (!message.valid && !message.disabled && formSubmitted && !showMessageInput) {
-                        <span class="red" (click)="showMessageInput = true">What do you need to develop?</span>
+                        <span class="warning red" (click)="showMessageInput = true">What do you need to develop?</span>
                     }
                 </label>
             </div>
@@ -86,7 +95,7 @@
                         <!-- <p>policyAccepted: {{ policyAccepted }}</p> -->
                         <span class="custom-checkbox"></span>
                         <span class="policy">
-                          I've read the <span class="green">privacy policy</span> and agree to the processing of my data as outlined.
+                          I've read the <a href="privacy-policy" class="policy-link green">privacy policy</a> and agree to the processing of my data as outlined. 
                         </span>
                     </label>
                     <div class="policy-warning-box">
@@ -99,7 +108,7 @@
                 
                 <div class="btn-box">
                     <!-- <input id="submit-btn" type="submit" value="Submit"> -->
-                    <app-slide-btn input id="submit-btn" type="submit" value="Submit" text="Say Hello ;)"></app-slide-btn> 
+                    <app-slide-btn input id="submit-btn" type="submit" value="Submit" text="Say Hello ;)" disabled></app-slide-btn> 
                 </div>
             </div>
             
