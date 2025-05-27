@@ -1,4 +1,4 @@
-<button class="btn" (mouseenter)="startAnimation()" (mouseleave)="stopAnimation()" [style.border-color]="borderColor">
+<button class="btn" (mouseenter)="startAnimation()" (mouseleave)="stopAnimation()" [style.border-color]="borderColor" [disabled]="disabled">
   <span class="btn-text btn-static" *ngIf="showStatic" [ngStyle]="staticStyle" [style.color]="textColor">
     {{ text }} 
   </span>

@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SlideBtnComponent {
   @Input() text = '';
+  @Input() disabled = false;
 
   borderColor = '#FFFFFF';
   textColor = '#FFFFFF'; 
@@ -36,6 +37,7 @@ export class SlideBtnComponent {
   private timeout3: any;
 
   startAnimation() {
+    if (this.disabled) return;
     if (this.running) return;
     this.running = true;
 
@@ -84,6 +86,7 @@ export class SlideBtnComponent {
   }
 
   stopAnimation() {
+    if (this.disabled) return;
     this.running = false;
     clearTimeout(this.timeout1);
     clearTimeout(this.timeout2);

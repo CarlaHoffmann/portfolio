@@ -25,3 +25,10 @@
     // user-select: none;
     transition: color 500ms linear;
   }
+
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+  }

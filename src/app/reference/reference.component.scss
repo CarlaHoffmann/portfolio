@@ -1,0 +1,18 @@
+$green: #3DCFB6;
+$dark-green: #08463B;
+$dark-grey: #1C1C1C;
+$white: #FFFFFF;
+
+.reference-container {
+    padding: 96px;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    font-family: 'Fira Code', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+    color: $green;
+}
