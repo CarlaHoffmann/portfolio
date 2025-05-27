@@ -6,7 +6,8 @@ $white: #FFFFFF;
 .reference-container {
     padding: 96px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -15,4 +16,9 @@ h2 {
     font-size: 32px;
     line-height: 1;
     color: $green;
+}
+
+.slide-control {
+    display: flex;
+    justify-content: center;
 }
