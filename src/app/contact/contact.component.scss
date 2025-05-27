@@ -98,9 +98,6 @@ form {
         color: #FFFFFF;
         opacity: 1; // für Firefox
     }
-    // &:hover input.shake, &:hover textarea.shake {
-    //     animation: shake 0.2s;
-    // }
 }
 
 #name.shake {
@@ -236,7 +233,7 @@ textarea {
     font-weight: 400;
     letter-spacing: -3%;
     padding: 5px 4px;
-    text-underline-offset: 6px; // Abstand zwischen Text und Unterstrich
+    text-underline-offset: 6px; 
 
     &:hover {
         text-decoration: underline $green;
