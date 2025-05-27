@@ -3,6 +3,11 @@ $dark-green: #08463B;
 $dark-grey: #1C1C1C;
 $white: #FFFFFF;
 
+
+html {
+    scroll-behavior: smooth;
+  }
+
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
