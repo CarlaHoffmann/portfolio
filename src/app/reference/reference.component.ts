@@ -9,10 +9,10 @@ import { Component } from '@angular/core';
 })
 export class ReferenceComponent {
   slides = [
-    { text: "Carla is a fantastic team player!", author: "Anna" },
-    { text: "Her code quality is outstanding.", author: "Ben" },
-    { text: "Always positive and helpful.", author: "Dario" },
-    { text: "Brings great energy to every project.", author: "Eva" }
+    { text: "Carla is a fantastic team player!", author: "Anna", position: "Frontend Developer" },
+    { text: "Her code quality is outstanding.", author: "Ben", position: "Team Partner" },
+    { text: "Always positive and helpful.", author: "Dario", position: "Team Partner" },
+    { text: "Brings great energy to every project.", author: "Eva", position: "Frontend Developer" }
   ];
 
   currentIndex = 0;

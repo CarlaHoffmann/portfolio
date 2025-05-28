@@ -1,50 +1,56 @@
-<!-- <div class="reference-container">
-    <h2>What my colleagues say about me</h2>
-    <div>Slideshow</div>
-    <div class="slide-control">
-        <img src="./assets/icons/arrow-left.svg" alt="">
-        <img src="./assets/icons/Ellipse 3.svg" alt="">
-        <img src="./assets/icons/arrow-right.svg" alt="">
-    </div>
-</div> -->
 <div class="reference-container">
-    <h2>What my colleagues say about me</h2>
+  <h2>What my colleagues say about me</h2>
 
-    <div class="slideshow">
-      <div class="slide prev">
-        <div class="slide-card">
-          <p>{{ slides[prevIndex].text }}</p>
-          <span class="author">– {{ slides[prevIndex].author }}</span>
-        </div>
-      </div>
-
-      <div class="slide current">
-        <div class="slide-card">
-          <p>{{ slides[currentIndex].text }}</p>
-          <span class="author">– {{ slides[currentIndex].author }}</span>
-        </div>
-      </div>
-
-      <div class="slide next">
-        <div class="slide-card">
-          <p>{{ slides[nextIndex].text }}</p>
-          <span class="author">– {{ slides[nextIndex].author }}</span>
-        </div>
+  <div class="slideshow">
+    <div class="slide prev">
+      <div class="slide-card">
+        <p>{{ slides[prevIndex].text }}</p>
+        <span class="author">– {{ slides[prevIndex].author }}–{{ slides[prevIndex].position }}</span>
       </div>
     </div>
 
-    <div class="slide-control">
-        <img src="./assets/icons/arrow-left.svg" alt="left" (click)="goPrev()" class="arrow">
-      
-        @for (slide of slides; track slide; let i = $index) {
-          <img
-            [src]="i === currentIndex ? './assets/icons/ellipse-current.svg' : './assets/icons/ellipse.svg'"
-            class="ellipse"
-            [class.current-ellipse]="i === currentIndex"
-            alt="ellipse"
-          >
-        }
-      
-        <img src="./assets/icons/arrow-right.svg" alt="right" (click)="goNext()" class="arrow">
+    <div class="slide current">
+      <img class="qoutes" src="./assets/icons/quotes.svg" alt="">
+      <div class="slide-card">
+        <p>{{ slides[currentIndex].text }}</p>
+        <span class="author">– {{ slides[currentIndex].author }}–{{ slides[currentIndex].position }}</span>
+      </div>
     </div>
+
+    <div class="slide next">
+      <div class="slide-card">
+        <p>{{ slides[nextIndex].text }}</p>
+        <span class="author">– {{ slides[nextIndex].author }}–{{ slides[nextIndex].position }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-control">
+    <img
+      src="./assets/icons/arrow-left.svg"
+      alt="left"
+      (click)="goPrev()"
+      class="arrow"
+    />
+
+    @for (slide of slides; track slide; let i = $index) {
+    <img
+      [src]="
+        i === currentIndex
+          ? './assets/icons/ellipse-current.svg'
+          : './assets/icons/ellipse.svg'
+      "
+      class="ellipse"
+      [class.current-ellipse]="i === currentIndex"
+      alt="ellipse"
+    />
+    }
+
+    <img
+      src="./assets/icons/arrow-right.svg"
+      alt="right"
+      (click)="goNext()"
+      class="arrow"
+    />
+  </div>
 </div>
