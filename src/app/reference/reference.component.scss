@@ -4,10 +4,40 @@ $dark-grey: #1C1C1C;
 $white: #FFFFFF;
 
 .reference-container {
-    padding: 96px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 120px; // Breite des Fades, nach Geschmack anpassen
+        height: 100%;
+        z-index: 3;
+        pointer-events: none; // verhindert, dass der Fade Klicks blockiert
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(
+            to right,
+            #1C1C1C 0%, 
+            rgba(8, 70, 59, 0.0) 100%  
+        );
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(
+            to left,
+            #1C1C1C 0%,
+            rgba(8, 70, 59, 0.0) 100% 
+        );
+    }
 }
 
 h2 {
@@ -18,7 +48,69 @@ h2 {
     color: $green;
 }
 
+.slideshow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px 0;
+    min-height: 180px;
+    width: 140%;
+}
+
+.slide {
+    transform: scale(0.9);
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    width: 50%;
+    margin: 0 12px;
+    pointer-events: none;
+    z-index: 1;
+  
+    &.current {
+      opacity: 1;
+      transform: scale(1);
+      background-color: rgba(120, 209, 194, 0.4);
+      border-radius: 30px;
+      pointer-events: auto;
+      z-index: 2;
+    }
+}
+  
+.slide-card {
+    background: rgba(8, 70, 59, 0.5);
+    border: 1px solid $green;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    padding: 48px 40px;
+    color: $white;
+    min-height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.slide-card p {
+    margin: 0;
+}
+
+.author {
+    // margin-top: 16px;
+    font-size: 1rem;
+    font-family: 'Fira Code', Arial, sans-serif;
+}
+  
 .slide-control {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 24px;
+
+    .arrow {
+        cursor: pointer;
+        transition: filter 0.2s;
+        &:hover {
+        filter: brightness(1.4);
+        }
+    }
 }
