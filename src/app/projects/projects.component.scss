@@ -12,7 +12,7 @@ $white: #FFFFFF;
     box-sizing: border-box;
     padding-left: 96px;
     padding-right: 96px;
-    padding-bottom: 16px;
+    padding-bottom: 160px;
     display: flex;
     justify-content: center;
 }
@@ -73,6 +73,19 @@ h1 {
     &:hover .project-image-wrapper {
         opacity: 1;
     }
+    &:hover .title-wrapper img {
+        display: block;
+    }
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.title-wrapper img {
+    display: none;
 }
 
 .project-title {

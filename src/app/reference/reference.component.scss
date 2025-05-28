@@ -5,6 +5,7 @@ $white: #FFFFFF;
 
 .reference-container {
     width: 100%;
+    padding-bottom: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,12 +134,21 @@ h2 {
     align-items: center;
     gap: 18px;
     margin-top: 24px;
+}
 
-    .arrow {
-        cursor: pointer;
-        transition: filter 0.2s;
-        &:hover {
-        filter: brightness(1.4);
-        }
-    }
+.arrow {
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.arrow.left:hover {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(67%) saturate(372%) hue-rotate(116deg) brightness(97%) contrast(93%);
+    /* Das filtert das SVG auf $green (#3DCFB6) – funktioniert mit schwarzen SVGs */
+    transform: scale(1.15) translateX(-8px);
+}
+
+.arrow.right:hover {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(67%) saturate(372%) hue-rotate(116deg) brightness(97%) contrast(93%);
+    /* Das filtert das SVG auf $green (#3DCFB6) – funktioniert mit schwarzen SVGs */
+    transform: scale(1.15) translateX(8px);
 }

@@ -1,11 +1,24 @@
 import { Component } from '@angular/core';
+import { trigger, transition, style, animate, AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 'app-reference',
   standalone: true,
   imports: [],
   templateUrl: './reference.component.html',
-  styleUrl: './reference.component.scss'
+  styleUrl: './reference.component.scss',
+  animations: [
+    trigger('slideAnimation', [
+      transition(':increment', [
+        style({ transform: 'translateX(100%)', opacity: 0 }),
+        animate('400ms cubic-bezier(0.4,0,0.2,1)', style({ transform: 'translateX(0)', opacity: 1 }))
+      ]),
+      transition(':decrement', [
+        style({ transform: 'translateX(-100%)', opacity: 0 }),
+        animate('400ms cubic-bezier(0.4,0,0.2,1)', style({ transform: 'translateX(0)', opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class ReferenceComponent {
   slides = [
@@ -16,6 +29,7 @@ export class ReferenceComponent {
   ];
 
   currentIndex = 0;
+  slideDirection: 'left' | 'right' = 'right';
 
   get prevIndex() {
     return (this.currentIndex - 1 + this.slides.length) % this.slides.length;

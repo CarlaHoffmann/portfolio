@@ -167,12 +167,12 @@ h1 {
     width: 0px;
     height: 186px;
     border: 1px solid #FFFFFF;
-    border-collapse: collapse;
+    // border-collapse: collapse;
 }
 
 .banner {
     position: absolute;
-    bottom: 48px;
+    bottom: 40px;
     width: 100%;
     max-width: 1440px;
     overflow: hidden;
@@ -192,7 +192,7 @@ h1 {
     display: flex;
     gap: 56px;
     width: max-content;
-    animation: scroll-left 10s linear infinite;
+    animation: scroll-left 20s linear infinite;
   }
   
   @keyframes scroll-left {

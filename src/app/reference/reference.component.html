@@ -6,22 +6,26 @@
       <div class="slide-card">
         <p>{{ slides[prevIndex].text }}</p>
         <span class="author-line">
-            <span class="line"></span>
-            <span class="author-name">{{ slides[prevIndex].author }} – {{ slides[prevIndex].position }}</span>
+          <span class="line"></span>
+          <span class="author-name"
+            >{{ slides[prevIndex].author }} –
+            {{ slides[prevIndex].position }}</span
+          >
         </span>
-        <!-- <span class="author">– {{ slides[prevIndex].author }} – {{ slides[prevIndex].position }}</span> -->
       </div>
     </div>
 
     <div class="slide current">
-      <img class="qoutes" src="./assets/icons/quotes.svg" alt="">
+      <img class="qoutes" src="./assets/icons/quotes.svg" alt="" />
       <div class="slide-card">
         <p>{{ slides[currentIndex].text }}</p>
         <span class="author-line">
-            <span class="line"></span>
-            <span class="author-name">{{ slides[currentIndex].author }} – {{ slides[currentIndex].position }}</span>
+          <span class="line"></span>
+          <span class="author-name"
+            >{{ slides[currentIndex].author }} –
+            {{ slides[currentIndex].position }}</span
+          >
         </span>
-        <!-- <span class="author">– {{ slides[currentIndex].author }} – {{ slides[currentIndex].position }}</span> -->
       </div>
     </div>
 
@@ -29,10 +33,12 @@
       <div class="slide-card">
         <p>{{ slides[nextIndex].text }}</p>
         <span class="author-line">
-            <span class="line"></span>
-            <span class="author-name">{{ slides[nextIndex].author }} – {{ slides[nextIndex].position }}</span>
+          <span class="line"></span>
+          <span class="author-name"
+            >{{ slides[nextIndex].author }} –
+            {{ slides[nextIndex].position }}</span
+          >
         </span>
-        <!-- <span class="author">– {{ slides[nextIndex].author }} – {{ slides[nextIndex].position }}</span> -->
       </div>
     </div>
   </div>
@@ -42,7 +48,7 @@
       src="./assets/icons/arrow-left.svg"
       alt="left"
       (click)="goPrev()"
-      class="arrow"
+      class="arrow left"
     />
 
     @for (slide of slides; track slide; let i = $index) {
@@ -62,7 +68,7 @@
       src="./assets/icons/arrow-right.svg"
       alt="right"
       (click)="goNext()"
-      class="arrow"
+      class="arrow right"
     />
   </div>
 </div>
