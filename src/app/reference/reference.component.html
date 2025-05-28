@@ -5,7 +5,11 @@
     <div class="slide prev">
       <div class="slide-card">
         <p>{{ slides[prevIndex].text }}</p>
-        <span class="author">– {{ slides[prevIndex].author }}–{{ slides[prevIndex].position }}</span>
+        <span class="author-line">
+            <span class="line"></span>
+            <span class="author-name">{{ slides[prevIndex].author }} – {{ slides[prevIndex].position }}</span>
+        </span>
+        <!-- <span class="author">– {{ slides[prevIndex].author }} – {{ slides[prevIndex].position }}</span> -->
       </div>
     </div>
 
@@ -13,14 +17,22 @@
       <img class="qoutes" src="./assets/icons/quotes.svg" alt="">
       <div class="slide-card">
         <p>{{ slides[currentIndex].text }}</p>
-        <span class="author">– {{ slides[currentIndex].author }}–{{ slides[currentIndex].position }}</span>
+        <span class="author-line">
+            <span class="line"></span>
+            <span class="author-name">{{ slides[currentIndex].author }} – {{ slides[currentIndex].position }}</span>
+        </span>
+        <!-- <span class="author">– {{ slides[currentIndex].author }} – {{ slides[currentIndex].position }}</span> -->
       </div>
     </div>
 
     <div class="slide next">
       <div class="slide-card">
         <p>{{ slides[nextIndex].text }}</p>
-        <span class="author">– {{ slides[nextIndex].author }}–{{ slides[nextIndex].position }}</span>
+        <span class="author-line">
+            <span class="line"></span>
+            <span class="author-name">{{ slides[nextIndex].author }} – {{ slides[nextIndex].position }}</span>
+        </span>
+        <!-- <span class="author">– {{ slides[nextIndex].author }} – {{ slides[nextIndex].position }}</span> -->
       </div>
     </div>
   </div>
