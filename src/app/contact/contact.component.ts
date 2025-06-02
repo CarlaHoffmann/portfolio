@@ -68,10 +68,6 @@ export class ContactComponent {
       this.showMessageInput = false;
     }
 
-    if (!this.policyAccepted) {
-      console.log('policy not accepted:', this.policyAccepted);
-      return;
-    }
     // Wenn irgendwas ungültig ist, abbrechen
     if (!ngForm.valid) {
       return;

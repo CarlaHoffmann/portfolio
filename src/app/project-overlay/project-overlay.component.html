@@ -1,1 +1,40 @@
-<p>project-overlay works!</p>
+<div class="project-overlay">
+    <div class="project-container">
+        <div class="close-overlay">
+            <img src="" alt="">XXX
+        </div>
+
+        <div class="project-info-box">
+            <div class="project-box-header">
+                <div class="project-number">01</div>
+                <div class="project-name">Join</div>
+            </div>
+            <div class="project-box-content">
+                <div class="overlay-title">What is this project about?</div>
+                <div class="overlay-info">Text</div>
+                <div class="overlay-languages">languages</div>
+            </div>
+            <div class="button-box">
+                <button (mouseenter)="triggerShake('github')"
+                (mouseleave)="triggerOffShake('github')">
+                    <span id="github" [class.shake]="shakeGithub">Github</span>
+                    <img src="./assets/icons/arrow_outward.svg" alt="">
+                </button>
+                <button (mouseenter)="triggerShake('live-test')"
+                (mouseleave)="triggerOffShake('live-test')">
+                    <span id="live-test" [class.shake]="shakeLiveTest">Live Test</span>
+                    <img src="./assets/icons/arrow_outward.svg" alt="">
+                </button>
+            </div>
+        </div>
+        
+        <div>
+            <img src="./assets/img/pollo-test.svg" alt="">
+        </div>
+
+        <div class="next">
+            <span>Next project</span>
+            <img src="" alt="">
+        </div>
+    </div>
+</div>

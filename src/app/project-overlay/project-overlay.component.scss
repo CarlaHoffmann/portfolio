@@ -1,0 +1,143 @@
+.project-overlay {
+  position: fixed; /* Über dem gesamten Viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Abdunkelung */
+  z-index: 5; /* Sehr hoch, damit es über allem liegt */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.project-overlay .project-container {
+  max-width: 1248px;
+  width: 100%;
+  padding: 96px 80px;
+  box-sizing: border-box;
+  background-image: linear-gradient(to left bottom, #08463b 10%, #1c1c1c 60%);
+  border: 1px solid #3dcfb6;
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 48px;
+  right: 80px;
+  z-index: 6;
+}
+
+.project-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-box-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-weight: 700;
+  letter-spacing: -3%;
+}
+
+.project-number {
+  font-size: 128px;
+  line-height: 100px;
+}
+
+.project-name {
+  font-family: "Fira Code", Arial, sans-serif;
+  font-size: 64px;
+  line-height: 80%;
+  color: #3dcfb6;
+}
+
+.project-box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.overlay-title {
+  font-family: "Fira Code", Arial, sans-serif;
+  font-size: 24px;
+  color: #3dcfb6;
+}
+
+.overlay-info {
+  font-size: 18px;
+}
+
+.button-box {
+  display: flex;
+  gap: 32px;
+}
+
+button {
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    border-color: #3dcfb6;
+    color: #3dcfb6;
+  }
+}
+
+button span {
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+@keyframes shake {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1px); }
+    100% { transform: translateY(0px); }
+}
+
+#github.shake{
+    animation: shake 0.2s;
+}
+#live-test.shake {
+    animation: shake 0.2s;
+}
+
+button img {
+    width: 20px;
+    height: 20px;
+  filter: brightness(0) saturate(100%) invert(64%) sepia(67%) saturate(372%)
+    hue-rotate(116deg) brightness(97%) contrast(93%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+button:hover img {
+  /* Icon leicht nach oben rechts verschieben */
+  transform: translate(4px, -2px);
+  /* Optional: Filter-Farbe anpassen, falls du möchtest, dass das Icon beim Hover auch farblich wechselt */
+  filter: brightness(0) saturate(100%) invert(70%) sepia(67%) saturate(372%)
+    hue-rotate(116deg) brightness(110%) contrast(100%);
+}
+
+.next {
+  position: absolute;
+  bottom: 48px;
+  right: 80px;
+}
