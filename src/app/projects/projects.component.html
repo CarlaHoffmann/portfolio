@@ -1,114 +1,39 @@
 <div id="projects" class="projects-container">
-  <div class="inner-projects-container">
-    <div class="component-header">
-      <h2>Portfolio</h2>
-      <h1>Featured Projects</h1>
-    </div>
-
-    <span class="info"
-      >Explore a selection of my work here - Interact with <br />projects to see
-      my skills in action.</span
-    >
-
-    <div class="project-list">
-
-      @for (project of projects; track project.title) {
-      <div (click)="openProject(project)" class="project">
-        <div class="title-wrapper">
-          <span class="project-title">{{ project.title }}</span>
+    <div class="inner-projects-container">
+        <div class="component-header">
+            <h2>Portfolio</h2>
+            <h1>Featured Projects</h1>
         </div>
-        <span class="languages">
-          @for (tech of project.technologies; track tech) {
-          {{ tech }} <span *ngIf="tech !== project.technologies.at(-1)">|</span>
-          }
+
+        <span class="info">
+            Explore a selection of my work here - Interact with <br />projects to see
+            my skills in action.
         </span>
-        <div class="project-image-wrapper">
-          <div
-            class="project-image"
-            [style.background-image]="'url(' + project.image + ')'"
-          ></div>
-        </div>
-        <!-- <div class="description">
-          {{ project.description }}
-        </div> -->
-      </div>
-      }
 
-      <!-- <div (click)="openProject('join')" class="project">
-        <div class="title-wrapper">
-          <span class="project-title">Join</span>
-          <img src="./assets/icons/arrow_outward.svg" alt="" />
-        </div>
-        <span class="languages">
-          HTML <span class="green">|</span> CSS
-          <span class="green">|</span> Firebase</span
-        >
-
-        <div class="project-image-wrapper">
-          <div class="project-shadow"></div>
-          <div
-            class="project-image"
-            style="background-image: url('./assets/img/join2.png')"
-          ></div>
-        </div>
-      </div> -->
-
-      <!-- <div (click)="openProject('pollo-loco')" class="project">
-        <div class="title-wrapper">
-          <span class="project-title">El Pollo Loco</span>
-          <img src="./assets/icons/arrow_outward.svg" alt="" />
-        </div>
-        <span class="languages"
-          >HTML <span class="green">|</span> CSS
-          <span class="green">|</span> JavaScript</span
-        >
-
-        <div class="project-image-wrapper">
-          <div class="project-shadow"></div>
-          <div
-            class="project-image"
-            style="background-image: url('./assets/img/pollo-loco.png')"
-          ></div>
-        </div>
-      </div> -->
-
-      <!-- <div (click)="openProject('ring-of-fire')" class="project">
-        <div class="title-wrapper">
-          <span class="project-title">Ring of Fire</span>
-          <img src="./assets/icons/arrow_outward.svg" alt="" />
-        </div>
-        <span class="languages"
-          >Angular <span class="green">|</span> Firebase
-          <span class="green">|</span> TypeScript</span
-        >
-
-        <div class="project-image-wrapper">
-          <div class="project-shadow"></div>
-          <div
-            class="project-image"
-            style="background-image: url('./assets/img/ringoffire3.png')"
-          ></div>
-        </div>
-      </div> -->
-
-      <!-- <div (click)="openProject()" class="project">
-                <div class="title-wrapper">
-                    <span class="project-title">DA Bubble</span>
-                    <img src="./assets/icons/arrow_outward.svg" alt="">
+        <div class="project-list">
+            @for (project of projects; track project.title) {
+                <div (click)="openProject(project)" class="project">
+                    <div class="title-wrapper">
+                        <span class="project-title">{{ project.title }}</span>
+                    </div>
+                    <span class="languages">
+                        @for (tech of project.technologies; track tech) {
+                            {{ tech }} <span *ngIf="tech !== project.technologies.at(-1)">|</span>
+                        }
+                    </span>
+                    <div class="project-image-wrapper">
+                        <div class="project-image"
+                            [style.background-image]="'url(' + project.image + ')'"
+                        ></div>
+                    </div>
                 </div>
-                <span class="languages">Angular <span class="green">|</span> Firebase <span class="green">|</span> TypeScript</span>
+            }
+        </div>
 
-                <div class="project-image-wrapper">
-                    <div class="project-shadow"></div>
-                    <div class="project-image" style="background-image: url('./assets/img/pollo-test.svg');"></div>
-                </div>
-            </div> -->
+        <app-project-overlay
+            *ngIf="isOverlayOpen && selectedProject"
+            [project]="selectedProject"
+            (close)="closeOverlay()"
+        ></app-project-overlay>
     </div>
-
-    <app-project-overlay
-      *ngIf="isOverlayOpen && selectedProject"
-      [project]="selectedProject"
-      (close)="closeOverlay()"
-    ></app-project-overlay>
-  </div>
 </div>

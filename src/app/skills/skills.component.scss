@@ -1,3 +1,7 @@
+.green {
+    color: #3BCFB6;
+}
+
 .skill-container {
     width: 100%;
     display: flex;
@@ -121,11 +125,10 @@ h3 {
 }
 
 img {
-    // transition: transform 0.4s;
     transition: transform 0.1s cubic-bezier(0.8, 0, 1, 1);
-    /* Optional: overflow verstecken, falls das Bild aus dem Container ragen könnte */
 }
 
 .tech span {
     text-align: center;
+    height: 44px;
 }

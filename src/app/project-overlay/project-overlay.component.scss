@@ -25,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 1;
 }
 
 .close-overlay {
@@ -158,6 +159,7 @@ button:hover img {
     height: 100%;
     aspect-ratio: auto;
     border-radius: 30px;
+    flex-grow: 1;
 }
 
 .next {

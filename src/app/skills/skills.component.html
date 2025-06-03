@@ -1,17 +1,14 @@
 <div id="skills" class="skill-container">
     <div class="inner-skill-container">
-
         <div class="text-container">
             <h2>Technologies</h2>
-
             <div class="text-box">
                 <h1>Skill Set</h1>
 
                 <div class="info-box">
                     <div class="info">A short introduction of your skills. Highlight your experience of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development.</div>
-                    
                     <div class="text-component">
-                        <h3>You need <span>another skill?</span></h3>
+                        <h3>You need <span class="green">another skill?</span></h3>
                         <div class="text">
                             Feel free to contact me. I look forward to expanding on my previous knowledge.
                         </div>
@@ -22,58 +19,17 @@
                     <app-slide-btn text="Let's Talk"></app-slide-btn>
                 </a>
             </div>
-
         </div>
 
         <div class="tech-icon-container">
             <div class="inner-tech-icon-container">
-                
-                <div class="tech">
-                    <img src="./assets/tech-icons/html.svg" alt="">
-                    <span>HTML</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/css.svg" alt="">
-                    <span>CSS</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/js.svg" alt="">
-                    <span>JavaScript</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/material-design.svg" alt="">
-                    <span>Material Design</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/ts.svg" alt="">
-                    <span>TypeScript</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/angular.svg" alt="">
-                    <span>Angular</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/firebase.svg" alt="">
-                    <span>Firebase</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/git.svg" alt="">
-                    <span>GIT</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/rest-api.svg" alt="">
-                    <span>Rest-Api</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/scrum.svg" alt="">
-                    <span>Scrum</span>
-                </div>
-                <div class="tech">
-                    <img src="./assets/tech-icons/growth.svg" alt="">
-                    <span>Growth mindset</span>
-                </div>
+                @for (tech of technologies; track tech.title) {
+                    <div class="tech">
+                        <img class="tech-image" [src]="tech.image" [alt]="tech.title">
+                        <span>{{ tech.title }}</span>
+                    </div>
+                }
             </div>
-            
         </div>
     </div>
 </div>

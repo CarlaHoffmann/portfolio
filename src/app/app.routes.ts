@@ -7,8 +7,6 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 
 export const routes: Routes = [
     { path: '', component: MainPageComponent},
-    // { path: '', component: MenuComponent},
-    // { path: '', component: HeaderComponent},
     // { path: '', component: ContactformComponent},
     { path:'contact', component: ContactformComponent},
     { path:'privacy-policy', component: PrivacyPolicyComponent}
