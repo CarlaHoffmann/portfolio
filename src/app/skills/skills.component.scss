@@ -99,8 +99,6 @@ h3 {
 
 .tech-icon-container {
     width: 632px;
-    font-family: 'Fira Code', Arial, sans-serif;
-    font-size: 18px;
 }
 
 .inner-tech-icon-container {
@@ -124,6 +122,10 @@ h3 {
     }
 }
 
+.tech.has-description:hover span {
+    color: #3BCFB6; 
+  }
+
 img {
     transition: transform 0.1s cubic-bezier(0.8, 0, 1, 1);
 }
@@ -131,4 +133,36 @@ img {
 .tech span {
     text-align: center;
     height: 44px;
+    font-family: 'Fira Code', Arial, sans-serif;
+    font-size: 18px;
+}
+
+.tech-dialog {
+    position: absolute;
+    top: -100%; // unterhalb des Bildes, ggf. anpassen
+    left: 100%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #3BCFB6;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    white-space: pre-line;
+    z-index: 10;
+    margin-top: 8px;
+    min-width: 120px;
+    text-align: center;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 30%;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 18px;
+        background: url('data:image/svg+xml;utf8,<svg width="32" height="18" viewBox="0 0 32 18" xmlns="http://www.w3.org/2000/svg"><path d="M 0 0 L 9 12 C 11 13 11 13 13 12 L 22 0 L 0 0" fill="white"/></svg>') no-repeat center/contain;
+        pointer-events: none;
+        z-index: 1;
+    }
 }

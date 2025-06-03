@@ -21,15 +21,43 @@
             </div>
         </div>
 
-        <div class="tech-icon-container">
+        <!-- <div class="tech-icon-container">
             <div class="inner-tech-icon-container">
                 @for (tech of technologies; track tech.title) {
-                    <div class="tech">
+                    <div class="tech" 
+                        [class.has-description]="tech.description"
+                        (mouseenter)="showDescription(tech)"
+                        (mouseleave)="hideDescription()"
+                    >
                         <img class="tech-image" [src]="tech.image" [alt]="tech.title">
                         <span>{{ tech.title }}</span>
                     </div>
                 }
+                
+                <div class="tech-dialog" *ngIf="activeDescription">
+                    {{ activeDescription }}
+                </div>
             </div>
-        </div>
+        </div> -->
+        <div class="tech-icon-container">
+            <div class="inner-tech-icon-container">
+                @for (tech of technologies; track tech.title) {
+                    <div class="tech"
+                        [class.has-description]="tech.description"
+                        (mouseenter)="showDescription(tech)"
+                        (mouseleave)="hideDescription()"
+                    >
+                        <div class="tech-image-wrapper" style="position: relative;">
+                            <img class="tech-image" [src]="tech.image" [alt]="tech.title">
+                            
+                            <div class="tech-dialog" *ngIf="activeTech === tech">
+                                {{ tech.description }}
+                            </div>
+                        </div>
+                        <span>{{ tech.title }}</span>
+                    </div>
+                }
+            </div>
+          </div>
     </div>
 </div>

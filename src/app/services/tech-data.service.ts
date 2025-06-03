@@ -66,7 +66,7 @@ export class TechDataService {
         {
             title: 'Growth mindset',
             image: './assets/tech-icons/growth.svg',
-            description: 'I have a special interes in learning',
+            description: 'I have a special interest in learning',
         },
     ];
 
