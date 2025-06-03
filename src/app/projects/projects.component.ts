@@ -11,16 +11,19 @@ import { ProjectOverlayComponent } from '../project-overlay/project-overlay.comp
 })
 export class ProjectsComponent {
   isOverlayOpen = false;
+  selectedProject: string | null = null;
 
-  // openProject(string: 'join' | 'pollo-loco' | 'ring-of-fire') {}
-  openProject() {
-  // openProject(project: string) {
+  // openProject(project: 'join' | 'pollo-loco' | 'ring-of-fire') {
+  openProject(project: string) {
+    this.selectedProject = project;
     this.isOverlayOpen = true;
-    document.body.style.overflow = 'hidden'; // Scrollen verhindern
+    document.body.style.overflow = 'hidden';
   }
   
   closeOverlay() {
+    console.log('Overlay closed in projects');
     this.isOverlayOpen = false;
-    document.body.style.overflow = ''; // Scrollen wieder erlauben
+    this.selectedProject = null;
+    document.body.style.overflow = '';
   }
 }
