@@ -11,7 +11,30 @@
     >
 
     <div class="project-list">
-      <div (click)="openProject('join')" class="project">
+
+      @for (project of projects; track project.title) {
+      <div (click)="openProject(project)" class="project">
+        <div class="title-wrapper">
+          <span class="project-title">{{ project.title }}</span>
+        </div>
+        <span class="languages">
+          @for (tech of project.technologies; track tech) {
+          {{ tech }} <span *ngIf="tech !== project.technologies.at(-1)">|</span>
+          }
+        </span>
+        <div class="project-image-wrapper">
+          <div
+            class="project-image"
+            [style.background-image]="'url(' + project.image + ')'"
+          ></div>
+        </div>
+        <!-- <div class="description">
+          {{ project.description }}
+        </div> -->
+      </div>
+      }
+
+      <!-- <div (click)="openProject('join')" class="project">
         <div class="title-wrapper">
           <span class="project-title">Join</span>
           <img src="./assets/icons/arrow_outward.svg" alt="" />
@@ -28,9 +51,9 @@
             style="background-image: url('./assets/img/join2.png')"
           ></div>
         </div>
-      </div>
+      </div> -->
 
-      <div (click)="openProject('pollo-loco')" class="project">
+      <!-- <div (click)="openProject('pollo-loco')" class="project">
         <div class="title-wrapper">
           <span class="project-title">El Pollo Loco</span>
           <img src="./assets/icons/arrow_outward.svg" alt="" />
@@ -47,9 +70,9 @@
             style="background-image: url('./assets/img/pollo-loco.png')"
           ></div>
         </div>
-      </div>
+      </div> -->
 
-      <div (click)="openProject('ring-of-fire')" class="project">
+      <!-- <div (click)="openProject('ring-of-fire')" class="project">
         <div class="title-wrapper">
           <span class="project-title">Ring of Fire</span>
           <img src="./assets/icons/arrow_outward.svg" alt="" />
@@ -66,7 +89,7 @@
             style="background-image: url('./assets/img/ringoffire3.png')"
           ></div>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div (click)="openProject()" class="project">
                 <div class="title-wrapper">
@@ -83,7 +106,7 @@
     </div>
 
     <app-project-overlay
-      *ngIf="isOverlayOpen"
+      *ngIf="isOverlayOpen && selectedProject"
       [project]="selectedProject"
       (close)="closeOverlay()"
     ></app-project-overlay>

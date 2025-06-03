@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ProjectsComponent } from '../projects/projects.component';
+import { Project } from '../services/project-data.service';
 
 @Component({
   selector: 'app-project-overlay',
@@ -13,13 +13,10 @@ export class ProjectOverlayComponent {
   shakeGithub = false;
   shakeLiveTest = false;
 
-  @Input() project: string | null = null;
+  @Input() project!: Project;
   @Output() close = new EventEmitter<void>();
 
-  // closeOverlay() {
-  //   ProjectsComponent.isOverlayOpen = false;
-  //   document.body.style.overflow = ''; // Scrollen wieder erlauben
-  // }
+
   closeOverlay() {
     console.log('close first step');
     this.close.emit();

@@ -24,6 +24,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .close-overlay {
@@ -46,6 +47,7 @@
 }
 
 .project-info-box {
+    width: 480px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -148,6 +150,14 @@ button img {
 
 button:hover img {
   transform: translate(4px, -2px);
+}
+
+.overlay-img {
+    width: 100%;
+    max-width: 520px;
+    height: 100%;
+    aspect-ratio: auto;
+    border-radius: 30px;
 }
 
 .next {
