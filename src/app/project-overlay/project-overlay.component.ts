@@ -14,11 +14,12 @@ export class ProjectOverlayComponent {
   shakeLiveTest = false;
 
   @Input() project!: Project;
+  @Input() index!: number | null;
   @Output() close = new EventEmitter<void>();
+  @Output() next = new EventEmitter<void>();
 
 
   closeOverlay() {
-    console.log('close first step');
     this.close.emit();
     document.body.style.overflow = '';
   }

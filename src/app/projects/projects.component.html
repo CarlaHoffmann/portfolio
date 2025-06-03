@@ -11,8 +11,8 @@
         </span>
 
         <div class="project-list">
-            @for (project of projects; track project.title) {
-                <div (click)="openProject(project)" class="project">
+            @for (project of projects; let i = $index; track project.title) {
+                <div (click)="openProject(project, i)" class="project">
                     <div class="title-wrapper">
                         <span class="project-title">{{ project.title }}</span>
                     </div>
@@ -22,6 +22,7 @@
                         }
                     </span>
                     <div class="project-image-wrapper">
+                        <div class="project-shadow"></div>
                         <div class="project-image"
                             [style.background-image]="'url(' + project.image + ')'"
                         ></div>
@@ -33,7 +34,9 @@
         <app-project-overlay
             *ngIf="isOverlayOpen && selectedProject"
             [project]="selectedProject"
+            [index]="selectedIndex"
             (close)="closeOverlay()"
+            (next)="openNextProject()"
         ></app-project-overlay>
     </div>
 </div>

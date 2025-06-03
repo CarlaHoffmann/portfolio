@@ -10,7 +10,7 @@
 
     <div class="project-info-box">
       <div class="project-box-header">
-        <div class="project-number">index</div>
+        <div class="project-number">{{ (index !== null ? (index + 1) : 1) | number:'2.0' }}</div>
         <div class="project-title">{{ project.title }}</div>
       </div>
 
@@ -26,7 +26,7 @@
       </div>
 
       <div class="button-box">
-        <a href="">
+        <a href="{{ project.github }}">
           <button
             (mouseenter)="triggerShake('github')"
             (mouseleave)="triggerOffShake('github')"
@@ -36,7 +36,7 @@
           </button>
         </a>
 
-        <a href="">
+        <a href="{{ project.link }}">
           <button
             (mouseenter)="triggerShake('live-test')"
             (mouseleave)="triggerOffShake('live-test')"
@@ -50,7 +50,7 @@
 
     <img class="overlay-img" [src]="project.image" alt="" />
 
-    <div class="next">
+    <div class="next" (click)="next.emit()">
       <span>Next project</span>
       <img src="./assets/icons/arrow-right.svg" alt="" />
     </div>

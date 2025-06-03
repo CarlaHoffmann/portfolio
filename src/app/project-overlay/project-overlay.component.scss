@@ -95,6 +95,10 @@
   gap: 32px;
 }
 
+a {
+    text-decoration: none;
+}
+
 button {
   height: 48px;
   box-sizing: border-box;
@@ -171,6 +175,7 @@ button:hover img {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
     color: #ffffff;
