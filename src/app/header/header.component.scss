@@ -4,8 +4,6 @@ $dark-grey: #1C1C1C;
 $white: #FFFFFF;
 
 .header-container { 
-    // width: 100%;
-    // max-width: 1440px;
     height: 900px;
     padding-left: 96px;
     padding-right: 96px;
@@ -193,13 +191,28 @@ h1 {
     gap: 56px;
     width: max-content;
     animation: scroll-left 20s linear infinite;
-  }
-  
-  @keyframes scroll-left {
+}
+
+@keyframes scroll-left {
     0% {
         transform: translateX(0);
     }
     100% {
       transform: translateX(-50%);
     }
-  }
+}
+
+@media(max-width: 1200px) {
+    // .header-container { 
+    //     padding-left: 16px;
+    //     padding-right: 16px;
+    // }
+
+    .header-left {
+        left: 16px;
+    }
+
+    .header-right {
+        right: 16px;
+    }
+}

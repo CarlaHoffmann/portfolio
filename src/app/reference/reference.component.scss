@@ -47,6 +47,8 @@ h2 {
     font-size: 32px;
     line-height: 1;
     color: $green;
+    z-index: 4;
+    text-align: center;
 }
 
 .slideshow {
@@ -151,4 +153,19 @@ h2 {
     filter: brightness(0) saturate(100%) invert(64%) sepia(67%) saturate(372%) hue-rotate(116deg) brightness(97%) contrast(93%);
     /* Das filtert das SVG auf $green (#3DCFB6) – funktioniert mit schwarzen SVGs */
     transform: scale(1.15) translateX(8px);
+}
+
+@media(max-width: 800px) {
+    .reference-container {
+        padding-bottom: 80px;
+    }
+    
+    h2 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .qoutes {
+        display: none;
+    }
 }

@@ -49,7 +49,7 @@ h2 {
 }
 
 .text-box {
-    width: 520px;
+    max-width: 520px;
     border: 2px solid #3BCFB6;
     border-radius: 30px;
     box-sizing: border-box;
@@ -103,7 +103,7 @@ h3 {
 
 .inner-tech-icon-container {
     width: 100%;
-    position: relative;
+    // position: relative;
     top: 48px;
     display: flex;
     flex-wrap: wrap;
@@ -144,7 +144,7 @@ img {
 .tech-dialog {
     position: absolute;
     top: -100%; // unterhalb des Bildes, ggf. anpassen
-    left: 100%;
+    left: 106%;
     transform: translateX(-50%);
     background: #fff;
     color: #3BCFB6;
@@ -168,5 +168,43 @@ img {
         background: url('data:image/svg+xml;utf8,<svg width="32" height="18" viewBox="0 0 32 18" xmlns="http://www.w3.org/2000/svg"><path d="M 0 0 L 9 12 C 11 13 11 13 13 12 L 22 0 L 0 0" fill="white"/></svg>') no-repeat center/contain;
         pointer-events: none;
         z-index: 1;
+    }
+}
+
+@media(max-width: 1420px) {
+    .inner-skill-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .text-box {
+        max-width: 568px;
+    }
+
+    .tech-icon-container {
+        max-width: 568px;
+    }
+
+    .inner-tech-icon-container {
+        width: fit-content;
+        gap: 40px;
+    }
+}
+
+@media(max-width: 800px) {
+    .skill-container {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 80px;
+    }
+
+    .tech-icon-container {
+        width: 100%;
+    }
+
+    .inner-tech-icon-container {
+        width: fit-content;
+        gap: 16px;
     }
 }

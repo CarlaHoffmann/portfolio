@@ -19,7 +19,7 @@
                     </div>
                     <span class="languages">
                         @for (tech of project.technologies; track tech) {
-                            {{ tech }} <span *ngIf="tech !== project.technologies.at(-1)">|</span>
+                            {{ tech }} <span class="green" *ngIf="tech !== project.technologies.at(-1)">|</span>
                         }
                     </span>
                     <div class="project-image-wrapper">

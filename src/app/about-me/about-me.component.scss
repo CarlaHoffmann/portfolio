@@ -83,7 +83,7 @@ $white: #ffffff;
 }
 
 .text-box {
-  width: 568px;
+  max-width: 568px;
   border: 2px solid #3bcfb6;
   border-radius: 30px;
   box-sizing: border-box;
@@ -132,4 +132,44 @@ h1 {
 .text-component div {
   color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
+}
+
+@media(max-width: 1420px) {
+    .inner-component-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-shadow {
+        display: none;
+    }
+
+    .text-container {
+        padding-top: 40px;
+    }
+
+    .text-box {
+        gap: 32px;
+        padding: 24px 32px;
+    }
+
+    .info-box {
+        gap: 24px;
+    }
+}
+
+@media(max-width: 800px) {
+    .component-container {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 80px;
+    }
+
+    .image-wrapper {
+        width: 100%;
+    }
+
+    .pic {
+        width: 100%;
+    }
 }

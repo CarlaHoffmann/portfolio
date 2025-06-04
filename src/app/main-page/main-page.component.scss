@@ -28,3 +28,11 @@
     width: 100%;
     max-width: 1440px;
 }
+
+@media(max-width: 1200px) {}
+
+@media(max-width: 800px) {
+    .content {
+        padding-top: 80px;
+    }
+}
