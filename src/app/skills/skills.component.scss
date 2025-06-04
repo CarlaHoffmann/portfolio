@@ -137,6 +137,10 @@ img {
     font-size: 18px;
 }
 
+.tech-image-wrapper {
+    position: relative;
+}
+
 .tech-dialog {
     position: absolute;
     top: -100%; // unterhalb des Bildes, ggf. anpassen

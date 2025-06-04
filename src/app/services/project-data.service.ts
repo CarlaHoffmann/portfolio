@@ -23,7 +23,7 @@ export class ProjectDataService {
       description:
         'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories',
       github: 'https://github.com/CarlaHoffmann/Join',
-      link: '',
+      link: 'https://carla-hoffmann.net/join/logIn.html',
     },
     {
       title: 'El Pollo Loco',
@@ -37,8 +37,8 @@ export class ProjectDataService {
     {
       title: 'Ring of Fire',
       image: './assets/img/ringoffire3.png',
-      technologies: ['HTML', 'SCSS', 'TypeScript'],
-      description: 'Projektbeschreibung ...',
+      technologies: ['HTML', 'CSS', 'Firebase', 'TypeScript'],
+      description: 'A card game to play and drink with friends.',
       github: 'https://github.com/CarlaHoffmann/ringoffire-firebase',
       link: '',
     },

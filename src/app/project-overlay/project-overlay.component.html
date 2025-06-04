@@ -19,8 +19,11 @@
         <div class="overlay-info">{{ project.description }}</div>
         <div class="overlay-languages">
           @for (tech of project.technologies; track tech) {
-          {{ tech
-          }}<span *ngIf="tech !== project.technologies.at(-1)"> | </span>
+            <div class="overlay-tech-icon">
+                <img [src]="getTechByTitle(tech)?.image" [alt]="tech"/>
+                {{ tech }}
+                <!-- <span *ngIf="tech !== project.technologies.at(-1)"> '' </span> -->
+            </div>
           }
         </div>
       </div>

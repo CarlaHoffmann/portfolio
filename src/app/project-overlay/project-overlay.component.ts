@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from '../services/project-data.service';
+import { TechDataService, Technology } from '../services/tech-data.service';
 
 @Component({
   selector: 'app-project-overlay',
@@ -18,6 +19,11 @@ export class ProjectOverlayComponent {
   @Output() close = new EventEmitter<void>();
   @Output() next = new EventEmitter<void>();
 
+  constructor(public techDataService: TechDataService) {}
+
+  getTechByTitle(title: string): Technology | undefined {
+    return this.techDataService.technologies.find(tech => tech.title === title);
+  }
 
   closeOverlay() {
     this.close.emit();
