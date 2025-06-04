@@ -32,7 +32,7 @@ export class ProjectDataService {
       description:
         'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen',
       github: 'https://github.com/CarlaHoffmann/El-pollo-loco',
-      link: '',
+      link: 'https://carla-hoffmann.net/pollo-loco/index.html',
     },
     {
       title: 'Ring of Fire',

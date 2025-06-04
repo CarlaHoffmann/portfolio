@@ -15,6 +15,7 @@
                 <div (click)="openProject(project, i)" class="project">
                     <div class="title-wrapper">
                         <span class="project-title">{{ project.title }}</span>
+                        <img src="./assets/icons/arrow_outward.svg" alt="" />
                     </div>
                     <span class="languages">
                         @for (tech of project.technologies; track tech) {
