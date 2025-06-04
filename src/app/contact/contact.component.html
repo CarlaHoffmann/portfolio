@@ -1,116 +1,117 @@
 <div id="contact" class="contact-container">
-    <div class="component-intro">
-        <div class="component-header">
-            <h2>Contact me</h2>
-            <h1>Let's work <br> together</h1>
-        </div>
+    <div class="inner-contact-container">
+        <div class="component-intro">
+            <div class="component-header">
+                <h2>Contact me</h2>
+                <h1>Let's work <br> together</h1>
+            </div>
 
-        <div class="component-info">
-            <h3>Got a problem to solve?</h3>
-            <div>
-                Encourage people to contact you and describe what role 
-                you are interested in. Show that you will add value to 
-                their projects through your work. <br><br>
-                Need a Frontend developer? <span class="green">Let’s talk!</span>
+            <div class="component-info">
+                <h3>Got a problem to solve?</h3>
+                <div>
+                    Encourage people to contact you and describe what role 
+                    you are interested in. Show that you will add value to 
+                    their projects through your work. <br><br>
+                    Need a Frontend developer? <span class="green">Let’s talk!</span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="contactform">
-        <form (ngSubmit)="onSubmit(contactform)" #contactform="ngForm">
-            <div>
-                <label class="contactform-section" for="name"
-                  (mouseenter)="triggerShake('name')"
-                  (mouseleave)="triggerOffShake('name')">
-                    <h2 class="green">What's your name?</h2>
-                    <input
-                      #name="ngModel" 
-                      minlength="3"
-                      [(ngModel)]="contactData.name"
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Your name goes here"
-                      required
-                      [style.display]="showNameInput ? 'block' : 'none'"
-                      [class.shake]="shakeName"
-                    >
-                    
-                    @if (!name.valid && !name.disabled && formSubmitted && !showNameInput) {
-                      <span class="warning red" style="cursor:pointer" (click)="showNameInput = true">
-                        Oops! it seems your name is missing
-                      </span>
-                    }
-                </label>
-                
-                <label class="contactform-section" for="email"
-                  (mouseenter)="triggerShake('email')"
-                  (mouseleave)="triggerOffShake('email')">
-                    <h2 class="green">What's your email?</h2>
-                    <input 
-                      #email="ngModel" 
-                      [(ngModel)]="contactData.email" 
-                      id="email" 
-                      name="email" 
-                      type="text" 
-                      placeholder="youremail@email.com" 
-                      required 
-                      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                      [style.display]="showEmailInput ? 'block' : 'none'"
-                      [class.shake]="shakeEmail"
-                    >
-            
-                    @if (!email.valid && !email.disabled && formSubmitted && !showEmailInput) {
-                        <span class="warning red" (click)="showEmailInput = true">Hoppla! your email is required</span>
-                    }
-                </label>
-                
-                <label class="contactform-section" for="message" 
-                  (mouseenter)="triggerShake('message')"
-                  (mouseleave)="triggerOffShake('message')">
-                    <h2 class="green">How can I help you?</h2>
-                    <textarea 
-                      #message="ngModel" 
-                      minlength="4" 
-                      [(ngModel)]="contactData.message" 
-                      name="message" 
-                      id="message" 
-                      placeholder="Hello Carla, I am interested in..." 
-                      required
-                      [style.display]="showMessageInput ? 'block' : 'none'"
-                      [class.shake]="shakeMessage"
-                    >
-                    </textarea>
-                    
-                    @if (!message.valid && !message.disabled && formSubmitted && !showMessageInput) {
-                        <span class="warning red" (click)="showMessageInput = true">What do you need to develop?</span>
-                    }
-                </label>
-            </div>
-            
-            <div class="contact-submit">
-                <div class="checkbox-container">
-                    <label class="checkbox-label">
-                        <input id="checkbox" type="checkbox" #policyNgModel="ngModel" [(ngModel)]="policyAccepted" name="policyAccepted" required autocomplete="off">
-                        <span class="custom-checkbox"></span>
-                        <span class="policy">
-                          I've read the <a href="privacy-policy" class="policy-link green">privacy policy</a> and agree to the processing of my data as outlined. 
-                        </span>
-                    </label>
-                    <div class="policy-warning-box">
-                        @if (policyNgModel.touched && !policyNgModel.valid) {
-                            <span class="policy-warning red">Please accept the privacy policy.</span>
+        <div class="contactform">
+            <form (ngSubmit)="onSubmit(contactform)" #contactform="ngForm">
+                <div>
+                    <label class="contactform-section" for="name"
+                        (mouseenter)="triggerShake('name')"
+                        (mouseleave)="triggerOffShake('name')">
+                        <h2 class="green">What's your name?</h2>
+                        <input
+                            #name="ngModel" 
+                            minlength="3"
+                            [(ngModel)]="contactData.name"
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Your name goes here"
+                            required
+                            [style.display]="showNameInput ? 'block' : 'none'"
+                            [class.shake]="shakeName"
+                        >
+                        
+                        @if (!name.valid && !name.disabled && formSubmitted && !showNameInput) {
+                            <span class="warning red" style="cursor:pointer" (click)="showNameInput = true">
+                                Oops! it seems your name is missing
+                            </span>
                         }
+                    </label>
+                    
+                    <label class="contactform-section" for="email"
+                        (mouseenter)="triggerShake('email')"
+                        (mouseleave)="triggerOffShake('email')">
+                        <h2 class="green">What's your email?</h2>
+                        <input 
+                            #email="ngModel" 
+                            [(ngModel)]="contactData.email" 
+                            id="email" 
+                            name="email" 
+                            type="text" 
+                            placeholder="youremail@email.com" 
+                            required 
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            [style.display]="showEmailInput ? 'block' : 'none'"
+                            [class.shake]="shakeEmail"
+                        >
+                
+                        @if (!email.valid && !email.disabled && formSubmitted && !showEmailInput) {
+                            <span class="warning red" (click)="showEmailInput = true">Hoppla! your email is required</span>
+                        }
+                    </label>
+                    
+                    <label class="contactform-section" for="message" 
+                        (mouseenter)="triggerShake('message')"
+                        (mouseleave)="triggerOffShake('message')">
+                        <h2 class="green">How can I help you?</h2>
+                        <textarea 
+                            #message="ngModel" 
+                            minlength="4" 
+                            [(ngModel)]="contactData.message" 
+                            name="message" 
+                            id="message" 
+                            placeholder="Hello Carla, I am interested in..." 
+                            required
+                            [style.display]="showMessageInput ? 'block' : 'none'"
+                            [class.shake]="shakeMessage"
+                        >
+                        </textarea>
+                        
+                        @if (!message.valid && !message.disabled && formSubmitted && !showMessageInput) {
+                            <span class="warning red" (click)="showMessageInput = true">What do you need to develop?</span>
+                        }
+                    </label>
+                </div>
+                
+                <div class="contact-submit">
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input id="checkbox" type="checkbox" #policyNgModel="ngModel" [(ngModel)]="policyAccepted" name="policyAccepted" required autocomplete="off">
+                            <span class="custom-checkbox"></span>
+                            <span class="policy">
+                                I've read the <a href="privacy-policy" class="policy-link green">privacy policy</a> and agree to the processing of my data as outlined. 
+                            </span>
+                        </label>
+                        <div class="policy-warning-box">
+                            @if (policyNgModel.touched && !policyNgModel.valid) {
+                                <span class="policy-warning red">Please accept the privacy policy.</span>
+                            }
+                        </div>
+                        
                     </div>
                     
+                    <div class="btn-box">
+                        <app-slide-btn input id="submit-btn" type="submit" value="Submit" text="Say Hello ;)" [disabled]="!policyAccepted"></app-slide-btn> 
+                    </div>
                 </div>
-                
-                <div class="btn-box">
-                    <app-slide-btn input id="submit-btn" type="submit" value="Submit" text="Say Hello ;)" [disabled]="!policyAccepted"></app-slide-btn> 
-                </div>
-            </div>
-            
-        </form>
+              
+            </form>
+        </div>
     </div>
-
 </div>
