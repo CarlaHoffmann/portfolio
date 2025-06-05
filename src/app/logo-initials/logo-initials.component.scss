@@ -1,31 +1,19 @@
-.logo {
+.initials {
     font-size: 48px;
     line-height: 0.8;
     font-weight: bold;
     color: #3BCFB6;
     font-family: 'Livvic', Arial, sans-serif;
+    line-height: 90%;
     display: flex;
-    align-items: center;
-    cursor: pointer;
+    gap: 4px;
+
     &:hover {
         color: transparent; // Text selbst wird durchsichtig
         -webkit-text-stroke: 1px #3BCFB6; // Bunte Kontur
         // text-stroke: 1px #3BCFB6; // Für andere Browser (experimentell)
         background: none; // kein Hintergrund
     }
-    &:hover .name {
-        color: transparent; // Text selbst wird durchsichtig
-        -webkit-text-stroke: 1px #FFFFFF; // Bunte Kontur
-        // text-stroke: 1px #FFFFFF; // Für andere Browser (experimentell)
-        background: none; // kein Hintergrund
-    }
-}
-
-.initials {
-    line-height: 90%;
-
-    display: flex;
-    gap: 4px;
 }
 
 .initial {
@@ -39,11 +27,4 @@
 
 .initial#h {
     transform: rotate(0deg) translateX(-6px) translateY(6px);
-}
-
-.name {
-    color: #FFFFFF;
-    font-size: 30px;
-    margin: 0;
-    line-height: 0.8;
 }

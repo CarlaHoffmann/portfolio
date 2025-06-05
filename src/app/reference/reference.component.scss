@@ -117,16 +117,10 @@ h2 {
     height: 1px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.8));
     border-radius: 1px;
-    margin-right: 8px;
 }
 
 .author-name {
     white-space: nowrap;
-    font-size: 18px;
-}
-
-.author {
-    // font-size: 1rem;
     font-size: 18px;
 }
   
@@ -158,6 +152,10 @@ h2 {
 @media(max-width: 800px) {
     .reference-container {
         padding-bottom: 80px;
+        &::before,
+        &::after {
+            display: none;
+        }
     }
     
     h2 {
@@ -165,7 +163,42 @@ h2 {
         padding-right: 16px;
     }
 
-    .qoutes {
-        display: none;
+    .slideshow {
+        // width: 100%;
+        flex-grow: 1;
     }
+
+    .slide {
+        margin: 0;
+    }
+
+    .slide-card {
+        font-size: 18px;
+    }
+
+    .author-name {
+        font-size: 16px;
+    }
+
+    // .prev {
+    //     display: none;
+    // }
+
+    .current {
+        width: 100%;
+        width: calc(100vw - 32px);
+        max-width: 568px;
+    }
+
+    .qoutes {
+        height: 48px;
+        position: absolute;
+        top: -10px;
+        left: -2px;
+        z-index: 3;
+    }
+
+    // .next {
+    //     display: none;
+    // }
 }

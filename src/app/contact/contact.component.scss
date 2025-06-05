@@ -176,7 +176,7 @@ textarea {
 }
 
 .custom-checkbox {
-    width: 18px;
+    width: 18px !important;
     height: 18px;
     box-sizing: border-box;
     border: 2px solid $green;
@@ -225,10 +225,12 @@ textarea {
     position: relative;
     font-size: 15px;
     font-family: 'Karla', Arial, sans-serif;
+    flex-wrap: wrap;
 }
 
 .policy-link {
-    display: inline-block;
+    // display: inline-block;
+    text-decoration: none;
     font-family: 'Fira Code', Arial, sans-serif;
     font-weight: 400;
     letter-spacing: -3%;
@@ -279,6 +281,14 @@ textarea {
 }
 
 @media(max-width: 800px) {
+    h2 {
+        font-size: 18px;
+    }
+  
+    h1 {
+        font-size: 56px;
+    }
+
     .contactform {
         width: 100%;
         max-width: 568px;

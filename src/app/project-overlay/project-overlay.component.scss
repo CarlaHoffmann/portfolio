@@ -48,7 +48,7 @@
 }
 
 .project-info-box {
-    width: 480px;
+  width: 480px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -209,4 +209,60 @@ button:hover img {
 
 .next:hover img {
   transform: translate(4px, 0px) scale(1.08);
+}
+
+@media(max-width: 1200px) {
+  .project-overlay .project-container {
+    max-width: calc(100vw - 32px);
+    padding: 80px 16px;
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .project-info-box {
+    width: 100%;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .close-overlay {
+    top: 32px;
+    right: 32px;
+  }
+
+  .project-number {
+    font-size: 72px;
+  }
+
+  .project-title {
+    font-size: 56px;
+  }
+
+  .overlay-headline {
+    font-size: 20px;
+  }
+
+  .overlay-info {
+    font-size: 16px;
+  }
+
+  .overlay-languages {
+    flex-wrap: wrap;
+  }
+
+  .button-box {
+    gap: 32px;
+  }
+
+  .next {
+    bottom: 32px;
+    right: 16px;
+  }
+}
+
+@media(max-width: 400px) {
+  .button-box {
+    gap: 16px;
+  }
 }

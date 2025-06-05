@@ -8,48 +8,51 @@
       />
     </div>
 
-    <div class="project-info-box">
-      <div class="project-box-header">
-        <div class="project-number">{{ (index !== null ? (index + 1) : 1) | number:'2.0' }}</div>
-        <div class="project-title">{{ project.title }}</div>
-      </div>
-
-      <div class="project-box-content">
-        <div class="overlay-headline">What is this project about?</div>
-        <div class="overlay-info">{{ project.description }}</div>
-        <div class="overlay-languages">
-          @for (tech of project.technologies; track tech) {
-            <div class="overlay-tech-icon">
-                <img [src]="getTechByTitle(tech)?.image" [alt]="tech"/>
-                {{ tech }}
-                <!-- <span *ngIf="tech !== project.technologies.at(-1)"> '' </span> -->
-            </div>
-          }
+    <div class="inner-project-container">
+      <div class="project-info-box">
+        <div class="project-box-header">
+          <div class="project-number">{{ (index !== null ? (index + 1) : 1) | number:'2.0' }}</div>
+          <div class="project-title">{{ project.title }}</div>
+        </div>
+  
+        <div class="project-box-content">
+          <div class="overlay-headline">What is this project about?</div>
+          <div class="overlay-info">{{ project.description }}</div>
+          <div class="overlay-languages">
+            @for (tech of project.technologies; track tech) {
+              <div class="overlay-tech-icon">
+                  <img [src]="getTechByTitle(tech)?.image" [alt]="tech"/>
+                  {{ tech }}
+                  <!-- <span *ngIf="tech !== project.technologies.at(-1)"> '' </span> -->
+              </div>
+            }
+          </div>
+        </div>
+  
+        <div class="button-box">
+          <a href="{{ project.github }}">
+            <button
+              (mouseenter)="triggerShake('github')"
+              (mouseleave)="triggerOffShake('github')"
+            >
+              <span id="github" [class.shake]="shakeGithub">Github</span>
+              <img src="./assets/icons/arrow_outward.svg" alt="" />
+            </button>
+          </a>
+  
+          <a href="{{ project.link }}">
+            <button
+              (mouseenter)="triggerShake('live-test')"
+              (mouseleave)="triggerOffShake('live-test')"
+            >
+              <span id="live-test" [class.shake]="shakeLiveTest">Live Test</span>
+              <img src="./assets/icons/arrow_outward.svg" alt="" />
+            </button>
+          </a>
         </div>
       </div>
-
-      <div class="button-box">
-        <a href="{{ project.github }}">
-          <button
-            (mouseenter)="triggerShake('github')"
-            (mouseleave)="triggerOffShake('github')"
-          >
-            <span id="github" [class.shake]="shakeGithub">Github</span>
-            <img src="./assets/icons/arrow_outward.svg" alt="" />
-          </button>
-        </a>
-
-        <a href="{{ project.link }}">
-          <button
-            (mouseenter)="triggerShake('live-test')"
-            (mouseleave)="triggerOffShake('live-test')"
-          >
-            <span id="live-test" [class.shake]="shakeLiveTest">Live Test</span>
-            <img src="./assets/icons/arrow_outward.svg" alt="" />
-          </button>
-        </a>
-      </div>
     </div>
+
 
     <img class="overlay-img" [src]="project.image" alt="" />
 

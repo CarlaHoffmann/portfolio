@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogoInitialsComponent } from '../logo-initials/logo-initials.component';
 
 @Component({
-  selector: 'app-logo',
+  selector: 'app-logo-initials',
   standalone: true,
-  imports: [LogoInitialsComponent],
-  templateUrl: './logo.component.html',
-  styleUrl: './logo.component.scss'
+  imports: [],
+  templateUrl: './logo-initials.component.html',
+  styleUrl: './logo-initials.component.scss'
 })
-export class LogoComponent {
+export class LogoInitialsComponent {
   constructor(private router: Router) {}
 
   scrollHome() {

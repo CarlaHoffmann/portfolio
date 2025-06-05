@@ -77,7 +77,8 @@ $white: #ffffff;
   padding-top: 98px;
 }
 
-.text-container span {
+h2 {
+  margin: 0;
   color: #3bcfb6;
   font-size: 24px;
 }
@@ -174,5 +175,13 @@ h1 {
     .pic {
         position: unset;
         height: fit-content;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 56px;
     }
 }
