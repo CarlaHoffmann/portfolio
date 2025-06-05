@@ -10,9 +10,5 @@ import { LanguageSwitchComponent } from '../language-switch/language-switch.comp
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-  selectedLanguage: 'en' | 'de' = 'en';
-
-  selectLanguage(lang: 'en' | 'de') {
-    this.selectedLanguage = lang;
-  }
+  
 }

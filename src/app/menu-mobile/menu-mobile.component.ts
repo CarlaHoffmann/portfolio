@@ -10,9 +10,13 @@ import { LanguageSwitchComponent } from '../language-switch/language-switch.comp
   styleUrl: './menu-mobile.component.scss'
 })
 export class MenuMobileComponent {
-  selectedLanguage: 'en' | 'de' = 'en';
+  isMenuOpen = false;
 
-  selectLanguage(lang: 'en' | 'de') {
-    this.selectedLanguage = lang;
+  openMenu() {
+    this.isMenuOpen = true;
+  }
+  
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 }

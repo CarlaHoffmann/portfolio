@@ -1,4 +1,4 @@
-<div class="menu-container">
+<!-- <div class="menu-container">
     <div class="inner-menu-container">
         <app-logo></app-logo>
         <div class="menu-wrapper">
@@ -12,5 +12,30 @@
             </div>
         </div>
     </div>
+</div> -->
+<div class="menu-container">
+    <div class="inner-menu-container">
+        <app-logo></app-logo>
+        <div class="menu-wrapper">
+            <img 
+                src="./assets/icons/menu-icon.svg" 
+                alt="Open menu" 
+                (click)="openMenu()" 
+                class="menu-icon"
+            />
     
+            <!-- Overlay für das Menü, erscheint nur wenn isMenuOpen true ist -->
+            @if (isMenuOpen) {
+                <!-- Overlay-Hintergrund, schließt Menü bei Klick -->
+                <div class="menu-overlay" (click)="closeMenu()"></div>
+                <!-- Das Menü selbst, stoppt das Event, damit es nicht schließt -->
+                <div class="menu" (click)="$event.stopPropagation()">
+                    <a href="#about-me" (click)="closeMenu()">About me</a>
+                    <a href="#skills" (click)="closeMenu()">Skills</a>
+                    <a href="#projects" (click)="closeMenu()">Projects</a>
+                    <app-language-switch></app-language-switch>
+                </div>
+            }
+        </div>
+    </div>
 </div>

@@ -40,6 +40,10 @@ $white: #FFFFFF;
     z-index: 1;
 }
 
+.mobile-only {
+    display: none;
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -235,6 +239,14 @@ h1 {
     }
 
     .menu-mobile {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
         display: block;
     }
 
