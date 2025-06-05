@@ -1,11 +1,7 @@
 <div class="menu-container">
     <div class="inner-menu-container">
         <div class="menu">
-        
-            <div class="language-switch">
-                <div (click)="selectLanguage('en')" class="language en" [class.active]="selectedLanguage === 'en'">EN</div>
-                <div (click)="selectLanguage('de')" class="language de" [class.active]="selectedLanguage === 'de'">DE</div>
-            </div>
+            <app-language-switch></app-language-switch>
             <a href="#about-me">About me</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>

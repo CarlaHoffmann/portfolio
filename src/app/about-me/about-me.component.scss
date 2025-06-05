@@ -167,9 +167,12 @@ h1 {
 
     .image-wrapper {
         width: 100%;
+        max-width: 568px;
+        height: fit-content;
     }
 
     .pic {
-        width: 100%;
+        position: unset;
+        height: fit-content;
     }
 }

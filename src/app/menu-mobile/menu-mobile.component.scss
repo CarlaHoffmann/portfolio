@@ -5,33 +5,48 @@ $white: #FFFFFF;
 
 .menu-container {
     width: 100%;
-    max-width: 1440px;
     box-sizing: border-box;
-    height: 98px;
-    display: flex;
-    justify-content: center;
     font-family: 'Fira Code', Arial, sans-serif;
-    font-size: 20px;
-    z-index: 1;
-
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    font-size: 18px;
 }
 
 .inner-menu-container {
     width: 100%;
-    // max-width: 1440px;
-    height: 100%;
+    height: 48px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 96px;
-    padding-right: 96px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.menu-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .menu {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    border: 1px solid $green;
+    border-radius: 30px;
+    padding: 40px 77px;
     display: flex;
-    align-items: center;
-    gap: 24px;
+    flex-direction: column;
+    gap: 10px;
+    background-image: linear-gradient(
+        to left bottom,
+        #08463B 10%,
+        #1C1C1C 60%
+    );
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+    cursor: pointer;
 }
 
 .language-switch {
@@ -79,40 +94,3 @@ $white: #FFFFFF;
     background-color: $green;
     color: $white;
 }
-
-a {
-    text-decoration: none;
-    color: $white;
-    cursor: pointer;
-    position: relative; // wichtig für das Pseudo-Element
-
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 50%;
-        bottom: -8px; // Abstand unterhalb des Texts, ggf. anpassen
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: $green;
-        opacity: 0;
-        transform: translateX(-50%) scale(0.5);
-        transition: opacity 0.3s, transform 0.3s;
-        pointer-events: none;
-    }
-
-    &:hover::after {
-        opacity: 1;
-        transform: translateX(-50%) scale(1);
-    }
-}
-
-@media(max-width: 1200px) {
-    .inner-menu-container {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-}
-
-// @media(max-width: 800px) {}

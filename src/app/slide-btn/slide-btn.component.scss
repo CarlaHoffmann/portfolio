@@ -1,8 +1,7 @@
 .btn {
     position: relative;
     overflow: hidden;
-    width: 200px;
-    // width: fit-content;
+    width: 180px;
     height: 48px;
     background-color: transparent;
     border: 1px solid #FFFFFF;
@@ -32,4 +31,14 @@
     cursor: default;
     border-color: rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media(max-width: 800px) {
+    .btn {
+      width: 170px;
+    }
+
+    .btn-text {
+      font-size: 18px;
+    }
   }
