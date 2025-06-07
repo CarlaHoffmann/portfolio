@@ -93,15 +93,17 @@ a {
         padding-right: 16px;
     }
 
+    .copyright {
+        position: unset;
+    }
+}
+
+@media(max-width: 400px) {
     .logo {
         display: none;
     }
 
     .logo-initials {
         display: block;
-    }
-
-    .copyright {
-        position: unset;
     }
 }

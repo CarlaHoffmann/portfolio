@@ -19,6 +19,12 @@ $white: #FFFFFF;
     gap: 48px;
 }
 
+.inner-contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
 h1, h2, h3, label, .green {
     margin: 0;
     color: $green;

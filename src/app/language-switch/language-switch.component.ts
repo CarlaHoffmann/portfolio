@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-language-switch',
@@ -8,9 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './language-switch.component.scss'
 })
 export class LanguageSwitchComponent {
-  selectedLanguage: 'en' | 'de' = 'en';
+  translation = inject(TranslationService);
+  selectedLanguage = this.translation.lang;
 
   selectLanguage(lang: 'en' | 'de') {
-    this.selectedLanguage = lang;
+    this.translation.setLang(lang);
   }
 }

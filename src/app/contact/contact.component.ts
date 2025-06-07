@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { SlideBtnComponent } from '../slide-btn/slide-btn.component';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,50 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactComponent {
   http = inject(HttpClient);
+  translation = inject(TranslationService);
+
+  translations = {
+    en: {
+      contactMe: 'Contact me',
+      letsWork: "Let's work <br> together",
+      gotAProblem: 'Got a problem to solve?',
+      info: `Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.<br><br>Need a Frontend developer? <span class="green">Let’s talk!</span>`,
+      whatsYourName: "What's your name?",
+      namePlaceholder: 'Your name goes here',
+      nameWarning: "Oops! it seems your name is missing",
+      whatsYourEmail: "What's your email?",
+      emailPlaceholder: "youremail@email.com",
+      emailWarning: "Hoppla! your email is required",
+      howCanIHelp: "How can I help you?",
+      messagePlaceholder: "Hello Carla, I am interested in...",
+      messageWarning: "What do you need to develop?",
+      privacyPolicy: "I've read the <a href='privacy-policy' class='policy-link green'>privacy policy</a> and agree to the processing of my data as outlined.",
+      acceptPolicyWarning: "Please accept the privacy policy.",
+      submitBtn: "Say Hello ;)"
+    },
+    de: {
+      contactMe: 'Kontakt',
+      letsWork: "Lass uns <br> zusammenarbeiten",
+      gotAProblem: 'Hast du ein Problem zu lösen?',
+      info: `Ermutige Menschen, dich zu kontaktieren und beschreibe, für welche Rolle du dich interessierst. Zeige, dass du mit deiner Arbeit einen Mehrwert für ihre Projekte schaffst.<br><br>Brauchst du eine Frontend-Entwicklerin? <span class="green">Lass uns reden!</span>`,
+      whatsYourName: "Wie ist dein Name?",
+      namePlaceholder: 'Platz für deinen Namen',
+      nameWarning: "Ups! Dein Name fehlt noch",
+      whatsYourEmail: "Wie lautet deine E-Mail?",
+      emailPlaceholder: "dein@email.de",
+      emailWarning: "Hoppla! Deine E-Mail fehlt noch",
+      howCanIHelp: "Wie kann ich helfen?",
+      messagePlaceholder: "Hallo Carla, ich interessiere mich für...",
+      messageWarning: "Wobei brauchst du Unterstützung?",
+      privacyPolicy: "Ich habe die <a href='privacy-policy' class='policy-link green'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      acceptPolicyWarning: "Bitte akzeptiere die Datenschutzerklärung.",
+      submitBtn: "Sag Hallo ;)"
+    }
+  };
+
+  get t() {
+    return this.translations[this.translation.lang()];
+  }
 
   contactData = {
     name: "",
