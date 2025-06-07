@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Project } from '../services/project-data.service';
 import { TechDataService, Technology } from '../services/tech-data.service';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-project-overlay',
@@ -13,6 +14,7 @@ import { TechDataService, Technology } from '../services/tech-data.service';
 export class ProjectOverlayComponent {
   shakeGithub = false;
   shakeLiveTest = false;
+  translation = inject(TranslationService);
 
   @Input() project!: Project;
   @Input() index!: number | null;
@@ -20,6 +22,21 @@ export class ProjectOverlayComponent {
   @Output() next = new EventEmitter<void>();
 
   constructor(public techDataService: TechDataService) {}
+
+  translations = {
+    en: {
+      whatIsThis: 'What is this project about?',
+      nextProject: 'Next project'
+    },
+    de: {
+      whatIsThis: 'Worum geht es in diesem Projekt?',
+      nextProject: 'Nächstes Projekt'
+    }
+  };
+
+  get t() {
+    return this.translations[this.translation.lang()];
+  }
 
   getTechByTitle(title: string): Technology | undefined {
     return this.techDataService.technologies.find(tech => tech.title === title);

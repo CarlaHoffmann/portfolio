@@ -93,7 +93,11 @@
                         <label class="checkbox-label">
                             <input id="checkbox" type="checkbox" #policyNgModel="ngModel" [(ngModel)]="policyAccepted" name="policyAccepted" required autocomplete="off">
                             <span class="custom-checkbox"></span>
-                            <span class="policy" [innerHTML]="t.privacyPolicy"></span>
+                            <span class="policy">
+                                {{ t.privacyPolicy1 }}
+                                <a routerLink='privacy-policy' class='policy-link green' style='text-decoration: none;'>{{ t.privacyPolicy }}</a>
+                                {{ t.privacyPolicy2 }}
+                            </span>
                         </label>
                         <div class="policy-warning-box">
                             @if (policyNgModel.touched && !policyNgModel.valid) {
@@ -102,7 +106,6 @@
                                 </span>
                             }
                         </div>
-                        
                     </div>
                     
                     <div class="btn-box">

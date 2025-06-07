@@ -1,11 +1,11 @@
 <div id="projects" class="projects-container">
     <div class="inner-projects-container">
         <div class="component-header">
-            <h2>Portfolio</h2>
-            <h1>Featured Projects</h1>
+            <h2>{{ t.portfolio }}</h2>
+            <h1>{{ t.featuredProjects }}</h1>
         </div>
 
-        <span class="info">
+        <span class="info" [innerHTML]="t.info">
             Explore a selection of my work here - Interact with <br />projects to see
             my skills in action.
         </span>

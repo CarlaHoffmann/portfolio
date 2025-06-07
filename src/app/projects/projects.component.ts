@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProjectOverlayComponent } from '../project-overlay/project-overlay.component';
 import { ProjectDataService, Project } from '../services/project-data.service';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-projects',
@@ -15,9 +16,27 @@ export class ProjectsComponent {
   isOverlayOpen = false;
   selectedProject: Project | null = null;
   selectedIndex: number | null = null;
+  translation = inject(TranslationService);
 
   constructor(private projectDataService: ProjectDataService) {
     this.projects = this.projectDataService.getProjects();
+  }
+
+  translations = {
+    en: {
+      portfolio: 'Portfolio',
+      featuredProjects: 'Featured Projects',
+      info: 'Explore a selection of my work here - Interact with <br />projects to see my skills in action.'
+    },
+    de: {
+      portfolio: 'Portfolio',
+      featuredProjects: 'Ausgewählte Projekte',
+      info: 'Hier findest du eine Auswahl meiner Arbeiten – Interagiere mit den <br />Projekten, um meine Fähigkeiten in Aktion zu sehen.'
+    }
+  };
+
+  get t() {
+    return this.translations[this.translation.lang()];
   }
 
   openProject(project: Project, index: number) {

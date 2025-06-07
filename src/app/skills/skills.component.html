@@ -1,27 +1,20 @@
 <div id="skills" class="skill-container">
     <div class="inner-skill-container">
         <div class="text-container">
-            <h2>Technologies</h2>
+            <h2>{{ t.technologies }}</h2>
             <div class="text-box">
-                <h1>Skill Set</h1>
+                <h1>{{ t.skillSet }}</h1>
 
                 <div class="info-box">
-                    <div class="info">
-                        <!-- A short introduction of your skills. Highlight your experience of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development. -->
-                        I have hands-on experience with a variety of front-end technologies, including HTML, CSS, JavaScript, and frameworks like Angular. I am always eager to learn and adapt to new tools and approaches, as I know how quickly web development evolves. Staying up to date with the latest trends and best practices is essential to me, and I enjoy continuously expanding my skill set to create modern, user-friendly web applications.
-                    </div>
+                    <div class="info">{{ t.intro }}</div>
                     <div class="text-component">
-                        <h3>You need <span class="green">another skill?</span></h3>
-                        <div class="text">
-                            Feel free to contact me. 
-                            <!-- I look forward to expanding on my previous knowledge. -->
-                            I’m looking forward to expanding my skills further.
-                        </div>
+                        <h3 [innerHTML]="t.needAnotherSkill">You need <span class="green">another skill?</span></h3>
+                        <div class="text">{{ t.expandSkills }}</div>
                     </div>
                 </div>
 
                 <a href="#contact">
-                    <app-slide-btn text="Let's Talk"></app-slide-btn>
+                    <app-slide-btn text="{{ t.letsTalk }}"></app-slide-btn>
                 </a>
             </div>
         </div>

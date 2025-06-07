@@ -8,11 +8,11 @@ h1 {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 48px;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .imprint-section p {
@@ -87,7 +87,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    overflow-y: auto;
+    // overflow-y: auto;
 }
 
 .imprint-section {

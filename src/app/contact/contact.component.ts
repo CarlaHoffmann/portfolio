@@ -3,11 +3,12 @@ import { Component, inject } from '@angular/core';
 import { SlideBtnComponent } from '../slide-btn/slide-btn.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslationService } from '../services/translation.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, SlideBtnComponent],
+  imports: [FormsModule, SlideBtnComponent, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -30,7 +31,9 @@ export class ContactComponent {
       howCanIHelp: "How can I help you?",
       messagePlaceholder: "Hello Carla, I am interested in...",
       messageWarning: "What do you need to develop?",
-      privacyPolicy: "I've read the <a href='privacy-policy' class='policy-link green' style='text-decoration: none;'>privacy policy</a> and agree to the processing of my data as outlined.",
+      privacyPolicy: "privacy policy",
+      privacyPolicy1: "I've read the ",
+      privacyPolicy2: " and agree to the processing of my data as outlined.",
       acceptPolicyWarning: "Please accept the privacy policy.",
       submitBtn: "Say Hello ;)"
     },
@@ -48,7 +51,9 @@ export class ContactComponent {
       howCanIHelp: "Wie kann ich helfen?",
       messagePlaceholder: "Hallo Carla, ich interessiere mich für...",
       messageWarning: "Wobei brauchst du Unterstützung?",
-      privacyPolicy: "Ich habe die <a routerLink='privacy-policy' class='policy-link green'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      privacyPolicy: "Datenschutzerklärung",
+      privacyPolicy1: "Ich habe die ",
+      privacyPolicy2: " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
       acceptPolicyWarning: "Bitte akzeptiere die Datenschutzerklärung.",
       submitBtn: "Sag Hallo ;)"
     }

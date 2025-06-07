@@ -16,7 +16,7 @@
         </div>
   
         <div class="project-box-content">
-          <div class="overlay-headline">What is this project about?</div>
+          <div class="overlay-headline">{{ t.whatIsThis }}</div>
           <div class="overlay-info">{{ project.description }}</div>
           <div class="overlay-languages">
             @for (tech of project.technologies; track tech) {
@@ -57,7 +57,7 @@
     <img class="overlay-img" [src]="project.image" alt="" />
 
     <div class="next" (click)="next.emit()">
-      <span>Next project</span>
+      <span>{{ t.nextProject }}</span>
       <img src="./assets/icons/arrow-right.svg" alt="" />
     </div>
   </div>
