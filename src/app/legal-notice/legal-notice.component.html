@@ -1,17 +1,17 @@
 <div class="legal-notice-page">
     <div class="legal-notice-container">
         <div class="legal-notice">
-            <a class="back" href="#">
+            <a class="back" routerLink="">
                 <img src="./assets/icons/arrow-left.svg" alt="">
-                Back
+                {{ t.back }}
             </a>
         
-            <h1>Legal notice</h1>
+            <h1>{{ t.legalNotice }}</h1>
             <div class="legal-notice-content">
-                <h2>Imprint</h2>
+                <h2>{{ t.imprint }}</h2>
 
                 <div class="imprint-section">
-                    <h3>Provider</h3>
+                    <h3>{{ t.provider }}</h3>
                     <p>
                         Carla Hoffmann <br>
                         Dürerstr. 20 <br>
@@ -21,47 +21,29 @@
                 
     
                 <div class="imprint-section">
-                    <h3>Contact us</h3>
+                    <h3>{{ t.contact }}</h3>
                     <p>
-                        Email: carlahoffmann&#64;gmx.de<br>
-                        Phone: 015125626836
+                        {{ t.email }}: carlahoffmann&#64;gmx.de<br>
+                        {{ t.phone }}: 015125626836
                     </p>
                 </div>
                 
                 <div class="imprint-section">
-                    <h3>Disclaimer</h3>
-                    <p>We are responsible for the content of our website in accordance 
-                        with the provisions of general law. All content is created with due 
-                        care and to the best of our knowledge. 
-                        Insofar as we refer to third-party websites on our Internet pages by 
-                        means of hyperlinks, we cannot assume any liability for the continued 
-                        topicality, correctness and completeness of the linked content, as this 
-                        content is outside our area of responsibility and we have no influence on 
-                        its future design. Should you consider any content to be in breach of 
-                        applicable law or inappropriate, please let us know.
-                        The legal information on this page as well as all questions and disputes 
-                        in connection with the design of this website are subject to the laws of 
-                        the Federal Republic of Germany.</p>
+                    <h3>{{ t.disclaimer }}</h3>
+                    <p>{{ t.disclaimerText }}</p>
                 </div>
                 
                 <div class="imprint-section">
-                    <h3>Copyright notice</h3>
-                    <p>The texts, images, photos, videos or graphics available on our website are 
-                        generally subject to copyright protection. Any unauthorized use (especially 
-                        copying, editing or distribution) of this copyright-protected content is 
-                        therefore prohibited. If you intend to use this content or parts thereof, 
-                        please contact us in advance using the details above. If we are not the owner 
-                        of the required copyrighted rights of use ourselves, we will endeavor to 
-                        arrange contact with the entitled party.</p>
-    
+                    <h3>{{ t.copyright }}</h3>
+                    <p>{{ t.copyrightText }}</p>
                 </div>
                 
-                <p>Date: June 04, 2025</p>
+                <p>{{ t.date }}</p>
                 
                 <div class="footer">
-                    <p>Created with the kind support of <a href="https://www.dieter-datenschutz.de/?_gl=1*3cdztl*_ga*MTIxMzE0OTgzOC4xNzQ5MDM1ODcx*_ga_7CBXCBBGR5*czE3NDkwMzU4NzAkbzEkZzEkdDE3NDkwMzU5OTQkajgkbDAkaDA.*_gcl_au*NzI0MTU2Mi4xNzQ5MDM1ODcxLjE1NTcxMDMxMzMuMTc0OTAzNTk1Mi4xNzQ5MDM1OTUy"> Dieter does data protection</a></p>
+                    <p [innerHTML]="t.createdWith">Created with the kind support of <a href="https://www.dieter-datenschutz.de/?_gl=1*3cdztl*_ga*MTIxMzE0OTgzOC4xNzQ5MDM1ODcx*_ga_7CBXCBBGR5*czE3NDkwMzU4NzAkbzEkZzEkdDE3NDkwMzU5OTQkajgkbDAkaDA.*_gcl_au*NzI0MTU2Mi4xNzQ5MDM1ODcxLjE1NTcxMDMxMzMuMTc0OTAzNTk1Mi4xNzQ5MDM1OTUy"> Dieter does data protection</a></p>
                 
-                    <p>"Dieter macht den Datenschutz" is a product of simply Legal GmbH, Burkarderstr. 36, D-97082 Würzburg. All rights reserved2025.</p>
+                    <p>{{ t.dieterLegal }}</p>
                 </div>
             </div>
 

@@ -16,6 +16,24 @@ body {
     font-family: 'Karla', Arial, sans-serif;
 }
 
+.green {
+    color: #3DCFB6;
+}
+
+.policy-link, .linking {
+    text-decoration: none;
+    font-family: 'Fira Code', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: -3%;
+    padding: 5px 4px;
+    text-underline-offset: 6px; 
+
+    &:hover {
+        text-decoration: underline $green;
+        color: #FFFFFF;
+    }
+}
+
 
 /* livvic-300 - latin */
 @font-face {

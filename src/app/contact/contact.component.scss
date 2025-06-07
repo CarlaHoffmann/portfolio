@@ -235,20 +235,19 @@ textarea {
     flex-wrap: wrap;
 }
 
-.policy-link {
-    // display: inline-block;
-    text-decoration: none;
-    font-family: 'Fira Code', Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: -3%;
-    padding: 5px 4px;
-    text-underline-offset: 6px; 
+// .policy-link {
+//     text-decoration: none;
+//     font-family: 'Fira Code', Arial, sans-serif;
+//     font-weight: 400;
+//     letter-spacing: -3%;
+//     padding: 5px 4px;
+//     text-underline-offset: 6px; 
 
-    &:hover {
-        text-decoration: underline $green;
-        color: #FFFFFF;
-    }
-}
+//     &:hover {
+//         text-decoration: underline $green;
+//         color: #FFFFFF;
+//     }
+// }
 
 .policy-warning-box {
     height: 17px;
