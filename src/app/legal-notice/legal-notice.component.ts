@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { TranslationService } from '../services/translation.service';
 import { RouterModule } from '@angular/router';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -10,6 +11,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
+  constructor(public navigation: NavigationService) {}
+
   translation = inject(TranslationService);
 
   translations = {

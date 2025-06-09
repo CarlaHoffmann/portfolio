@@ -99,3 +99,9 @@ a {
 .footer a {
     color: #3dcfb7;
 }
+
+@media(max-width: 800px) {
+    .legal-notice-container {
+        padding: 24px 16px;
+    }
+}

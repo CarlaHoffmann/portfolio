@@ -3,10 +3,13 @@ $dark-green: #08463B;
 $dark-grey: #1C1C1C;
 $white: #FFFFFF;
 
+@import 'swiper/css/bundle';
 
 html {
     scroll-behavior: smooth;
-  }
+    white-space: normal;
+    word-break: break-word;
+}
 
 /* You can add global styles to this file, and also import other style files */
 body {

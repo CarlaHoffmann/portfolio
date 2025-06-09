@@ -30,7 +30,7 @@
         </div>
   
         <div class="button-box">
-          <a href="{{ project.github }}">
+          <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer">
             <button
               (mouseenter)="triggerShake('github')"
               (mouseleave)="triggerOffShake('github')"
@@ -40,7 +40,7 @@
             </button>
           </a>
   
-          <a href="{{ project.link }}">
+          <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
             <button
               (mouseenter)="triggerShake('live-test')"
               (mouseleave)="triggerOffShake('live-test')"
