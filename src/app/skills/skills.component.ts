@@ -36,7 +36,7 @@ export class SkillsComponent {
       intro: `Ich habe praktische Erfahrung mit verschiedenen Frontend-Technologien wie HTML, CSS, JavaScript und Frameworks wie Angular. Ich lerne gerne dazu und passe mich neuen Tools und Ansätzen an, denn die Webentwicklung entwickelt sich ständig weiter. Es ist mir wichtig, immer auf dem neuesten Stand zu bleiben und mein Wissen kontinuierlich zu erweitern, um moderne und benutzerfreundliche Webanwendungen zu entwickeln.`,
       needAnotherSkill: 'Du brauchst <span class="green">eine andere Fähigkeit?</span>',
       expandSkills: `Melde dich gerne bei mir. Ich freue mich darauf, mein Wissen weiter auszubauen.`,
-      letsTalk: `Lass uns sprechen`
+      letsTalk: `Lass uns reden`
     }
   };
 

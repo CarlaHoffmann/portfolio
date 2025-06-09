@@ -30,10 +30,19 @@ body {
     cursor: pointer; 
 
     &:hover {
-        text-decoration: underline $green;
+        // text-decoration: underline $green;
+        text-decoration: underline;
+        text-decoration-color: $green; 
         color: #FFFFFF;
     }
 }
+
+// .policy-link:hover, .linking:hover {
+//     // text-decoration: underline $green;
+//     text-decoration: underline;
+//     text-decoration-color: $green;
+//     color: #FFFFFF;
+// }
 
 
 /* livvic-300 - latin */
