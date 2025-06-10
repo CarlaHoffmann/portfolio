@@ -1,47 +1,68 @@
 <div class="reference-container">
   <h2>{{ t.headline }}</h2>
 
-  <swiper-container class="slideshow">
-    <swiper-slide class="slide prev">
-      <div class="slide-card">
-        <p>{{ slides[prevIndex].text }}</p>
-        <span class="author-line">
-          <span class="line"></span>
-          <span class="author-name"
-            >{{ slides[prevIndex].author }} –
-            {{ slides[prevIndex].position }}</span
-          >
-        </span>
-      </div>
-    </swiper-slide>
+  <div class="slideshow">
+    <div class="slides-wrapper" 
+      [style.transform]="wrapperTransform"
+      [style.transition]="transition"
+      (transitionend)="onTransitionEnd()"
+    >
+      <!-- <img class="qoutes" src="./assets/icons/quotes.svg" alt="" /> -->
 
-    <swiper-slide class="slide current">
-      <img class="qoutes" src="./assets/icons/quotes.svg" alt="" />
-      <div class="slide-card">
-        <p>{{ slides[currentIndex].text }}</p>
-        <span class="author-line">
-          <span class="line"></span>
-          <span class="author-name"
-            >{{ slides[currentIndex].author }} –
-            {{ slides[currentIndex].position }}</span
-          >
-        </span>
+      <!-- <div class="slide prev">
+        <div class="slide-card">
+          <p>{{ slides[prevIndex].text }}</p>
+          <span class="author-line">
+            <span class="line"></span>
+            <span class="author-name"
+              >{{ slides[prevIndex].author }} –
+              {{ slides[prevIndex].position }}</span
+            >
+          </span>
+        </div>
       </div>
-    </swiper-slide>
+  
+      <div class="slide current">
 
-    <swiper-slide class="slide next">
-      <div class="slide-card">
-        <p>{{ slides[nextIndex].text }}</p>
-        <span class="author-line">
-          <span class="line"></span>
-          <span class="author-name"
-            >{{ slides[nextIndex].author }} –
-            {{ slides[nextIndex].position }}</span
-          >
-        </span>
+        <div class="slide-card">
+          <p>{{ slides[currentIndex].text }}</p>
+          <span class="author-line">
+            <span class="line"></span>
+            <span class="author-name"
+              >{{ slides[currentIndex].author }} –
+              {{ slides[currentIndex].position }}</span
+            >
+          </span>
+        </div>
       </div>
-    </swiper-slide>
-  </swiper-container>
+  
+      <div class="slide next">
+        <div class="slide-card">
+          <p>{{ slides[nextIndex].text }}</p>
+          <span class="author-line">
+            <span class="line"></span>
+            <span class="author-name"
+              >{{ slides[nextIndex].author }} –
+              {{ slides[nextIndex].position }}</span
+            >
+          </span>
+        </div>
+      </div> -->
+
+      @for (slide of visibleSlides; track slide.id; let i = $index) {
+        <div class="slide" [ngClass]="slide.slideType">
+          <div class="slide-card">
+            <p>{{ slide.text }}</p>
+            <span class="author-line">
+              <span class="line"></span>
+              <span class="author-name">{{ slide.author }} – {{ slide.position }}</span>
+            </span>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
 
   <div class="slide-control">
     <img
