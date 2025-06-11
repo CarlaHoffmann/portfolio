@@ -25,14 +25,24 @@ export class TestComponent {
     if (this.isAnimating) return;
     this.direction = 'left';
     this.isAnimating = true;
-    this.wrapperTransform = 'translateX(0%)'; // Nach rechts sliden
+    // this.wrapperTransform = 'translateX(0%)'; // Nach rechts sliden
+    let slide = this.slides.pop()
+    if(slide) {
+      this.slides.unshift(slide)
+      this.isAnimating = false;
+    }
   }
 
   next() {
     if (this.isAnimating) return;
     this.direction = 'right';
     this.isAnimating = true;
-    this.wrapperTransform = 'translateX(-200%)'; // Nach links sliden
+    // this.wrapperTransform = 'translateX(-200%)'; // Nach links sliden
+    let slide = this.slides.pop()
+    if(slide) {
+      this.slides.unshift(slide)
+      this.isAnimating = false;
+    }
   }
 
   onTransitionEnd() {

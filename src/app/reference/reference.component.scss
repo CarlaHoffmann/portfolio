@@ -57,8 +57,7 @@ h2 {
 }
 
 .slides-wrapper {
-    width: 140%;
-    // max-width: calc(1440px * 1.2);
+    width: 200%;
     min-height: 180px;
     margin: 32px 16px;
     display: flex;
@@ -68,7 +67,7 @@ h2 {
 }
 
 .slide {
-    flex: 0 0 calc((100% - (4 * 32px + 32px)) / 5); // Drei Slides + zwei Gaps
+    flex: 0 0 calc((100% - (4 * 32px + 32px)) / 5); 
     background-color: rgba(8, 70, 59, 0.5);
     border: 1px solid $green;
     border-radius: 30px;

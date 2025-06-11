@@ -9,47 +9,7 @@
     >
       <!-- <img class="qoutes" src="./assets/icons/quotes.svg" alt="" /> -->
 
-      <!-- <div class="slide prev">
-        <div class="slide-card">
-          <p>{{ slides[prevIndex].text }}</p>
-          <span class="author-line">
-            <span class="line"></span>
-            <span class="author-name"
-              >{{ slides[prevIndex].author }} –
-              {{ slides[prevIndex].position }}</span
-            >
-          </span>
-        </div>
-      </div>
-  
-      <div class="slide current">
-
-        <div class="slide-card">
-          <p>{{ slides[currentIndex].text }}</p>
-          <span class="author-line">
-            <span class="line"></span>
-            <span class="author-name"
-              >{{ slides[currentIndex].author }} –
-              {{ slides[currentIndex].position }}</span
-            >
-          </span>
-        </div>
-      </div>
-  
-      <div class="slide next">
-        <div class="slide-card">
-          <p>{{ slides[nextIndex].text }}</p>
-          <span class="author-line">
-            <span class="line"></span>
-            <span class="author-name"
-              >{{ slides[nextIndex].author }} –
-              {{ slides[nextIndex].position }}</span
-            >
-          </span>
-        </div>
-      </div> -->
-
-      @for (slide of visibleSlides; track slide.id; let i = $index) {
+      @for (slide of visibleSlides; track slide.text; let i = $index) {
         <div class="slide" [ngClass]="slide.slideType">
           <div class="slide-card">
             <p>{{ slide.text }}</p>
@@ -71,18 +31,16 @@
       (click)="goPrev()"
       class="arrow left"
     />
-
-    @for (slide of slides; track slide; let i = $index) {
-    <img
-      [src]="
-        i === currentIndex
+    
+    @for (slide of slides; track slide.id; let i = $index) {
+      <img
+        [src]="i === currentSlideId
           ? './assets/icons/ellipse-current.svg'
-          : './assets/icons/ellipse.svg'
-      "
-      class="ellipse"
-      [class.current-ellipse]="i === currentIndex"
-      alt="ellipse"
-    />
+          : './assets/icons/ellipse.svg'"
+        class="ellipse"
+        [class.current-ellipse]="i === currentSlideId"
+        alt="ellipse"
+      />
     }
 
     <img
