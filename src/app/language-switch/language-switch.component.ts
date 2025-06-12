@@ -9,10 +9,15 @@ import { TranslationService } from '../services/translation.service';
   styleUrl: './language-switch.component.scss'
 })
 export class LanguageSwitchComponent {
-  translation = inject(TranslationService);
-  selectedLanguage = this.translation.lang;
+  constructor(private translation: TranslationService) {}
+  // translation = inject(TranslationService);
+  // selectedLanguage = this.translation.lang;
 
   selectLanguage(lang: 'en' | 'de') {
     this.translation.setLang(lang);
+  }
+
+  get selectedLanguage(): 'en' | 'de' {
+    return this.translation.currentLang;
   }
 }
