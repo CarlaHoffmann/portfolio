@@ -3,6 +3,10 @@ $dark-green: #08463B;
 $dark-grey: #1C1C1C;
 $white: #FFFFFF;
 
+a {
+    text-decoration: none;
+}
+
 .header-container { 
     height: 900px;
     padding-left: 96px;
@@ -218,12 +222,7 @@ h1 {
     }
 }
 
-@media(max-width: 1200px) {
-    // .header-container { 
-    //     padding-left: 16px;
-    //     padding-right: 16px;
-    // }
-
+@media(max-width: 1250px) {
     .header-left {
         left: 16px;
     }

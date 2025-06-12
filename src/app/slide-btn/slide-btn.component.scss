@@ -23,6 +23,7 @@
     color: #ffffff;
     pointer-events: none;
     font-size: 20px;
+    // white-space: nowrap;
     // user-select: none;
     transition: color 500ms linear;
   }
@@ -35,10 +36,6 @@
   }
 
   @media(max-width: 800px) {
-    .btn {
-      width: 170px;
-    }
-
     .btn-text {
       font-size: 18px;
     }

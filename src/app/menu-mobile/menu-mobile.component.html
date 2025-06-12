@@ -30,9 +30,9 @@
                 <div class="menu-overlay" (click)="closeMenu()"></div>
                 <!-- Das Menü selbst, stoppt das Event, damit es nicht schließt -->
                 <div class="menu" (click)="$event.stopPropagation()">
-                    <a href="#about-me" (click)="closeMenu()">About me</a>
-                    <a href="#skills" (click)="closeMenu()">Skills</a>
-                    <a href="#projects" (click)="closeMenu()">Projects</a>
+                    <a href="#about-me" (click)="closeMenu()">{{ t.aboutMe }}</a>
+                    <a href="#skills" (click)="closeMenu()">{{ t.skills }}</a>
+                    <a href="#projects" (click)="closeMenu()">{{ t.projects }}</a>
                     <app-language-switch></app-language-switch>
                 </div>
             }
