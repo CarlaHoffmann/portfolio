@@ -223,6 +223,10 @@ h1 {
 }
 
 @media(max-width: 1250px) {
+    .header-container {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
     .header-left {
         left: 16px;
     }
@@ -271,6 +275,14 @@ h1 {
 
     .line-right {
         height: 112px;
+    }
+
+    .banner {
+        font-size: 24px;
+    }
+
+    .banner-content {
+        gap: 40px;
     }
 }
 
