@@ -9,7 +9,6 @@
       (transitionend)="onTransitionEnd()"
     >
       
-
       @for (slide of visibleSlides; track slide.id; let i = $index) {
         <div class="slide" [ngClass]="slide.slideType">
           <div class="slide-card">
@@ -34,6 +33,8 @@
       alt="left"
       (click)="goPrev()"
       class="arrow left"
+      [class.disabled]="isAnimating"
+      [style.pointerEvents]="isAnimating ? 'none' : 'auto'"
     />
 
     @for (slide of slides; track slide.id; let i = $index) {
@@ -52,6 +53,8 @@
       alt="right"
       (click)="goNext()"
       class="arrow right"
+      [class.disabled]="isAnimating"
+      [style.pointerEvents]="isAnimating ? 'none' : 'auto'"
     />
   </div>
 </div>

@@ -10,7 +10,19 @@ import { Component, Input } from '@angular/core';
 })
 export class SlideBtnComponent {
   @Input() text = '';
-  @Input() disabled = false;
+  // @Input() disabled = false;
+
+  private _disabled = false;
+  @Input() 
+  set disabled(value: boolean) {
+    this._disabled = value;
+    if (value) {
+      this.stopAnimation(true); // true = durch Disabled-Änderung gestoppt
+    }
+  }
+  get disabled() {
+    return this._disabled;
+  }
 
   borderColor = '#FFFFFF';
   textColor = '#FFFFFF'; 
@@ -85,8 +97,9 @@ export class SlideBtnComponent {
     }, 20);
   }
 
-  stopAnimation() {
-    if (this.disabled) return;
+  stopAnimation(fromDisabled = false) {
+    if (!this.running) return;
+    // if (this.disabled) return;
     this.running = false;
     clearTimeout(this.timeout1);
     clearTimeout(this.timeout2);

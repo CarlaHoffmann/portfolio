@@ -1,7 +1,7 @@
 .btn {
     position: relative;
     overflow: hidden;
-    width: 180px;
+    // width: 180px;
     height: 48px;
     background-color: transparent;
     border: 1px solid #FFFFFF;
@@ -14,10 +14,11 @@
   }
   
   .btn-text {
-    position: absolute;
+    // position: absolute;
     left: 0;
     width: 100%;
     text-align: center;
+    padding: 0 24px;
     line-height: 48px;
     color: #ffffff;
     pointer-events: none;

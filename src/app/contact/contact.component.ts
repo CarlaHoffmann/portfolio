@@ -85,7 +85,7 @@ export class ContactComponent {
   //     console.log(this.contactData);
   //   }
   // }
-  mailTest = false;
+  mailTest = true;
 
   post = {
     endPoint: 'https://carla-hoffmann.net/sendMail.php', // 'https://deineDomain.de/sendMail.php'

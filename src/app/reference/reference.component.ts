@@ -52,7 +52,6 @@ export class ReferenceComponent {
   }
 
   get slides() {
-    console.log('refe');
     return this.translation.lang() === 'de' ? this.slidesDe : this.slidesEn;
   }
 
