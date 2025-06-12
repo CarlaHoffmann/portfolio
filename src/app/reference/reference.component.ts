@@ -1,4 +1,4 @@
-import { Component, inject, effect } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslationService } from '../services/translation.service';
 import { CommonModule } from '@angular/common';
 
@@ -37,8 +37,6 @@ export class ReferenceComponent {
     }
   };
 
-  // currentIndex = 0;
-  // slideDirection: 'left' | 'right' = 'right';
   visibleSlides: any[] = [];
 
   wrapperTransform = 'translateX(0%)';
