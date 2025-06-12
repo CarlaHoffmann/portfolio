@@ -1,7 +1,6 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslationService } from '../services/translation.service';
 import { CommonModule } from '@angular/common';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-reference',
@@ -10,9 +9,8 @@ import { Subscription } from 'rxjs';
   templateUrl: './reference.component.html',
   styleUrl: './reference.component.scss'
 })
-export class ReferenceComponent implements OnInit, OnDestroy {
-  private langSub!: Subscription;
-  // translation = inject(TranslationService);
+export class ReferenceComponent {
+  translation = inject(TranslationService);
 
   slidesEn = [
     { id: 0, text: "Carla is a fantastic team player!", author: "Anna", position: "Frontend Developer" },
@@ -45,32 +43,17 @@ export class ReferenceComponent implements OnInit, OnDestroy {
   transition = 'transform 0.5s cubic-bezier(.4,0,.2,1)';
   isAnimating = false;
 
-  constructor(private translation: TranslationService) {}
-
   ngOnInit() {
     this.updateVisibleSlides();
-    // this.translation.lang.effect(() => {
-    //   this.updateVisibleSlides();
-    // });
-    this.langSub = this.translation.lang$.subscribe(() => {
-      this.updateVisibleSlides(); // Bei Sprachwechsel automatisch neu berechnen!
-    });
   }
 
-  ngOnDestroy() {
-    this.langSub?.unsubscribe();
-  }
-
-  // get t() {
-  //   return this.translations[this.translation.lang()];
-  // }
   get t() {
-    return this.translations[this.translation.currentLang];
+    return this.translations[this.translation.lang()];
   }
 
   get slides() {
-    // return this.translation.lang() === 'de' ? this.slidesDe : this.slidesEn;
-    return this.translation.currentLang === 'de' ? this.slidesDe : this.slidesEn;
+    console.log('refe');
+    return this.translation.lang() === 'de' ? this.slidesDe : this.slidesEn;
   }
 
   get currentSlideId() {
