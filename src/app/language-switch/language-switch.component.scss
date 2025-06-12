@@ -4,6 +4,7 @@ $dark-grey: #1C1C1C;
 $white: #FFFFFF;
 
 .language-switch {
+    width: 80px;
     height: 24px;
     display: flex;
     align-items: center;
@@ -27,6 +28,8 @@ $white: #FFFFFF;
     height: 24px;
     display: flex;
     align-items: center;
+    text-align: center;
+    white-space: nowrap;
     padding-left: 12px;
     padding-right: 12px;  
     border-radius: 100px;
@@ -53,14 +56,14 @@ a {
     text-decoration: none;
     color: $white;
     cursor: pointer;
-    position: relative; // wichtig für das Pseudo-Element
+    position: relative;
 
     &::after {
         content: '';
         display: block;
         position: absolute;
         left: 50%;
-        bottom: -8px; // Abstand unterhalb des Texts, ggf. anpassen
+        bottom: -8px;
         width: 7px;
         height: 7px;
         border-radius: 50%;
