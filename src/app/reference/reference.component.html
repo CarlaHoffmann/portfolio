@@ -2,17 +2,21 @@
   <h2>{{ t.headline }}</h2>
 
   <div class="slideshow">
+    <img class="qoutes" src="./assets/icons/quotes.svg" alt="" />
     <div class="slides-wrapper" 
       [style.transform]="wrapperTransform"
       [style.transition]="transition"
       (transitionend)="onTransitionEnd()"
     >
-      <!-- <img class="qoutes" src="./assets/icons/quotes.svg" alt="" /> -->
+      
 
       @for (slide of visibleSlides; track slide.text; let i = $index) {
         <div class="slide" [ngClass]="slide.slideType">
           <div class="slide-card">
-            <p>{{ slide.text }}</p>
+            <div class="slide-card-text-box">
+              <p>{{ slide.text }}</p>
+            </div>
+            
             <span class="author-line">
               <span class="line"></span>
               <span class="author-name">{{ slide.author }} – {{ slide.position }}</span>
@@ -31,7 +35,7 @@
       (click)="goPrev()"
       class="arrow left"
     />
-    
+
     @for (slide of slides; track slide.id; let i = $index) {
       <img
         [src]="i === currentSlideId

@@ -8,6 +8,7 @@ $white: #FFFFFF;
     padding-bottom: 160px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: hidden;
     position: relative;
     &::before,
@@ -52,27 +53,35 @@ h2 {
 
 .slideshow {
     position: relative;
-    width: 100%;
-    overflow: hidden;
+    // width: 2880px;
+    width: fit-content;
+    overflow-x: hidden;
+    position: relative;
+    // display: flex;
+    // justify-content: center;
 }
 
 .slides-wrapper {
-    width: 200%;
+    // width: 2880px;
+    width: fit-content;
+    // min-width: fit-content;
     min-height: 180px;
-    margin: 32px 16px;
+    margin: 32px 0;
     display: flex;
-    gap: 32px;
+    gap: 56px;
     transition: transform 0.5s cubic-bezier(.4,0,.2,1);
-    // will-change: transform;
+    will-change: transform;
 }
 
 .slide {
-    flex: 0 0 calc((100% - (4 * 32px + 32px)) / 5); 
+    width: 640px;
+    flex: 0 0 calc((100% - (4 * 56px)) / 5); 
     background-color: rgba(8, 70, 59, 0.5);
     border: 1px solid $green;
     border-radius: 30px;
     padding: 48px 40px;
-    color: $white;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 20px;
     pointer-events: none;
     z-index: 1;
@@ -84,9 +93,10 @@ h2 {
     
   
     &.current {
+        color: $white;
         opacity: 1;
         transform: scaleY(1);
-        background-color: rgba(120, 209, 194, 0.4);
+        background-color: rgba(61, 207, 182, 0.3);
         pointer-events: auto;
         position: relative;
     }
@@ -94,8 +104,9 @@ h2 {
 
 .qoutes {
     position: absolute;
-    top: -10px;
-    left: -44px;
+    top: 22px;
+    left: 1348px;
+    z-index: 2;
 }
   
 .slide-card {
@@ -154,16 +165,6 @@ h2 {
     transform: scale(1.15) translateX(8px);
 }
 
-// @media(max-width: 1000px) {
-//     // .slideshow {
-//     //     width: 350%;
-//     // }
-
-//     .slide.current {
-//         width: 100vw;
-//     }
-// }
-
 @media(max-width: 800px) {
     .reference-container {
         padding-bottom: 80px;
@@ -181,22 +182,33 @@ h2 {
 
     .slideshow {
         margin: 0;
+        width: fit-content;
     }
 
-    // .slides-wrapper {
-    //     width: 280%;
-    //     left: -90%;
-    // }
+    .slides-wrapper {
+        width: fit-content;
+        gap: 16px;
+    }
 
     .slide {
+        flex: 0 0 calc((100% - (4 * 16px)) / 5); 
+        width: 360px;
+        height: 360px;
+        transform: scaleY(0.8);
         margin: 0;
         opacity: 0.5;
         pointer-events: none;
-        // transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
     }
 
     .slide-card {
+        height: 100%;
         font-size: 18px;
+    }
+
+    .slide-card-text-box {
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
     .author-name {
@@ -204,10 +216,9 @@ h2 {
     }
 
     .qoutes {
-        height: 48px;
+        height: 48px;    
         position: absolute;
-        top: -10px;
-        left: -2px;
-        z-index: 3;
+        top: 20px;
+        left: 750px;
     }
 }
