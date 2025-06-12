@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { TranslationService } from '../services/translation.service';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
+import { Subscription, map } from 'rxjs';
 
 @Component({
   selector: 'app-reference',
@@ -9,8 +10,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './reference.component.html',
   styleUrl: './reference.component.scss'
 })
-export class ReferenceComponent {
-  translation = inject(TranslationService);
+export class ReferenceComponent implements OnInit, OnDestroy {
+  // translation = inject(TranslationService);
 
   slidesEn = [
     { id: 0, text: "Carla is a fantastic team player!", author: "Anna", position: "Frontend Developer" },
@@ -37,23 +38,46 @@ export class ReferenceComponent {
     }
   };
 
+  lang: 'en' | 'de' = 'en';
   visibleSlides: any[] = [];
+  slides: any[] = [];
 
   wrapperTransform = 'translateX(0%)';
   transition = 'transform 0.5s cubic-bezier(.4,0,.2,1)';
   isAnimating = false;
 
+  private langSub!: Subscription;
+
+  constructor(private translation: TranslationService) {}
+
+  // ngOnInit() {
+  //   this.updateVisibleSlides();
+  // }
   ngOnInit() {
+    // Reaktiv auf Sprachwechsel reagieren
+    this.langSub = this.translation.lang$.subscribe(lang => {
+      this.lang = lang;
+      this.slides = lang === 'de' ? this.slidesDe : this.slidesEn;
+      this.updateVisibleSlides();
+    });
+    // Initial setzen
+    this.lang = this.translation.currentLang;
+    this.slides = this.lang === 'de' ? this.slidesDe : this.slidesEn;
     this.updateVisibleSlides();
   }
 
-  get t() {
-    return this.translations[this.translation.lang()];
+  ngOnDestroy() {
+    this.langSub?.unsubscribe();
   }
 
-  get slides() {
-    return this.translation.lang() === 'de' ? this.slidesDe : this.slidesEn;
+  get t() {
+    // return this.translations[this.translation.lang()];
+    return this.translations[this.lang];
   }
+
+  // get slides() {
+  //   return this.translation.lang() === 'de' ? this.slidesDe : this.slidesEn;
+  // }
 
   get currentSlideId() {
     return this.visibleSlides[2]?.id;
@@ -90,36 +114,53 @@ export class ReferenceComponent {
     this.wrapperTransform = 'translateX(-20%)';
   }
 
+  // onTransitionEnd() {
+  //   if (!this.isAnimating) return;
+
+  //   // Array-Rotation erst nach Animation!
+  //   if (this.wrapperTransform === 'translateX(-20%)') { // Next
+  //     if (this.slidesEn.length > 0) {
+  //       const first = this.slidesEn.shift();
+  //       if (first) this.slidesEn.push(first);
+  //     }
+  //     if (this.slidesDe.length > 0) {
+  //       const first = this.slidesDe.shift();
+  //       if (first) this.slidesDe.push(first);
+  //     }
+  //   } else if (this.wrapperTransform === 'translateX(20%)') { // Prev
+  //     if (this.slidesEn.length > 0) {
+  //       const last = this.slidesEn.pop();
+  //       if (last) this.slidesEn.unshift(last);
+  //     }
+  //     if (this.slidesDe.length > 0) {
+  //       const last = this.slidesDe.pop();
+  //       if (last) this.slidesDe.unshift(last);
+  //     }
+  //   }
+
+  //   // Wrapper sofort zurück zur Mittelposition (ohne Animation)
+  //   this.transition = 'none';
+  //   this.wrapperTransform = 'translateX(0%)';
+  //   this.updateVisibleSlides();
+
+  //   // Transition wieder aktivieren
+  //   setTimeout(() => {
+  //     this.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
+  //     this.isAnimating = false;
+  //   }, 20);
+  // }
   onTransitionEnd() {
     if (!this.isAnimating) return;
-
-    // Array-Rotation erst nach Animation!
-    if (this.wrapperTransform === 'translateX(-20%)') { // Next
-      if (this.slidesEn.length > 0) {
-        const first = this.slidesEn.shift();
-        if (first) this.slidesEn.push(first);
-      }
-      if (this.slidesDe.length > 0) {
-        const first = this.slidesDe.shift();
-        if (first) this.slidesDe.push(first);
-      }
-    } else if (this.wrapperTransform === 'translateX(20%)') { // Prev
-      if (this.slidesEn.length > 0) {
-        const last = this.slidesEn.pop();
-        if (last) this.slidesEn.unshift(last);
-      }
-      if (this.slidesDe.length > 0) {
-        const last = this.slidesDe.pop();
-        if (last) this.slidesDe.unshift(last);
-      }
+    if (this.wrapperTransform === 'translateX(-20%)') {
+      const first = this.slides.shift();
+      if (first) this.slides.push(first);
+    } else if (this.wrapperTransform === 'translateX(20%)') {
+      const last = this.slides.pop();
+      if (last) this.slides.unshift(last);
     }
-
-    // Wrapper sofort zurück zur Mittelposition (ohne Animation)
     this.transition = 'none';
     this.wrapperTransform = 'translateX(0%)';
     this.updateVisibleSlides();
-
-    // Transition wieder aktivieren
     setTimeout(() => {
       this.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
       this.isAnimating = false;
