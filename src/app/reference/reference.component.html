@@ -10,7 +10,7 @@
     >
       
 
-      @for (slide of visibleSlides; track slide.text; let i = $index) {
+      @for (slide of visibleSlides; track slide.id; let i = $index) {
         <div class="slide" [ngClass]="slide.slideType">
           <div class="slide-card">
             <div class="slide-card-text-box">
