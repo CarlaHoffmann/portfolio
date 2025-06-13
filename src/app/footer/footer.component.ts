@@ -30,12 +30,10 @@ export class FooterComponent implements OnInit, OnDestroy {
   constructor(private translation: TranslationService) {}
 
   ngOnInit() {
-    // Sprachwechsel abonnieren
     this.langSub = this.translation.lang$.subscribe(lang => {
       this.lang = lang;
       this.t = this.translations[lang];
     });
-    // Initial setzen
     this.lang = this.translation.currentLang;
     this.t = this.translations[this.lang];
   }

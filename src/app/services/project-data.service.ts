@@ -40,7 +40,7 @@ export class ProjectDataService {
       technologies: ['HTML', 'CSS', 'Firebase', 'TypeScript'],
       description: 'A card game to play and drink with friends.',
       github: 'https://github.com/CarlaHoffmann/ringoffire-firebase',
-      link: '',
+      link: 'https://carla-hoffmann.net/ring-of-fire/index.html',
     },
   ];
 

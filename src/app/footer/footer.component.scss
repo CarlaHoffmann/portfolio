@@ -36,10 +36,6 @@
     gap: 8px;
 }
 
-// .footer-logo {
-//     display: flex;
-// }
-
 .footer-right {
     display: flex;
     flex-direction: column;
@@ -51,7 +47,7 @@ a {
     text-decoration: none;
     color: #FFFFFF;
     transition: color 0.5s ease;
-    position: relative; // wichtig für das Pseudo-Element
+    position: relative; 
 
     &::before {
         content: '';
