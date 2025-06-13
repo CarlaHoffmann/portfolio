@@ -8,8 +8,7 @@
                 (click)="openMenu()" 
                 class="menu-icon"
             />
-    
-            <!-- Overlay für das Menü, erscheint nur wenn isMenuOpen true ist -->
+
             @if (isMenuOpen) {
                 <div class="menu-overlay" (click)="closeMenu()"></div>
                 <div class="menu" (click)="$event.stopPropagation()">

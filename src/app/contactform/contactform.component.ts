@@ -32,7 +32,7 @@ export class ContactformComponent {
     options: {
       headers: {
         'Content-Type': 'text/plain',
-        responseType: 'text' as const, // added as const
+        responseType: 'text', // add as const?
       },
     },
   };

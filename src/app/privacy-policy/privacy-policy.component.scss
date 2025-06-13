@@ -64,7 +64,6 @@ a {
 .back img {
     filter: brightness(0) saturate(100%) invert(70%) sepia(67%) saturate(372%)
       hue-rotate(116deg) brightness(110%) contrast(100%);
-    //   transition: filter 0.3s ease, transform 0.3s ease-out;
     transition: filter 0.3s ease, transform 0.3s cubic-bezier(0.33, 1, 1, 1); /* easeOut timing für abruptes Ende */
 }
   
