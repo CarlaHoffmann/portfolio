@@ -27,7 +27,7 @@ export class ProjectDataService {
     },
     {
       title: 'El Pollo Loco',
-      image: './assets/img/pollo-loco.png',
+      image: './assets/img/pollo2.JPG',
       technologies: ['HTML', 'CSS', 'Firebase'],
       description:
         'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen',

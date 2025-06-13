@@ -104,60 +104,60 @@
 //   //   }
 //   // }
 
-//   onSubmit(ngForm: NgForm) {
-//     this.formSubmitted = true;
+  // onSubmit(ngForm: NgForm) {
+  //   this.formSubmitted = true;
 
-//     // Nur das jeweilige Feld ausblenden, wenn es ungültig ist
-//     if (ngForm.controls['name'] && !ngForm.controls['name'].valid) {
-//       this.showNameInput = false;
-//     }
-//     if (ngForm.controls['email'] && !ngForm.controls['email'].valid) {
-//       this.showEmailInput = false;
-//     }
-//     if (ngForm.controls['message'] && !ngForm.controls['message'].valid) {
-//       this.showMessageInput = false;
-//     }
+  //   // Nur das jeweilige Feld ausblenden, wenn es ungültig ist
+  //   if (ngForm.controls['name'] && !ngForm.controls['name'].valid) {
+  //     this.showNameInput = false;
+  //   }
+  //   if (ngForm.controls['email'] && !ngForm.controls['email'].valid) {
+  //     this.showEmailInput = false;
+  //   }
+  //   if (ngForm.controls['message'] && !ngForm.controls['message'].valid) {
+  //     this.showMessageInput = false;
+  //   }
 
-//     // Wenn irgendwas ungültig ist, abbrechen
-//     if (!ngForm.valid) {
-//       return;
-//     }
+  //   // Wenn irgendwas ungültig ist, abbrechen
+  //   if (!ngForm.valid) {
+  //     return;
+  //   }
 
-//     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-//       this.http.post(this.post.endPoint, this.post.body(this.contactData))
-//         .subscribe({
-//           next: (response) => { 
+  //   if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  //       .subscribe({
+  //         next: (response) => { 
             
-//             ngForm.resetForm({
-//               // name: '',
-//               // email: '',
-//               // message: '',
-//               policyAccepted: false
-//             });
-//             this.formSubmitted = false;
-//             this.showNameInput = true;
-//             this.showEmailInput = true;
-//             this.showMessageInput = true;
-//           },
-//           error: (error) => {
-//             console.error(error);
-//           },
-//           complete: () => console.info('send post complete'),
-//         });
-//     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-//       console.log('Test mail');
-//       ngForm.resetForm({
-//         // name: '',
-//         // email: '',
-//         // message: '',
-//         policyAccepted: false
-//       });
-//       this.formSubmitted = false;
-//       this.showNameInput = true;
-//       this.showEmailInput = true;
-//       this.showMessageInput = true;
-//     }
-//   }
+  //           ngForm.resetForm({
+  //             // name: '',
+  //             // email: '',
+  //             // message: '',
+  //             policyAccepted: false
+  //           });
+  //           this.formSubmitted = false;
+  //           this.showNameInput = true;
+  //           this.showEmailInput = true;
+  //           this.showMessageInput = true;
+  //         },
+  //         error: (error) => {
+  //           console.error(error);
+  //         },
+  //         complete: () => console.info('send post complete'),
+  //       });
+  //   } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+  //     console.log('Test mail');
+  //     ngForm.resetForm({
+  //       // name: '',
+  //       // email: '',
+  //       // message: '',
+  //       policyAccepted: false
+  //     });
+  //     this.formSubmitted = false;
+  //     this.showNameInput = true;
+  //     this.showEmailInput = true;
+  //     this.showMessageInput = true;
+  //   }
+  // }
 
 //   triggerShake(field: 'name' | 'email' | 'message') {
 //     // Setze die Variable auf true, damit die Klasse gesetzt wird
@@ -198,7 +198,7 @@
 //   }
 // }
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { SlideBtnComponent } from '../slide-btn/slide-btn.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslationService } from '../services/translation.service';
@@ -213,6 +213,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit, OnDestroy {
+  http = inject(HttpClient);
   translations = {
     en: {
       contactMe: 'Contact me',
@@ -277,7 +278,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   shakeEmail = false;
   shakeMessage = false;
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://carla-hoffmann.net/sendMail.php',
@@ -291,7 +292,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   };
 
   constructor(
-    public http: HttpClient,
+    // public http: HttpClient,
     private translation: TranslationService
   ) {}
 

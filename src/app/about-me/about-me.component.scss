@@ -13,7 +13,6 @@ $white: #ffffff;
   justify-content: center;
   box-sizing: border-box;
   font-family: "Karla", Arial, sans-serif;
-  // position: relative;
 }
 
 .inner-component-container {
@@ -21,21 +20,17 @@ $white: #ffffff;
   max-width: 1440px;
   display: flex;
   justify-content: space-between;
-  // align-items: center;
-//   position: relative;
 }
 
 .image-wrapper {
-  // position: absolute;
   top: 50%;
   right: -45%;
   width: 568px;
   height: 568px;
   transform: translateY(0%);
   opacity: 1;
-  // transition: opacity 0.5s ease;
   pointer-events: none;
-  z-index: 1; // über dem normalen Inhalt, aber unter eventuellem Overlay
+  z-index: 1; 
 }
 
 .img-shadow {
@@ -65,7 +60,6 @@ $white: #ffffff;
   background-size: cover;
   background-position: center;
   border-radius: 30px;
-  // box-shadow: 0 0 16px 0 rgba($green, 0.2); // Optional: leichter Glow
   z-index: 2;
   pointer-events: none;
 }

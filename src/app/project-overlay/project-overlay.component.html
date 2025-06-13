@@ -53,8 +53,13 @@
       </div>
     </div>
 
-
-    <img class="overlay-img" [src]="project.image" alt="" />
+    <!-- <img class="overlay-img" [src]="project.image" alt="" /> -->
+    <div
+      class="overlay-img"
+      [ngStyle]="{'background-image': 'url(' + project.image + ')'}"
+      role="img"
+      [attr.aria-label]="project.title"
+    ></div>
 
     <div class="next" (click)="next.emit()">
       <span>{{ t.nextProject }}</span>
