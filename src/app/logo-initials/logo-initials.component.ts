@@ -13,10 +13,8 @@ export class LogoInitialsComponent {
 
   scrollHome() {
     if (this.router.url === '/') {
-      // Bereits auf der Main-Page: smooth scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Navigiere zur Main-Page und scrolle nach oben, sobald Navigation fertig ist
       this.router.navigate(['/']).then(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });

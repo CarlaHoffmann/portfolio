@@ -16,10 +16,10 @@ $white: #FFFFFF;
         content: '';
         position: absolute;
         top: 0;
-        width: 120px; // Breite des Fades, nach Geschmack anpassen
+        width: 120px;
         height: 100%;
         z-index: 3;
-        pointer-events: none; // verhindert, dass der Fade Klicks blockiert
+        pointer-events: none;
     }
 
     &::before {
@@ -53,18 +53,13 @@ h2 {
 
 .slideshow {
     position: relative;
-    // width: 2880px;
     width: fit-content;
     overflow-x: hidden;
     position: relative;
-    // display: flex;
-    // justify-content: center;
 }
 
 .slides-wrapper {
-    // width: 2880px;
     width: fit-content;
-    // min-width: fit-content;
     min-height: 180px;
     margin: 32px 0;
     display: flex;
@@ -155,13 +150,11 @@ h2 {
 
 .arrow.left:hover {
     filter: brightness(0) saturate(100%) invert(64%) sepia(67%) saturate(372%) hue-rotate(116deg) brightness(97%) contrast(93%);
-    /* Das filtert das SVG auf $green (#3DCFB6) – funktioniert mit schwarzen SVGs */
     transform: scale(1.15) translateX(-8px);
 }
 
 .arrow.right:hover {
     filter: brightness(0) saturate(100%) invert(64%) sepia(67%) saturate(372%) hue-rotate(116deg) brightness(97%) contrast(93%);
-    /* Das filtert das SVG auf $green (#3DCFB6) – funktioniert mit schwarzen SVGs */
     transform: scale(1.15) translateX(8px);
 }
 
@@ -220,5 +213,17 @@ h2 {
         position: absolute;
         top: 20px;
         left: 750px;
+    }
+}
+
+@media (max-width: 420px) {
+    .slide {
+        width: calc(100vw - 48px);
+        height: unset;
+        min-height: 360px;
+    }
+
+    .qoutes {
+        left: 40%;
     }
 }
