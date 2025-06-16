@@ -23,6 +23,12 @@ h3 {
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    background-color: #1C1C1C;
+}
+
+.legal-notice-content {
+    display: flex;
     justify-content: center;
 }
 
@@ -32,7 +38,7 @@ h3 {
     min-height: 100%;
     padding: 24px 96px;
     box-sizing: border-box;
-    background-color: #1C1C1C;
+    padding-bottom: 80px;
 }
 
 .legal-notice {
@@ -67,7 +73,7 @@ a {
     transform: translate(-4px, 0px) scale(1.08);
 }
 
-.legal-notice-content {
+.legal-notice-text {
     display: flex;
     flex-direction: column;
     gap: 32px;

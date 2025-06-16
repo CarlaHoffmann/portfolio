@@ -1,52 +1,58 @@
 <div class="legal-notice-page">
-    <div class="legal-notice-container">
-        <div class="legal-notice">
-            <a class="back" routerLink="">
-                <img src="./assets/icons/arrow-left.svg" alt="">
-                {{ t.back }}
-            </a>
-        
-            <h1>{{ t.legalNotice }}</h1>
-            <div class="legal-notice-content">
-                <h2>{{ t.imprint }}</h2>
+    <app-header></app-header>
 
-                <div class="imprint-section">
-                    <h3>{{ t.provider }}</h3>
-                    <p>
-                        Carla Hoffmann <br>
-                        Dürerstr. 20 <br>
-                        09126 Chemnitz
-                    </p>
-                </div>
-                
+    <div class="legal-notice-content">
+        <div class="legal-notice-container">
+            <div class="legal-notice">
+                <!-- <a class="back" routerLink="">
+                    <img src="./assets/icons/arrow-left.svg" alt="">
+                    {{ t.back }}
+                </a> -->
+            
+                <h1>{{ t.legalNotice }}</h1>
+                <div class="legal-notice-text">
+                    <h2>{{ t.imprint }}</h2>
     
-                <div class="imprint-section">
-                    <h3>{{ t.contact }}</h3>
-                    <p>
-                        {{ t.email }}: carlahoffmann&#64;gmx.de<br>
-                        {{ t.phone }}: 015125626836
-                    </p>
+                    <div class="imprint-section">
+                        <h3>{{ t.provider }}</h3>
+                        <p>
+                            Carla Hoffmann <br>
+                            Dürerstr. 20 <br>
+                            09126 Chemnitz
+                        </p>
+                    </div>
+                    
+        
+                    <div class="imprint-section">
+                        <h3>{{ t.contact }}</h3>
+                        <p>
+                            {{ t.email }}: carlahoffmann&#64;gmx.de<br>
+                            {{ t.phone }}: 015125626836
+                        </p>
+                    </div>
+                    
+                    <div class="imprint-section">
+                        <h3>{{ t.disclaimer }}</h3>
+                        <p>{{ t.disclaimerText }}</p>
+                    </div>
+                    
+                    <div class="imprint-section">
+                        <h3>{{ t.copyright }}</h3>
+                        <p>{{ t.copyrightText }}</p>
+                    </div>
+                    
+                    <p>{{ t.date }}</p>
+                    
+                    <div class="footer">
+                        <p [innerHTML]="t.createdWith">Created with the kind support of <a href="https://www.dieter-datenschutz.de/?_gl=1*3cdztl*_ga*MTIxMzE0OTgzOC4xNzQ5MDM1ODcx*_ga_7CBXCBBGR5*czE3NDkwMzU4NzAkbzEkZzEkdDE3NDkwMzU5OTQkajgkbDAkaDA.*_gcl_au*NzI0MTU2Mi4xNzQ5MDM1ODcxLjE1NTcxMDMxMzMuMTc0OTAzNTk1Mi4xNzQ5MDM1OTUy"> Dieter does data protection</a></p>
+                    
+                        <p>{{ t.dieterLegal }}</p>
+                    </div>
                 </div>
-                
-                <div class="imprint-section">
-                    <h3>{{ t.disclaimer }}</h3>
-                    <p>{{ t.disclaimerText }}</p>
-                </div>
-                
-                <div class="imprint-section">
-                    <h3>{{ t.copyright }}</h3>
-                    <p>{{ t.copyrightText }}</p>
-                </div>
-                
-                <p>{{ t.date }}</p>
-                
-                <div class="footer">
-                    <p [innerHTML]="t.createdWith">Created with the kind support of <a href="https://www.dieter-datenschutz.de/?_gl=1*3cdztl*_ga*MTIxMzE0OTgzOC4xNzQ5MDM1ODcx*_ga_7CBXCBBGR5*czE3NDkwMzU4NzAkbzEkZzEkdDE3NDkwMzU5OTQkajgkbDAkaDA.*_gcl_au*NzI0MTU2Mi4xNzQ5MDM1ODcxLjE1NTcxMDMxMzMuMTc0OTAzNTk1Mi4xNzQ5MDM1OTUy"> Dieter does data protection</a></p>
-                
-                    <p>{{ t.dieterLegal }}</p>
-                </div>
+    
             </div>
-
         </div>
     </div>
+    
+    <app-footer></app-footer>
 </div>

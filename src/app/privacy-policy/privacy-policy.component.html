@@ -1,230 +1,237 @@
 <div class="privacy-policy-page">
-    <div class="privacy-policy-container">
-        <div class="privacy-policy">
-            <a class="back" routerLink="">
-                <img src="./assets/icons/arrow-left.svg" alt="">
-                {{ t.back }}
-            </a>
-    
-            <h1>{{ t.privacyPolicy }}</h1>
-            <div class="privacy-policy-content">
-                <p>{{ t.lastUpdated }}</p>
-                <p>{{ t.intro1 }}</p>
-                <p>{{ t.intro2 }}</p>
-    
-                <div class="privacy-section">
-                    <h2>{{ t.interpretationAndDefinitions }}</h2>
-                    <h3>{{ t.interpretation }}</h3>
-                    <p>{{ t.interpretationText }}</p>
-                
-                    <h3>{{ t.definitions }}</h3>
-                    <p>{{ t.definitionsText }}</p>
-    
-                    <ul>
-                        <li>
-                            <p [innerHTML]="t.account"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.affiliate"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.company"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.cookies"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.country"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.device"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.personalData"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.service"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.serviceProvider"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.usageData"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.website"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.you"></p>
-                        </li>
-                    </ul>
-                </div>                
-    
-                <div class="privacy-section">
-                    <h2>{{ t.collectingAndUsing }}</h2>
-                    <h3>{{ t.typesOfData }}</h3>
-                    <h4>{{ t.personalDataSection }}</h4>
-                    <p>{{ t.personalDataText }}</p>
-    
-                    <ul>
-                        <li>{{ t.email }}</li>
-                        <li>{{ t.name }}</li>
-                        <li>{{ t.usageDataShort }}</li>
-                    </ul>            
-                
-                    <h4>{{ t.usageDataSection }}</h4>
-                    <p>{{ t.usageDataText }}</p>
-                    <p>{{ t.usageDataDetails1 }}</p>
-                    <p>{{ t.usageDataDetails2 }}</p>
-                    <p>{{ t.usageDataDetails3 }}</p>
-                
-                    <h4>{{ t.trackingCookies }}</h4>
-                    <p>{{ t.trackingCookiesText }}</p>
-        
-                    <ul>
-                        <li><span [innerHTML]="t.browserCookies"></span></li>
-                        <li><span [innerHTML]="t.webBeacons"></span></li>
-                    </ul>
-        
-                    <p>{{ t.cookiesTypes }}</p>
-        
-                    <p>{{ t.cookiesPurpose }}</p>
-        
-                    <ul>
-                        <li>
-                            <p [innerHTML]="t.necessaryCookies"></p>
-                            <p>{{ t.necessaryCookiesType }}</p>
-                            <p>{{ t.necessaryCookiesAdmin }}</p>
-                            <p>{{ t.necessaryCookiesPurpose }}</p>
-                        </li>
-        
-                        <li>
-                            <p [innerHTML]="t.acceptanceCookies"></p>
-                            <p>{{ t.acceptanceCookiesType }}</p>
-                            <p>{{ t.acceptanceCookiesAdmin }}</p>
-                            <p>{{ t.acceptanceCookiesPurpose }}</p>
-                        </li>
-        
-                        <li>
-                            <p [innerHTML]="t.functionalityCookies"></p>
-                            <p>{{ t.functionalityCookiesType }}</p>
-                            <p>{{ t.functionalityCookiesAdmin }}</p>
-                            <p>{{ t.functionalityCookiesPurpose }}</p>
-                        </li>
-                    </ul>
-                    
-                    <p>{{ t.moreAboutCookies }}</p>
-                    
-        
-                    <h3>{{ t.useData_headline }}</h3>
-                    <p>{{ t.useData_intro }}</p>
-        
-                    <ul>
-                        <li>
-                            <p [innerHTML]="t.useData_provide"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.useData_account"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.useData_contract"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.useData_contact"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.useData_news"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.useData_requests"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.useData_business"></p>
-                        </li>
-                        <li>
-                            <p [innerHTML]="t.useData_other"></p>
-                        </li>
-                    </ul>
-        
-                    <!-- We may share Your personal information in the following situations:
-        
-                    With Service Providers: We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.
-                    For business transfers: We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.
-                    With Affiliates: We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.
-                    With business partners: We may share Your information with Our business partners to offer You certain products, services or promotions.
-                    With other users: when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.
-                    With Your consent: We may disclose Your personal information for any other purpose with Your consent. -->
-                
-                    <h3>{{ t.retention_headline }}</h3>
-                    <p>{{ t.retention_p1 }}</p>
-                    <p>{{ t.retention_p2 }}</p>        
-        
-                    <h3>{{ t.transfer_headline }}</h3>
-                    <p>{{ t.transfer_p1 }}</p>
-                    <p>{{ t.transfer_p2 }}</p>
-                    <p>{{ t.transfer_p3 }}</p>        
-        
-                    <h3>{{ t.delete_headline }}</h3>
-                    <p>{{ t.delete_p1 }}</p>        
-                    <p>{{ t.delete_p2 }}</p>      
-                    <p>{{ t.delete_p3 }}</p>
-                    <p>{{ t.delete_p4 }}</p>
-                
-                    <h3>{{ t.disclosure_headline }}</h3>
-                    <h4>{{ t.disclosure_business }}</h4>
-                    <p>{{ t.disclosure_business_p }}</p>
-        
-                    <h4>{{ t.disclosure_law }}</h4>
-                    <p>{{ t.disclosure_law_p }}</p>
-        
-                    <h4>{{ t.disclosure_other }}</h4>
-                    <p>{{ t.disclosure_other_p }}</p>
-        
-                    <ul>
-                        <li>{{ t.disclosure_list1 }}</li>
-                        <li>{{ t.disclosure_list2 }}</li>
-                        <li>{{ t.disclosure_list3 }}</li>
-                        <li>{{ t.disclosure_list4 }}</li>
-                        <li>{{ t.disclosure_list5 }}</li>
-                    </ul>
-            
-                    <h3>{{ t.security_headline }}</h3>
-                    <p>{{ t.security_p }}</p>
-                </div>
+    <app-header></app-header>
 
-                <div class="privacy-section">
-                    <h2>{{ t.children_headline }}</h2>
-                    <p>{{ t.children_p1 }}</p>        
-                    <p>{{ t.children_p2 }}</p>
-                </div>
-                
-                <div class="privacy-section">
-                    <h2>{{ t.links_headline }}</h2>
-                    <p>{{ t.links_p1 }}</p>
-                    <p>{{ t.links_p2 }}</p>
-                </div>
-                
-                <div class="privacy-section">
-                    <h2>{{ t.changes_headline }}</h2>
-                    <p>{{ t.changes_p1 }}</p>        
-                    <p>{{ t.changes_p2 }}</p>        
-                    <p>{{ t.changes_p3 }}</p>
-                </div>
-                
-                <div class="privacy-section">
-                    <h2>{{ t.contact_headline }}</h2>
-                    <p>{{ t.contact_p }}</p>
+    <div class="privacy-policy-content">
+        <div class="privacy-policy-container">
+            <div class="privacy-policy">
+                <!-- <a class="back" routerLink="">
+                    <img src="./assets/icons/arrow-left.svg" alt="">
+                    {{ t.back }}
+                </a> -->
         
-                    <ul>
-                        <li [innerHTML]="t.contact_mail"></li>
-                    </ul>
-                </div>
+                <h1>{{ t.privacyPolicy }}</h1>
+                <div class="privacy-policy-text">
+                    <p>{{ t.lastUpdated }}</p>
+                    <p>{{ t.intro1 }}</p>
+                    <p>{{ t.intro2 }}</p>
+        
+                    <div class="privacy-section">
+                        <h2>{{ t.interpretationAndDefinitions }}</h2>
+                        <h3>{{ t.interpretation }}</h3>
+                        <p>{{ t.interpretationText }}</p>
+                    
+                        <h3>{{ t.definitions }}</h3>
+                        <p>{{ t.definitionsText }}</p>
+        
+                        <ul>
+                            <li>
+                                <p [innerHTML]="t.account"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.affiliate"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.company"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.cookies"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.country"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.device"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.personalData"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.service"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.serviceProvider"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.usageData"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.website"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.you"></p>
+                            </li>
+                        </ul>
+                    </div>                
+        
+                    <div class="privacy-section">
+                        <h2>{{ t.collectingAndUsing }}</h2>
+                        <h3>{{ t.typesOfData }}</h3>
+                        <h4>{{ t.personalDataSection }}</h4>
+                        <p>{{ t.personalDataText }}</p>
+        
+                        <ul>
+                            <li>{{ t.email }}</li>
+                            <li>{{ t.name }}</li>
+                            <li>{{ t.usageDataShort }}</li>
+                        </ul>            
+                    
+                        <h4>{{ t.usageDataSection }}</h4>
+                        <p>{{ t.usageDataText }}</p>
+                        <p>{{ t.usageDataDetails1 }}</p>
+                        <p>{{ t.usageDataDetails2 }}</p>
+                        <p>{{ t.usageDataDetails3 }}</p>
+                    
+                        <h4>{{ t.trackingCookies }}</h4>
+                        <p>{{ t.trackingCookiesText }}</p>
+            
+                        <ul>
+                            <li><span [innerHTML]="t.browserCookies"></span></li>
+                            <li><span [innerHTML]="t.webBeacons"></span></li>
+                        </ul>
+            
+                        <p>{{ t.cookiesTypes }}</p>
+            
+                        <p>{{ t.cookiesPurpose }}</p>
+            
+                        <ul>
+                            <li>
+                                <p [innerHTML]="t.necessaryCookies"></p>
+                                <p>{{ t.necessaryCookiesType }}</p>
+                                <p>{{ t.necessaryCookiesAdmin }}</p>
+                                <p>{{ t.necessaryCookiesPurpose }}</p>
+                            </li>
+            
+                            <li>
+                                <p [innerHTML]="t.acceptanceCookies"></p>
+                                <p>{{ t.acceptanceCookiesType }}</p>
+                                <p>{{ t.acceptanceCookiesAdmin }}</p>
+                                <p>{{ t.acceptanceCookiesPurpose }}</p>
+                            </li>
+            
+                            <li>
+                                <p [innerHTML]="t.functionalityCookies"></p>
+                                <p>{{ t.functionalityCookiesType }}</p>
+                                <p>{{ t.functionalityCookiesAdmin }}</p>
+                                <p>{{ t.functionalityCookiesPurpose }}</p>
+                            </li>
+                        </ul>
+                        
+                        <p>{{ t.moreAboutCookies }}</p>
+                        
+            
+                        <h3>{{ t.useData_headline }}</h3>
+                        <p>{{ t.useData_intro }}</p>
+            
+                        <ul>
+                            <li>
+                                <p [innerHTML]="t.useData_provide"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.useData_account"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.useData_contract"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.useData_contact"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.useData_news"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.useData_requests"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.useData_business"></p>
+                            </li>
+                            <li>
+                                <p [innerHTML]="t.useData_other"></p>
+                            </li>
+                        </ul>
+            
+                        <!-- We may share Your personal information in the following situations:
+            
+                        With Service Providers: We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.
+                        For business transfers: We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.
+                        With Affiliates: We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.
+                        With business partners: We may share Your information with Our business partners to offer You certain products, services or promotions.
+                        With other users: when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.
+                        With Your consent: We may disclose Your personal information for any other purpose with Your consent. -->
+                    
+                        <h3>{{ t.retention_headline }}</h3>
+                        <p>{{ t.retention_p1 }}</p>
+                        <p>{{ t.retention_p2 }}</p>        
+            
+                        <h3>{{ t.transfer_headline }}</h3>
+                        <p>{{ t.transfer_p1 }}</p>
+                        <p>{{ t.transfer_p2 }}</p>
+                        <p>{{ t.transfer_p3 }}</p>        
+            
+                        <h3>{{ t.delete_headline }}</h3>
+                        <p>{{ t.delete_p1 }}</p>        
+                        <p>{{ t.delete_p2 }}</p>      
+                        <p>{{ t.delete_p3 }}</p>
+                        <p>{{ t.delete_p4 }}</p>
+                    
+                        <h3>{{ t.disclosure_headline }}</h3>
+                        <h4>{{ t.disclosure_business }}</h4>
+                        <p>{{ t.disclosure_business_p }}</p>
+            
+                        <h4>{{ t.disclosure_law }}</h4>
+                        <p>{{ t.disclosure_law_p }}</p>
+            
+                        <h4>{{ t.disclosure_other }}</h4>
+                        <p>{{ t.disclosure_other_p }}</p>
+            
+                        <ul>
+                            <li>{{ t.disclosure_list1 }}</li>
+                            <li>{{ t.disclosure_list2 }}</li>
+                            <li>{{ t.disclosure_list3 }}</li>
+                            <li>{{ t.disclosure_list4 }}</li>
+                            <li>{{ t.disclosure_list5 }}</li>
+                        </ul>
                 
-                <div class="footer">
-                    <p [innerHTML]="t.footer"></p>
-                </div>
-            </div>
+                        <h3>{{ t.security_headline }}</h3>
+                        <p>{{ t.security_p }}</p>
+                    </div>
     
+                    <div class="privacy-section">
+                        <h2>{{ t.children_headline }}</h2>
+                        <p>{{ t.children_p1 }}</p>        
+                        <p>{{ t.children_p2 }}</p>
+                    </div>
+                    
+                    <div class="privacy-section">
+                        <h2>{{ t.links_headline }}</h2>
+                        <p>{{ t.links_p1 }}</p>
+                        <p>{{ t.links_p2 }}</p>
+                    </div>
+                    
+                    <div class="privacy-section">
+                        <h2>{{ t.changes_headline }}</h2>
+                        <p>{{ t.changes_p1 }}</p>        
+                        <p>{{ t.changes_p2 }}</p>        
+                        <p>{{ t.changes_p3 }}</p>
+                    </div>
+                    
+                    <div class="privacy-section">
+                        <h2>{{ t.contact_headline }}</h2>
+                        <p>{{ t.contact_p }}</p>
+            
+                        <ul>
+                            <li [innerHTML]="t.contact_mail"></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer">
+                        <p [innerHTML]="t.footer"></p>
+                    </div>
+                </div>
+        
+            </div>
         </div>
     </div>
+    
+    <app-footer></app-footer>
 </div>
+    

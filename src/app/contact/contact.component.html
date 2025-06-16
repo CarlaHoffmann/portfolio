@@ -30,6 +30,7 @@
                             required
                             [style.display]="showNameInput ? 'block' : 'none'"
                             [class.shake]="shakeName"
+                            (blur)="validateSingleField('name', name)"
                         >
                         
                         @if (!name.valid && !name.disabled && formSubmitted && !showNameInput) {
@@ -54,6 +55,7 @@
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                             [style.display]="showEmailInput ? 'block' : 'none'"
                             [class.shake]="shakeEmail"
+                            (blur)="validateSingleField('email', email)"
                         >
                 
                         @if (!email.valid && !email.disabled && formSubmitted && !showEmailInput) {
@@ -77,6 +79,7 @@
                             required
                             [style.display]="showMessageInput ? 'block' : 'none'"
                             [class.shake]="shakeMessage"
+                            (blur)="validateSingleField('message', message)"
                         >
                         </textarea>
                         

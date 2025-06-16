@@ -117,7 +117,6 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   onSubmit(ngForm: NgForm) {
     this.formSubmitted = true;
-    this.validateFields(ngForm);
 
     if (!ngForm.valid) {
       return;
@@ -132,10 +131,19 @@ export class ContactComponent implements OnInit, OnDestroy {
     }
   }
 
-  private validateFields(ngForm: NgForm) {
-    this.showNameInput = !(ngForm.controls['name'] && !ngForm.controls['name'].valid);
-    this.showEmailInput = !(ngForm.controls['email'] && !ngForm.controls['email'].valid);
-    this.showMessageInput = !(ngForm.controls['message'] && !ngForm.controls['message'].valid);
+  validateSingleField(field: 'name' | 'email' | 'message', control: any) {
+    if (field === 'name') {
+      this.showNameInput = !!(control && control.valid);
+      this.formSubmitted = true;
+    }
+    if (field === 'email') {
+      this.showEmailInput = !!(control && control.valid);
+      this.formSubmitted = true;
+    }
+    if (field === 'message') {
+      this.showMessageInput = !!(control && control.valid);
+      this.formSubmitted = true;
+    }
   }
 
   private resetForm(ngForm: NgForm) {
