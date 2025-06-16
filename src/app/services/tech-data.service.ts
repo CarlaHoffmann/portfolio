@@ -49,12 +49,12 @@ export class TechDataService {
             description: '',
         },
         {
-            title: 'GIT',
+            title: 'Git',
             image: './assets/tech-icons/git.svg',
             description: '',
         },
         {
-            title: 'Rest-Api',
+            title: 'REST-API',
             image: './assets/tech-icons/rest-api.svg',
             description: '',
         },

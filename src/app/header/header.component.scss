@@ -7,17 +7,27 @@ a {
     text-decoration: none;
 }
 
-.header-container { 
+.background {
+    width: 100%;
     height: 100vh;
-    padding-left: 96px;
-    padding-right: 96px;
-    box-sizing: border-box;
-    position: relative;
+
     background-image: linear-gradient(
         to left bottom,
         #08463B 10%,
         #1C1C1C 60%
     );
+    display: flex;
+    justify-content: center;
+}
+
+.header-container { 
+    width: 100%;
+    // max-width: 1440px;
+    height: 100%;
+    // padding-left: 96px;
+    // padding-right: 96px;
+    // box-sizing: border-box;
+    // position: relative;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -46,6 +56,20 @@ a {
 
 .mobile-only {
     display: none;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    padding-left: 96px;
+    padding-right: 96px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .header {

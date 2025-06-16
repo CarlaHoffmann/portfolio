@@ -1,9 +1,6 @@
 .footer-container {
     width: 100%;
-    // max-width: 1440px;
     background-color: #1C1C1C;
-    padding-left: 96px;
-    padding-right: 96px;
     padding-bottom: 48px;
     box-sizing: border-box;
     font-family: 'Karla', Arial, sans-serif;
@@ -16,6 +13,10 @@
 
 .inner-footer-container {
     width: 100%;
+    max-width: 1440px;
+    padding-left: 96px;
+    padding-right: 96px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
 }
