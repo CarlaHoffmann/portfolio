@@ -1,7 +1,6 @@
 .btn {
     position: relative;
     overflow: hidden;
-    // width: 180px;
     height: 48px;
     background-color: transparent;
     border: 1px solid #FFFFFF;
@@ -14,7 +13,6 @@
   }
   
   .btn-text {
-    // position: absolute;
     left: 0;
     width: 100%;
     text-align: center;
@@ -23,8 +21,6 @@
     color: #ffffff;
     pointer-events: none;
     font-size: 20px;
-    // white-space: nowrap;
-    // user-select: none;
     transition: color 500ms linear;
   }
 

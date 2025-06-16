@@ -25,7 +25,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
       intro: "Hallo, ich bin Carla! Programmieren begeistert mich, weil es sowohl logisch als auch kreativ ist. Ich liebe es, Ideen zum Leben zu erwecken und sofort Ergebnisse zu sehen.",
       based: "Ich lebe in Chemnitz und möchte gerne hier bleiben. Die Flexibilität von Remote-Arbeit schätze ich sehr und bin offen für diese Möglichkeit, ich bespreche aber auch gerne andere Arbeitsmodelle.",
       openMinded: "Ich bin immer neugierig auf neue Technologien und halte meine Fähigkeiten gerne aktuell. Offenheit und Anpassungsfähigkeit sind mir wichtig.",
-      problemSolving: "Herausforderungen gehe ich analytisch, kreativ und ausdauernd an. Jedes Problem ist für mich eine Lernchance und ich arbeite gern im Team an effizienten Lösungen.",
+      problemSolving: "Herausforderungen gehe ich analytisch, kreativ und ausdauernd an. Jedes Problem ist für mich eine Lernchance und ich arbeite gerne im Team an effizienten Lösungen.",
     }
   };
 

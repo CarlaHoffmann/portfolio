@@ -23,7 +23,6 @@
               <div class="overlay-tech-icon">
                   <img [src]="getTechByTitle(tech)?.image" [alt]="tech"/>
                   {{ tech }}
-                  <!-- <span *ngIf="tech !== project.technologies.at(-1)"> '' </span> -->
               </div>
             }
           </div>
@@ -53,7 +52,6 @@
       </div>
     </div>
 
-    <!-- <img class="overlay-img" [src]="project.image" alt="" /> -->
     <div
       class="overlay-img"
       [ngStyle]="{'background-image': 'url(' + project.image + ')'}"

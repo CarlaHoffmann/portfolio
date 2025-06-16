@@ -2,6 +2,11 @@
     color: #3BCFB6;
 }
 
+* {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
 a {
     text-decoration: none;
 }
@@ -107,8 +112,7 @@ h3 {
 
 .inner-tech-icon-container {
     width: 100%;
-    // position: relative;
-    top: 48px;
+    margin-top: 48px;
     display: flex;
     flex-wrap: wrap;
     gap: 72px;
@@ -147,7 +151,7 @@ img {
 
 .tech-dialog {
     position: absolute;
-    top: -100%; // unterhalb des Bildes, ggf. anpassen
+    top: -100%; 
     left: 106%;
     transform: translateX(-50%);
     background: #fff;
@@ -192,6 +196,7 @@ img {
 
     .inner-tech-icon-container {
         width: fit-content;
+        margin-top: 0;
         gap: 40px;
     }
 }

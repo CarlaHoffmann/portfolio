@@ -1,7 +1,7 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../services/translation.service';
-import { Subscription, map } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-reference',
@@ -11,7 +11,6 @@ import { Subscription, map } from 'rxjs';
   styleUrl: './reference.component.scss'
 })
 export class ReferenceComponent implements OnInit, OnDestroy {
-  // translation = inject(TranslationService);
 
   slidesEn = [
     { id: 0, text: "Carla is a fantastic team player!", author: "Anna", position: "Frontend Developer" },
@@ -50,17 +49,12 @@ export class ReferenceComponent implements OnInit, OnDestroy {
 
   constructor(private translation: TranslationService) {}
 
-  // ngOnInit() {
-  //   this.updateVisibleSlides();
-  // }
   ngOnInit() {
-    // Reaktiv auf Sprachwechsel reagieren
     this.langSub = this.translation.lang$.subscribe(lang => {
       this.lang = lang;
       this.slides = lang === 'de' ? this.slidesDe : this.slidesEn;
       this.updateVisibleSlides();
     });
-    // Initial setzen
     this.lang = this.translation.currentLang;
     this.slides = this.lang === 'de' ? this.slidesDe : this.slidesEn;
     this.updateVisibleSlides();
@@ -71,41 +65,35 @@ export class ReferenceComponent implements OnInit, OnDestroy {
   }
 
   get t() {
-    // return this.translations[this.translation.lang()];
     return this.translations[this.lang];
   }
-
-  // get slides() {
-  //   return this.translation.lang() === 'de' ? this.slidesDe : this.slidesEn;
-  // }
 
   get currentSlideId() {
     return this.visibleSlides[2]?.id;
   }
 
-  updateVisibleSlides() {
-    // Zeige immer 5 Slides (2 vor, current, 2 nach)
-    const arr = this.slides;
-    const visible = 5;
+  private getSlideType(index: number, half: number): string {
+    if (index === half) return 'current';
+    if (index < half) return `prev${half - index}`;
+    return `next${index - half}`;
+  }
+
+  private buildVisibleSlides(arr: any[], visible: number): any[] {
     const half = Math.floor(visible / 2);
-    const result = [];
-    for (let i = 0; i < visible; i++) {
-      let slideType = '';
-      if (i === half) slideType = 'current';
-      else if (i < half) slideType = `prev${half - i}`;
-      else slideType = `next${i - half}`;
-      result.push({
-        ...arr[i % arr.length],
-        slideType
-      });
-    }
-    this.visibleSlides = result;
+    return Array.from({ length: visible }, (_, i) => ({
+      ...arr[i % arr.length],
+      slideType: this.getSlideType(i, half)
+    }));
+  }
+
+  updateVisibleSlides() {
+    this.visibleSlides = this.buildVisibleSlides(this.slides, 5);
   }
 
   goPrev() {
     if (this.isAnimating) return;
     this.isAnimating = true;
-    this.wrapperTransform = 'translateX(20%)'; // nach rechts animieren
+    this.wrapperTransform = 'translateX(20%)'; 
   }
 
   goNext() {
@@ -114,50 +102,17 @@ export class ReferenceComponent implements OnInit, OnDestroy {
     this.wrapperTransform = 'translateX(-20%)';
   }
 
-  // onTransitionEnd() {
-  //   if (!this.isAnimating) return;
-
-  //   // Array-Rotation erst nach Animation!
-  //   if (this.wrapperTransform === 'translateX(-20%)') { // Next
-  //     if (this.slidesEn.length > 0) {
-  //       const first = this.slidesEn.shift();
-  //       if (first) this.slidesEn.push(first);
-  //     }
-  //     if (this.slidesDe.length > 0) {
-  //       const first = this.slidesDe.shift();
-  //       if (first) this.slidesDe.push(first);
-  //     }
-  //   } else if (this.wrapperTransform === 'translateX(20%)') { // Prev
-  //     if (this.slidesEn.length > 0) {
-  //       const last = this.slidesEn.pop();
-  //       if (last) this.slidesEn.unshift(last);
-  //     }
-  //     if (this.slidesDe.length > 0) {
-  //       const last = this.slidesDe.pop();
-  //       if (last) this.slidesDe.unshift(last);
-  //     }
-  //   }
-
-  //   // Wrapper sofort zurück zur Mittelposition (ohne Animation)
-  //   this.transition = 'none';
-  //   this.wrapperTransform = 'translateX(0%)';
-  //   this.updateVisibleSlides();
-
-  //   // Transition wieder aktivieren
-  //   setTimeout(() => {
-  //     this.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
-  //     this.isAnimating = false;
-  //   }, 20);
-  // }
-  onTransitionEnd() {
-    if (!this.isAnimating) return;
-    if (this.wrapperTransform === 'translateX(-20%)') {
+  private rotateSlides(direction: 'next' | 'prev') {
+    if (direction === 'next') {
       const first = this.slides.shift();
       if (first) this.slides.push(first);
-    } else if (this.wrapperTransform === 'translateX(20%)') {
+    } else if (direction === 'prev') {
       const last = this.slides.pop();
       if (last) this.slides.unshift(last);
     }
+  }
+
+  private resetAnimation() {
     this.transition = 'none';
     this.wrapperTransform = 'translateX(0%)';
     this.updateVisibleSlides();
@@ -165,5 +120,15 @@ export class ReferenceComponent implements OnInit, OnDestroy {
       this.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
       this.isAnimating = false;
     }, 20);
+  }
+
+  onTransitionEnd() {
+    if (!this.isAnimating) return;
+    if (this.wrapperTransform === 'translateX(-20%)') {
+      this.rotateSlides('next');
+    } else if (this.wrapperTransform === 'translateX(20%)') {
+      this.rotateSlides('prev');
+    }
+    this.resetAnimation();
   }
 }

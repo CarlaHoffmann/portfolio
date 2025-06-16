@@ -47,8 +47,8 @@ export class MenuMobileComponent implements OnInit, OnDestroy {
     this.langSub?.unsubscribe();
   }
 
-  openMenu() {
-    this.isMenuOpen = true;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
   
   closeMenu() {

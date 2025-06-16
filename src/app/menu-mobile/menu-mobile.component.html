@@ -5,12 +5,11 @@
             <img 
                 src="./assets/icons/menu-icon.svg" 
                 alt="Open menu" 
-                (click)="openMenu()" 
+                (click)="toggleMenu()" 
                 class="menu-icon"
             />
 
             @if (isMenuOpen) {
-                <div class="menu-overlay" (click)="closeMenu()"></div>
                 <div class="menu" (click)="$event.stopPropagation()">
                     <a href="#about-me" (click)="closeMenu()">{{ t.aboutMe }}</a>
                     <a href="#skills" (click)="closeMenu()">{{ t.skills }}</a>

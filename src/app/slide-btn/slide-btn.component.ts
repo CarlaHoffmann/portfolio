@@ -10,14 +10,13 @@ import { Component, Input } from '@angular/core';
 })
 export class SlideBtnComponent {
   @Input() text = '';
-  // @Input() disabled = false;
 
   private _disabled = false;
   @Input() 
   set disabled(value: boolean) {
     this._disabled = value;
     if (value) {
-      this.stopAnimation(true); // true = durch Disabled-Änderung gestoppt
+      this.stopAnimation(true);
     }
   }
   get disabled() {
@@ -30,65 +29,35 @@ export class SlideBtnComponent {
   showStatic = true;
   showAnimated = false;
 
-  staticStyle = {
-    transform: 'translateX(0%)',
-    opacity: '1',
-    transition: 'none'
-  };
+  staticStyle = this.getInitialStaticStyle();
+  animatedStyle = this.getInitialAnimatedStyle();
 
-  animatedStyle = {
-    transform: 'translateX(100%)',
-    opacity: '1',
-    transition: 'none'
-  };
-
-  private duration = 2000; // ms, Geschwindigkeit des Durchflugs
+  private duration = 2000; 
   private running = false;
   private timeout1: any;
   private timeout2: any;
   private timeout3: any;
 
   startAnimation() {
-    if (this.disabled) return;
-    if (this.running) return;
+    if (this.disabled || this.running) return;
     this.running = true;
-
-    this.borderColor = '#3DCFB6';
-    this.textColor = '#3DCFB6';
-
-    // 1. Statisches Element nach links raus
-    this.staticStyle = {
-      transform: 'translateX(-100%)',
-      opacity: '0',
-      transition: `transform 500ms linear, opacity 500ms linear, color 500ms linear`
-    };
+    this.setActiveColors();
+    this.staticStyle = this.getHiddenStaticStyle();
 
     this.timeout1 = setTimeout(() => {
       this.showStatic = false;
       this.showAnimated = true;
       this.loopAnimated();
-    }, 500); // Zeit wie oben gewählt
+    }, 500);
   }
 
   private loopAnimated() {
     if (!this.running) return;
+    this.animatedStyle = this.getInitialAnimatedStyle();
 
-    // Von rechts nach links animieren
-    this.animatedStyle = {
-      transform: 'translateX(100%)',
-      opacity: '1',
-      transition: 'none'
-    };
-
-    // Kleines Timeout, damit der Browser das "none" registriert
     setTimeout(() => {
-      this.animatedStyle = {
-        transform: 'translateX(-100%)',
-        opacity: '1',
-        transition: `transform ${this.duration}ms linear`
-      };
+      this.animatedStyle = this.getAnimatedLoopStyle();
 
-      // Nach der Animation sofort wieder von rechts starten
       this.timeout2 = setTimeout(() => {
         if (this.running) {
           this.loopAnimated();
@@ -99,23 +68,13 @@ export class SlideBtnComponent {
 
   stopAnimation(fromDisabled = false) {
     if (!this.running) return;
-    // if (this.disabled) return;
     this.running = false;
-    clearTimeout(this.timeout1);
-    clearTimeout(this.timeout2);
-    clearTimeout(this.timeout3);
+    this.clearAllTimeouts();
+    this.resetColors();
     this.showStatic = true;
     this.showAnimated = false;
+    this.staticStyle = this.getHiddenStaticStyle();
 
-    this.borderColor = '#FFFFFF';
-    this.textColor = '#FFFFFF';
-
-    this.staticStyle = {
-      transform: 'translateX(-100%)',
-      opacity: '1',
-      transition: 'none'
-    }; 
-    
     setTimeout(() => {
       this.staticStyle = {
         transform: 'translateX(0%)',
@@ -123,5 +82,53 @@ export class SlideBtnComponent {
         transition: `transform 200ms linear, opacity 500ms linear`
       };
     }, 20);
+  }
+
+  private getInitialStaticStyle() {
+    return {
+      transform: 'translateX(0%)',
+      opacity: '1',
+      transition: 'none'
+    };
+  }
+
+  private getHiddenStaticStyle() {
+    return {
+      transform: 'translateX(-100%)',
+      opacity: '1',
+      transition: `transform 500ms linear, opacity 500ms linear, color 500ms linear`
+    };
+  }
+
+  private getInitialAnimatedStyle() {
+    return {
+      transform: 'translateX(100%)',
+      opacity: '1',
+      transition: 'none'
+    };
+  }
+
+  private getAnimatedLoopStyle() {
+    return {
+      transform: 'translateX(-100%)',
+      opacity: '1',
+      transition: `transform ${this.duration}ms linear`
+    };
+  }
+
+  private setActiveColors() {
+    this.borderColor = '#3DCFB6';
+    this.textColor = '#3DCFB6';
+  }
+
+  private resetColors() {
+    this.borderColor = '#FFFFFF';
+    this.textColor = '#FFFFFF';
+  }
+
+  private clearAllTimeouts() {
+    clearTimeout(this.timeout1);
+    clearTimeout(this.timeout2);
+    clearTimeout(this.timeout3);
   }
 }
