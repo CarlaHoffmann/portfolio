@@ -115,5 +115,20 @@
               
             </form>
         </div>
+        
+        @if (mailSent) {
+            <div class="mail-success">
+                <div>
+                    {{ t.contactSuccess }}
+                </div>
+            </div>
+        }
+        @if (mailError) {
+            <div class="mail-error">
+                <div>
+                    {{ t.contactError }}
+                </div>
+            </div>
+        }
     </div>
 </div>

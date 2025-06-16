@@ -249,6 +249,30 @@ textarea {
     justify-content: center;
 }
 
+.mail-success, .mail-error {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.32); 
+    transition: opacity 0.3s;
+}
+
+.mail-success > div, .mail-error > div {
+    background: rgb(255, 255, 255);
+    color: #3BCFB6;
+    padding: 2rem 3rem;
+    border-radius: 18px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 @media(max-width: 1000px) {
     .contact-container {
         padding-left: 16px;
