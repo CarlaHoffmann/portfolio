@@ -166,7 +166,7 @@ export class ContactComponent implements OnInit, OnDestroy {
           setTimeout(() => this.mailError = false, 3000);
         },
         complete: () => {
-          console.info('send post complete');
+          // console.info('send post complete');
           this.mailSent = true;
           setTimeout(() => this.mailSent = false, 3000);
         },
