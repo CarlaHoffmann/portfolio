@@ -2,13 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslationService } from '../services/translation.service';
 import { Subscription } from 'rxjs';
-import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { MenuComponent } from '../menu/menu.component';
+import { MenuMobileComponent } from '../menu-mobile/menu-mobile.component';
 
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, FooterComponent],
+  imports: [RouterModule, MenuComponent, MenuMobileComponent, FooterComponent],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })

@@ -2,11 +2,6 @@
     color: #3BCFB6;
 }
 
-* {
-    word-break: normal;
-    overflow-wrap: break-word;
-}
-
 a {
     text-decoration: none;
 }
@@ -20,18 +15,16 @@ a {
     padding-bottom: 160px;
     box-sizing: border-box;
 
-    
-  // Radial Gradient am linken Rand
-  background: radial-gradient(
-    circle 360px at -10px 50%,
-    // circle at -10% 50%,
-    // Mittelpunkt liegt leicht außerhalb des linken Rands, vertikal mittig
-    rgba(8, 70, 59, 0.3) 0%,
-    // Startfarbe
-    rgba(8, 70, 59, 0.3) 60%,
-    // Bis 30% voll sichtbar
-    transparent 100% // Dann weich auslaufend
-  );
+    background: radial-gradient(
+        circle 360px at -10px 50%,
+        // circle at -10% 50%,
+        // Mittelpunkt liegt leicht außerhalb des linken Rands, vertikal mittig
+        rgba(8, 70, 59, 0.3) 0%,
+        // Startfarbe
+        rgba(8, 70, 59, 0.3) 60%,
+        // Bis 30% voll sichtbar
+        transparent 100% // Dann weich auslaufend
+    );
 }
 
 .inner-skill-container {
