@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
+sendMail.php
+sendMail copy.php
 
 # Node
 /node_modules
