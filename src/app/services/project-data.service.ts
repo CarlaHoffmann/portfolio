@@ -34,14 +34,14 @@ export class ProjectDataService {
       github: 'https://github.com/CarlaHoffmann/El-pollo-loco',
       link: 'https://carla-hoffmann.net/pollo-loco/index.html',
     },
-    {
-      title: 'Ring of Fire',
-      image: './assets/img/ringoffire3.png',
-      technologies: ['HTML', 'CSS', 'Firebase', 'TypeScript'],
-      description: 'A card game to play and drink with friends.',
-      github: 'https://github.com/CarlaHoffmann/ringoffire-firebase',
-      link: 'https://carla-hoffmann.net/ring-of-fire/index.html',
-    },
+    // {
+    //   title: 'Ring of Fire',
+    //   image: './assets/img/ringoffire3.png',
+    //   technologies: ['HTML', 'CSS', 'Firebase', 'TypeScript'],
+    //   description: 'A card game to play and drink with friends.',
+    //   github: 'https://github.com/CarlaHoffmann/ringoffire-firebase',
+    //   link: 'https://carla-hoffmann.net/ring-of-fire/index.html',
+    // },
   ];
 
   getProjects(): Project[] {
