@@ -27,9 +27,28 @@ h4 {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    
+    flex-direction: column; 
+}
+
+.menu {
+    position: absolute;
+    width: 100%;
+    height: 98px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.menu-mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    top: 32px;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .privacy-policy-content {
@@ -39,6 +58,7 @@ h4 {
     display: flex;
     justify-content: center;
     padding-bottom: 80px;
+    padding-top: 98px;
 }
 
 .privacy-policy-container {
@@ -98,6 +118,14 @@ a {
 }
 
 @media(max-width: 800px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
     .privacy-policy-container {
         padding: 24px 16px;
     }

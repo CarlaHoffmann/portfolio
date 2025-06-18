@@ -3,13 +3,14 @@ import { TranslationService } from '../services/translation.service';
 import { RouterModule } from '@angular/router';
 import { NavigationService } from '../services/navigation.service';
 import { Subscription } from 'rxjs';
-import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { MenuComponent } from '../menu/menu.component';
+import { MenuMobileComponent } from '../menu-mobile/menu-mobile.component';
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, FooterComponent],
+  imports: [RouterModule, MenuComponent, MenuMobileComponent, FooterComponent],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })

@@ -51,6 +51,8 @@ h1 {
     text-wrap: wrap;
     letter-spacing: -3%;
     line-height: 1;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 .component-intro {

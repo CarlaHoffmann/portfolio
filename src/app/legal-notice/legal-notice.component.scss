@@ -27,6 +27,27 @@ h3 {
     background-color: #1C1C1C;
 }
 
+.menu {
+    position: absolute;
+    width: 100%;
+    height: 98px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.menu-mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    top: 32px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
 .legal-notice-content {
     display: flex;
     justify-content: center;
@@ -39,6 +60,7 @@ h3 {
     padding: 24px 96px;
     box-sizing: border-box;
     padding-bottom: 80px;
+    padding-top: 98px;
 }
 
 .legal-notice {
@@ -90,6 +112,14 @@ a {
 }
 
 @media(max-width: 800px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
     .legal-notice-container {
         padding: 24px 16px;
     }
