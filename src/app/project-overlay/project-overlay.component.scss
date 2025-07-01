@@ -197,14 +197,25 @@ button:hover img {
 @media(max-width: 1200px) {
   .project-overlay .project-container {
     max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 56px);
     padding: 80px 16px;
     flex-direction: column-reverse;
     gap: 32px;
+  }
+  
+  .inner-project-container {
+    overflow-y: auto;
   }
 
   .project-info-box {
     width: 100%;
     max-width: 520px;
+  }
+}
+
+@media (max-height: 640px) {
+  .overlay-img {
+    display: none;
   }
 }
 

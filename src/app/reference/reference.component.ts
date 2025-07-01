@@ -14,18 +14,16 @@ export class ReferenceComponent implements OnInit, OnDestroy {
 
   slidesEn = [
     { id: 0, text: "Carla is a fantastic team player!", author: "Anna", position: "Frontend Developer" },
-    { id: 1, text: "Her code quality is outstanding.", author: "Ben", position: "Team Partner" },
+    { id: 1, text: "Well-structured clean Code!", author: "Albert", position: "Mentor" },
     { id: 2, text: "Always positive and helpful.", author: "Dario", position: "Team Partner" },
-    { id: 3, text: "Brings great energy to every project.", author: "Eva", position: "Frontend Developer" },
-    { id: 4, text: "Most positive and helpful.", author: "Damian", position: "Partner" }
+    { id: 3, text: "Brings great energy to every project.", author: "Eva", position: "Frontend Developer" }
   ];
   
   slidesDe = [
     { id: 0, text: "Carla ist eine fantastische Teamplayerin!", author: "Anna", position: "Frontend-Entwicklerin" },
-    { id: 1, text: "Ihre Codequalität ist herausragend.", author: "Ben", position: "Teamkollege" },
+    { id: 1, text: "Gut strukturierter, sauberer Code!", author: "Albert", position: "Mentor" },
     { id: 2, text: "Immer positiv und hilfsbereit.", author: "Dario", position: "Teamkollege" },
-    { id: 3, text: "Bringt großartige Energie in jedes Projekt.", author: "Eva", position: "Frontend-Entwicklerin" },
-    { id: 4, text: "Sehr positiv und hilfsbereit.", author: "Damian", position: "Kollege" }
+    { id: 3, text: "Bringt großartige Energie in jedes Projekt.", author: "Eva", position: "Frontend-Entwicklerin" }
   ];
 
   translations = {
