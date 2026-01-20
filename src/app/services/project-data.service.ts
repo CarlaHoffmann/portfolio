@@ -42,6 +42,14 @@ export class ProjectDataService {
     //   github: 'https://github.com/CarlaHoffmann/ringoffire-firebase',
     //   link: 'https://carla-hoffmann.net/ring-of-fire/index.html',
     // },
+    {
+      title: 'Dabubble',
+      image: './assets/img/ringoffire3.png',
+      technologies: ['HTML', 'CSS', 'Firebase', 'TypeScript'],
+      description: 'Message App to get connected with your colleagues.',
+      github: 'https://github.com/CarlaHoffmann/dabubble',
+      link: 'https://carla-hoffmann.net/dabubble/index.html',
+    },
   ];
 
   getProjects(): Project[] {
