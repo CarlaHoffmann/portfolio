@@ -13,17 +13,17 @@ import { Subscription } from 'rxjs';
 export class ReferenceComponent implements OnInit, OnDestroy {
 
   slidesEn = [
-    { id: 0, text: "Carla is a fantastic team player!", author: "Anna", position: "Frontend Developer" },
-    { id: 1, text: "Well-structured clean Code!", author: "Albert", position: "Mentor" },
-    { id: 2, text: "Always positive and helpful.", author: "Dario", position: "Team Partner" },
-    { id: 3, text: "Brings great energy to every project.", author: "Eva", position: "Frontend Developer" }
+    { id: 0, text: "Always positive and helpful.", author: "Sven", position: "Team Partner" },
+    { id: 1, text: "Carla is a very pleasant colleague to work with. Collaborating with her on the project was always a great experience, as she is friendly, open-minded, reliable, and highly competent in her field.", author: "Adrian", position: "Frontend Developer" },
+    { id: 2, text: "Well-structured clean Code!", author: "Albert", position: "Mentor" },
+    // { id: 3, text: "Brings great energy to every project.", author: "Eva", position: "Frontend Developer" }
   ];
   
   slidesDe = [
-    { id: 0, text: "Carla ist eine fantastische Teamplayerin!", author: "Anna", position: "Frontend-Entwicklerin" },
-    { id: 1, text: "Gut strukturierter, sauberer Code!", author: "Albert", position: "Mentor" },
-    { id: 2, text: "Immer positiv und hilfsbereit.", author: "Dario", position: "Teamkollege" },
-    { id: 3, text: "Bringt großartige Energie in jedes Projekt.", author: "Eva", position: "Frontend-Entwicklerin" }
+    { id: 0, text: "Immer positiv und hilfsbereit.", author: "Sven", position: "Teamkollege" },
+    { id: 1, text: "Carla ist eine menschlich angenehme Kollegin. Mit ihr am Projekt zu arbeiten war jederzeit super, da sie eine freundliche, offene, zuverlässige und fachlich sehr kompetente Person ist.", author: "Adrian", position: "Frontend-Entwickler" },
+    { id: 2, text: "Gut strukturierter, sauberer Code!", author: "Albert", position: "Mentor" },
+    // { id: 3, text: "Bringt großartige Energie in jedes Projekt.", author: "Eva", position: "Frontend-Entwicklerin" }
   ];
 
   translations = {

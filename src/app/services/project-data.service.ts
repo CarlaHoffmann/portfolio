@@ -4,7 +4,10 @@ export interface Project {
   title: string;
   image: string;
   technologies: string[];
-  description: string;
+  description: {
+    en: string;
+    de: string;
+  };
   github: string;
   link: string;
 }
@@ -20,8 +23,10 @@ export class ProjectDataService {
       title: 'Join',
       image: './assets/img/join2.png',
       technologies: ['HTML', 'CSS', 'Firebase'],
-      description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories',
+      description: {
+        en: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories',
+        de: 'Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu'
+      },
       github: 'https://github.com/CarlaHoffmann/Join',
       link: 'https://carla-hoffmann.net/join/logIn.html',
     },
@@ -29,8 +34,10 @@ export class ProjectDataService {
       title: 'El Pollo Loco',
       image: './assets/img/pollo2.JPG',
       technologies: ['HTML', 'CSS', 'Firebase'],
-      description:
-        'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen',
+      description: {
+        en: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+        de: 'Springen, laufen und werfen Spiel basierend auf objektorientiertem Ansatz. Hilf Pepe Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen'
+      },
       github: 'https://github.com/CarlaHoffmann/El-pollo-loco',
       link: 'https://carla-hoffmann.net/pollo-loco/index.html',
     },
@@ -43,12 +50,15 @@ export class ProjectDataService {
     //   link: 'https://carla-hoffmann.net/ring-of-fire/index.html',
     // },
     {
-      title: 'Dabubble',
-      image: './assets/img/ringoffire3.png',
+      title: 'DABubble',
+      image: './assets/img/dabubble.png',
       technologies: ['HTML', 'CSS', 'Firebase', 'TypeScript'],
-      description: 'Message App to get connected with your colleagues.',
+      description: {
+        en: 'Modern messaging application for efficient team communication. Real-time messaging, group chats, and user management for seamless collaboration with colleagues.',
+        de: 'Moderne Messaging-Anwendung für effiziente Teamkommunikation. Echtzeit-Nachrichten, Gruppenchats und Benutzerverwaltung für nahtlose Zusammenarbeit mit Kollegen.'
+      },
       github: 'https://github.com/CarlaHoffmann/dabubble',
-      link: 'https://carla-hoffmann.net/dabubble/index.html',
+      link: 'https://carla-hoffmann.net/dabubble/',
     },
   ];
 

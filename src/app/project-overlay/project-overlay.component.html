@@ -17,7 +17,7 @@
   
         <div class="project-box-content">
           <div class="overlay-headline">{{ t.whatIsThis }}</div>
-          <div class="overlay-info">{{ project.description }}</div>
+          <div class="overlay-info">{{ project.description[this.lang] }}</div>
           <div class="overlay-languages">
             @for (tech of project.technologies; track tech) {
               <div class="overlay-tech-icon">
